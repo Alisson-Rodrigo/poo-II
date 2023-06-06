@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>660</width>
-    <height>583</height>
+    <width>652</width>
+    <height>614</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -111,7 +111,6 @@
 }
 
 QPushButton:hover {
-	transform: scale(1.5);
 	background-color: lightgray;
 }</string>
     </property>
@@ -161,7 +160,6 @@ QPushButton:hover {
 
 
 QPushButton:hover {
-	transform: scale(1.5);
 	background-color: lightgray;
 }</string>
     </property>
@@ -189,8 +187,42 @@ QPushButton:hover {
     <bool>true</bool>
    </property>
   </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>583</y>
+     <width>61</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="cursor">
+    <cursorShape>PointingHandCursor</cursorShape>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color: white;
+	color: blue;
+	border-radius :10px
+}
+
+
+QPushButton:hover {
+	background-color: lightgray;
+}</string>
+   </property>
+   <property name="text">
+    <string>Sair</string>
+   </property>
+  </widget>
   <zorder>label</zorder>
   <zorder>frame</zorder>
+  <zorder>pushButton</zorder>
  </widget>
  <resources/>
  <connections/>

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1114</width>
-    <height>886</height>
+    <height>894</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,10 +20,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>250</x>
-      <y>140</y>
+      <x>260</x>
+      <y>160</y>
       <width>601</width>
-      <height>651</height>
+      <height>631</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -360,8 +360,8 @@ border: 1px solid black;</string>
     <widget class="QPushButton" name="botao_cadastrar">
      <property name="geometry">
       <rect>
-       <x>250</x>
-       <y>590</y>
+       <x>260</x>
+       <y>570</y>
        <width>81</width>
        <height>23</height>
       </rect>
@@ -371,6 +371,9 @@ border: 1px solid black;</string>
        <pointsize>11</pointsize>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	background-color: white;
@@ -379,7 +382,6 @@ border: 1px solid black;</string>
 }
 
 QPushButton:hover {
-	transform: scale(1.5);
 	background-color: lightgray;
 }
 
@@ -404,7 +406,8 @@ QPushButton:hover {
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">color: white;</string>
+      <string notr="true">color: black;
+background: white;</string>
      </property>
      <property name="editable">
       <bool>false</bool>
@@ -417,17 +420,22 @@ QPushButton:hover {
      </property>
      <item>
       <property name="text">
-       <string>Plano Premium (30,99)</string>
+       <string>Selecione um Plano...</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Plano Normal (25,99)</string>
+       <string notr="true">Plano Básico (19,00)</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Plano Básico (19,99)</string>
+       <string>Plano Normal (25,00)</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Plano Premium (35,00)</string>
       </property>
      </item>
     </widget>
@@ -461,6 +469,9 @@ border: 1px solid black;</string>
        <height>23</height>
       </rect>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
 	background-color: white;
@@ -469,7 +480,6 @@ border: 1px solid black;</string>
 }
 
 QPushButton:hover {
-	transform: scale(1.5);
 	background-color: lightgray;
 }
 
@@ -483,8 +493,8 @@ QPushButton:hover {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>510</x>
-      <y>-10</y>
+      <x>530</x>
+      <y>10</y>
       <width>131</width>
       <height>151</height>
      </rect>
@@ -503,10 +513,13 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>820</y>
+      <y>850</y>
       <width>81</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
@@ -516,7 +529,6 @@ QPushButton:hover {
 }
 
 QPushButton:hover {
-	transform: scale(1.5);
 	background-color: lightgray;
 }</string>
     </property>
