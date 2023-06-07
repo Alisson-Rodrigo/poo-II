@@ -40,7 +40,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         super(Main,self).__init__(parent)
         self.setupUi(self)
 
-        self.tela_inicial.button_login.clicked.connect(self.verificar_login)
+        self.tela_inicial.button_login.clicked.connect(self.verificacao_login)
         self.tela_inicial.button_register.clicked.connect(self.abrir_tela_cadastro)
         self.tela_inicial.pushButton.clicked.connect(self.close)
 
@@ -48,14 +48,22 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_cadastro.pushButton_2.clicked.connect(self.voltar_tela)
 
 
-    def verificar_login(self):
+    def verificacao_login(self):
         username_login = self.tela_inicial.txt_user.text()
         password_login = self.tela_inicial.txt_password.text()
         self.login = Operacoes()
-        self.login.verificar_login(username_login, password_login)
-        if self.login:
+        resultado = self.login.verificar_login(username_login, password_login)
+        if username_login == "" or password_login == "":
+            QMessageBox.information(self, 'Erro', 'Preencha todos os campos!')
+        elif resultado == False:
+            QMessageBox.information(self, 'Erro', 'Usuário ou senha incorretos!')
+        elif resultado == 0:
+            QMessageBox.information(
+                self, 'Erro', 'Usuario não existe!')
+        elif resultado == True:
             QMessageBox.information(
                 self, 'Login', 'Login realizado com sucesso!')
+            self.QtStack.setCurrentIndex(2)
  
     def botaoCadastrar(self):
         nome = self.tela_cadastro.txt_nome.text()

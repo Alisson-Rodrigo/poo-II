@@ -7,8 +7,6 @@ conexao = mysql.connector.connect(
     database="pooII" 
 )
 cursor = conexao.cursor()
-#cursor.execute("DROP TABLE IF EXISTS cadastro")
-#cursor.execute("DELETE FROM cadastro")
 
 class Operacoes():
     def __init__(self):
@@ -31,16 +29,22 @@ class Operacoes():
         return True
 
     def verificar_login(self, username, password):
-        if self.username == 'admin' and self.password == 'admin':
-            return True
+        self.verificacao = self.verificar_usuario_existente(username)
+        if self.verificacao == True:
+            cursor.execute("SELECT * FROM cadastro WHERE usuario = %s AND senha = %s", (username, password))
+            resultado = cursor.fetchall()
+            if resultado:
+                return True
+            else:
+                return False
         else:
-            return False
-    def verificar_usuario_existente(usuario):
+            return 0
+
+    def verificar_usuario_existente(self,usuario):
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
-        resultado = cursor.fetchone()
+        resultado = cursor.fetchall()
         if resultado:
-            print("O usuário existe.")
-        else:
-            print("O usuário não existe.")
+            return True
+        return False
 
 
