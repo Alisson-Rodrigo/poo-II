@@ -45,6 +45,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_inicial.pushButton.clicked.connect(self.close)
 
         self.tela_cadastro.botao_cadastrar.clicked.connect(self.botaoCadastrar)
+        self.tela_cadastro.pushButton_2.clicked.connect(self.voltar_tela)
 
 
     def verificar_login(self):
@@ -76,6 +77,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 self, 'Cadastro', 'Cadastro não realizado!')
 
 
+    def voltar_tela(self):
+        self.QtStack.setCurrentIndex(0)
     def abrir_tela_cadastro(self):
         self.QtStack.setCurrentIndex(1)
     def close (self):

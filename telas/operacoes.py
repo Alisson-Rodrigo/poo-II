@@ -6,19 +6,13 @@ conexao = mysql.connector.connect(
     password="1234",
     database="pooII" 
 )
-
 cursor = conexao.cursor()
-cursor.execute("SELECT * FROM cadastro")
-resultado = cursor.fetchall()
-for x in resultado:
-    print(x)
-
 #cursor.execute("DROP TABLE IF EXISTS cadastro")
 #cursor.execute("DELETE FROM cadastro")
 
 class Operacoes():
     def __init__(self):
-        cursor.execute("""CREATE TABLE cadastro (
+        cursor.execute("""CREATE TABLE IF NOT EXISTS cadastro (
             id INT AUTO_INCREMENT PRIMARY KEY,
             nome VARCHAR(50),
             email VARCHAR(50),
