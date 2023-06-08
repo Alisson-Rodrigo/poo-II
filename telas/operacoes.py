@@ -6,6 +6,7 @@ conexao = mysql.connector.connect(
     password="1234",
     database="pooII" 
 )
+
 cursor = conexao.cursor()
 
 class Operacoes():
