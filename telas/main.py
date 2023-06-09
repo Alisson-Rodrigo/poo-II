@@ -18,7 +18,7 @@ from pessoa import Pessoa
 class Ui_Main(object):
     def setupUi(self, Main):
         Main.setObjectName("Main")
-        Main.resize(640, 480) 
+        Main.resize(600, 400) 
 
         self.QtStack = QtWidgets.QStackedLayout()
 
@@ -74,15 +74,18 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         senha = self.tela_cadastro.txt_senha.text()
         senha_confirmacao = self.tela_cadastro.txt_senhaconf.text()
         plano_assinatura = self.tela_cadastro.planos_assinatura.currentIndex()
-        self.p = Pessoa(nome, email, endereco, nascimento, usuario, senha, senha_confirmacao, plano_assinatura)
-        self.cadastro = Operacoes()
-        self.cadastro.cadastramento(self.p)
-        if self.cadastro:
-            QMessageBox.information(
-                self, 'Cadastro', 'Cadastro realizado com sucesso!')
+        if nome == "" or email == "" or endereco == "" or nascimento == "" or usuario == "" or senha == "" or senha_confirmacao == "":
+            QMessageBox.information(self, 'Erro', 'Preencha todos os campos!')
         else:
-            QMessageBox.information(
-                self, 'Cadastro', 'Cadastro não realizado!')
+            self.p = Pessoa(nome, email, endereco, nascimento, usuario, senha, senha_confirmacao, plano_assinatura)
+            self.cadastro = Operacoes()
+            operacao = self.cadastro.cadastramento(self.p)
+            if operacao:
+                QMessageBox.information(
+                    self, 'Cadastro', 'Cadastro realizado com sucesso!')
+            else:
+                QMessageBox.information(
+                    self, 'Cadastro', 'Usuario já existente!')
 
 
     def voltar_tela(self):
