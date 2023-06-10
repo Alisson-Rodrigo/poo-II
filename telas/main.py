@@ -10,6 +10,7 @@ import sys
 
 
 from tela_login import Tela_Login
+from tela_inicial import Tela_Inicial
 from tela_cadastro import Tela_Cadastro
 from operacoes import Operacoes
 from pessoa import Pessoa
@@ -24,6 +25,7 @@ class Ui_Main(object):
 
         self.stack0 = QtWidgets.QMainWindow()
         self.stack1 = QtWidgets.QMainWindow()
+        self.stack2 = QtWidgets.QMainWindow()
 
         self.tela_inicial = Tela_Login()
         self.tela_inicial.setupUi(self.stack0)
@@ -31,8 +33,12 @@ class Ui_Main(object):
         self.tela_cadastro = Tela_Cadastro()
         self.tela_cadastro.setupUi(self.stack1)
 
+        self.tela_primaria = Tela_Inicial()
+        self.tela_primaria.setupUi(self.stack2)
+
         self.QtStack.addWidget(self.stack0)
         self.QtStack.addWidget(self.stack1)
+        self.QtStack.addWidget(self.stack2)
 
 
 class Main(QtWidgets.QMainWindow, Ui_Main):
@@ -47,6 +53,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_cadastro.botao_cadastrar.clicked.connect(self.botaoCadastrar)
         self.tela_cadastro.pushButton_2.clicked.connect(self.voltar_tela)
 
+        self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
+        self.tela_primaria.pushButton_2.clicked.connect(self.close)
+
 
     def verificacao_login(self):
         username_login = self.tela_inicial.txt_user.text()
@@ -60,8 +69,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         elif resultado == True:
             QMessageBox.information(
                 self, 'Login', 'Login realizado com sucesso!')
-            self.QtStack.setCurrentIndex(0)
- 
+            self.tela_inicial.txt_user.clear()
+            self.tela_inicial.txt_password.clear()
+            self.QtStack.setCurrentIndex(2)
     def botaoCadastrar(self):
         nome = self.tela_cadastro.txt_nome.text()
         email = self.tela_cadastro.txt_email.text()
@@ -83,7 +93,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             else:
                 QMessageBox.information(
                     self, 'Cadastro', 'Usuario já existente!')
-
 
     def voltar_tela(self):
         self.QtStack.setCurrentIndex(0)
