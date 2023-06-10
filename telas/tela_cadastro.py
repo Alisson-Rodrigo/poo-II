@@ -20,7 +20,7 @@ class Tela_Cadastro(object):
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(350, 0, 601, 591))
-        self.frame.setStyleSheet("background-color: rgb(0, 0, 0,0.3);\n"
+        self.frame.setStyleSheet("background-color: rgba(0, 0, 0,0.3);\n"
 "")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)

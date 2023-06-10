@@ -41,8 +41,6 @@ class Operacoes():
                 return True
             else:
                 return False
-        else:
-            return 0
 
     def verificar_usuario_existente(self,usuario):
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))

@@ -57,13 +57,10 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             QMessageBox.information(self, 'Erro', 'Preencha todos os campos!')
         elif resultado == False:
             QMessageBox.information(self, 'Erro', 'Usuário ou senha incorretos!')
-        elif resultado == 0:
-            QMessageBox.information(
-                self, 'Erro', 'Usuario não existe!')
         elif resultado == True:
             QMessageBox.information(
                 self, 'Login', 'Login realizado com sucesso!')
-            self.QtStack.setCurrentIndex(2)
+            self.QtStack.setCurrentIndex(0)
  
     def botaoCadastrar(self):
         nome = self.tela_cadastro.txt_nome.text()
