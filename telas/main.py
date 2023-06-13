@@ -111,6 +111,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         sys.exit(app.exec_())
 
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    app = QApplication(sys.argv)    
     show_main = Main()
     sys.exit(app.exec_())
