@@ -15,7 +15,6 @@ from tela_cadastro import Tela_Cadastro
 from operacoes import Operacoes
 from pessoa import Pessoa
 
-
 class Ui_Main(object):
     def setupUi(self, Main):
         Main.setObjectName("Main")
