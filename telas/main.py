@@ -81,8 +81,10 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         senha = self.tela_cadastro.txt_senha.text()
         senha_confirmacao = self.tela_cadastro.txt_senhaconf.text()
         plano_assinatura = self.tela_cadastro.planos_assinatura.currentIndex()
-        if nome == "" or email == "" or endereco == "" or nascimento == "" or usuario == "" or senha == "" or senha_confirmacao == "":
+        if nome == "" or email == "" or endereco == "" or nascimento == "" or usuario == "" or senha == "" or senha_confirmacao == "" or plano_assinatura == 0:
             QMessageBox.information(self, 'Erro', 'Preencha todos os campos!')
+        elif senha != senha_confirmacao:
+            QMessageBox.information(self, 'Erro', 'Senhas não coincidem!')
         else:
             self.p = Pessoa(nome, email, endereco, nascimento, usuario, senha, senha_confirmacao, plano_assinatura)
             self.cadastro = Operacoes()
@@ -90,6 +92,14 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             if operacao:
                 QMessageBox.information(
                     self, 'Cadastro', 'Cadastro realizado com sucesso!')
+                self.tela_cadastro.txt_nome.clear()
+                self.tela_cadastro.txt_email.clear()
+                self.tela_cadastro.txt_endereco.clear()
+                self.tela_cadastro.txt_nascimento.clear()
+                self.tela_cadastro.txt_usuario.clear()
+                self.tela_cadastro.txt_senha.clear()
+                self.tela_cadastro.txt_senhaconf.clear()
+                
             else:
                 QMessageBox.information(
                     self, 'Cadastro', 'Usuario já existente!')
