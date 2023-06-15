@@ -21,3 +21,4 @@ while True:
         print (str(erro))
         serv_socket.close()
         break
+    
