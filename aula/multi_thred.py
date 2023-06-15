@@ -14,11 +14,15 @@ print ('aguardando mensagem')
 while True:
     try:
         recebe = con.recv(1024)
+        if recebe == 'sair':
+            print ('desconectado')
+            serv_socket.close()
+            break
         print ('mensagem recebida: ', recebe.decode())
         enviar = input('digite a mensagem: ')
         con.send(enviar.encode())
+        
     except Exception as erro:
         print (str(erro))
         serv_socket.close()
         break
-    

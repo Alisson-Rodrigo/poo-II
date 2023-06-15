@@ -1,7 +1,7 @@
 import socket
 
-host = 'localhost'
-port = 8000
+host = '10.180.44.130'
+port = 8084
 addr = (host, port)
 cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 cliente_socket.connect(addr)
@@ -11,7 +11,17 @@ while True:
         mensagem = input('digite a mensagem: ')
         cliente_socket.send(mensagem.encode())
         print ('aguardando mensagem')
-        print ('mensagem recebida: ', cliente_socket.recv(1024).decode())
+        mensagem_recebida = cliente_socket.recv(1024).decode()
+        print(mensagem_recebida)
+        if mensagem == 'sair':
+            print ('conexao fechada')
+            cliente_socket.close()
+            break
+        if mensagem_recebida == 'sair':
+            print ('conexao fechada')
+            cliente_socket.close()
+            break
+        print (f'mensagem recebida: {mensagem_recebida}')
     except:
         cliente_socket.close()
-        break
+        break	
