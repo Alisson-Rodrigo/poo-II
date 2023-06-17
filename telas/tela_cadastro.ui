@@ -20,10 +20,10 @@
    <widget class="QFrame" name="frame">
     <property name="geometry">
      <rect>
-      <x>260</x>
-      <y>160</y>
+      <x>350</x>
+      <y>0</y>
       <width>601</width>
-      <height>631</height>
+      <height>591</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -360,8 +360,8 @@ border: 1px solid black;</string>
     <widget class="QPushButton" name="botao_cadastrar">
      <property name="geometry">
       <rect>
-       <x>260</x>
-       <y>570</y>
+       <x>290</x>
+       <y>540</y>
        <width>81</width>
        <height>23</height>
       </rect>
@@ -493,8 +493,8 @@ QPushButton:hover {
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>530</x>
-      <y>10</y>
+      <x>190</x>
+      <y>180</y>
       <width>131</width>
       <height>151</height>
      </rect>
@@ -513,7 +513,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>850</y>
+      <y>10</y>
       <width>81</width>
       <height>21</height>
      </rect>

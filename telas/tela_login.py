@@ -18,7 +18,7 @@ class Tela_Login(object):
         Login.setStyleSheet("background-color:rgb(171, 177, 255);")
         self.frame = QtWidgets.QFrame(Login)
         self.frame.setGeometry(QtCore.QRect(140, 160, 411, 351))
-        self.frame.setStyleSheet("background-color: rgba(0, 0, 0,0.2);")
+        self.frame.setStyleSheet("background-color: rgb(0, 0, 0,0.2);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -114,13 +114,3 @@ class Tela_Login(object):
         self.label_2.setText(_translate("Login", "Or"))
         self.button_register.setText(_translate("Login", "Register"))
         self.pushButton.setText(_translate("Login", "Sair"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Login = QtWidgets.QWidget()
-    ui = Tela_Login()
-    ui.setupUi(Login)
-    Login.show()
-    sys.exit(app.exec_())

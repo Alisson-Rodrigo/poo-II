@@ -19,7 +19,7 @@ class Tela_Cadastro(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(260, 160, 601, 631))
+        self.frame.setGeometry(QtCore.QRect(350, 0, 601, 591))
         self.frame.setStyleSheet("background-color: rgba(0, 0, 0,0.3);\n"
 "")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -133,7 +133,7 @@ class Tela_Cadastro(object):
         self.txt_senhaconf.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_senhaconf.setObjectName("txt_senhaconf")
         self.botao_cadastrar = QtWidgets.QPushButton(self.frame)
-        self.botao_cadastrar.setGeometry(QtCore.QRect(260, 570, 81, 23))
+        self.botao_cadastrar.setGeometry(QtCore.QRect(290, 540, 81, 23))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.botao_cadastrar.setFont(font)
@@ -188,13 +188,13 @@ class Tela_Cadastro(object):
 "")
         self.botao_saibamais.setObjectName("botao_saibamais")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(530, 10, 131, 151))
+        self.label.setGeometry(QtCore.QRect(190, 180, 131, 151))
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap("../imagens/cadastro.png"))
         self.label.setScaledContents(True)
         self.label.setObjectName("label")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(10, 850, 81, 21))
+        self.pushButton_2.setGeometry(QtCore.QRect(10, 10, 81, 21))
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setStyleSheet("QPushButton {\n"
 "    background-color: white;\n"
@@ -242,13 +242,3 @@ class Tela_Cadastro(object):
         self.label_9.setText(_translate("MainWindow", "Planos de Assinatura"))
         self.botao_saibamais.setText(_translate("MainWindow", "Saiba mais"))
         self.pushButton_2.setText(_translate("MainWindow", "Voltar"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Tela_Cadastro()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())

@@ -3,9 +3,10 @@ import mysql.connector
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
-    database="pooII" 
+    password="Curupira098*",
+    database="bdPOO" 
 )
+
 cursor = conexao.cursor()
 
 class Operacoes():
@@ -24,9 +25,12 @@ class Operacoes():
         conexao.commit()
 
     def cadastramento (self, pessoa):
-        cursor.execute('''INSERT INTO cadastro (nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)''', (pessoa.nome, pessoa.email, pessoa.endereco, pessoa.nascimento, pessoa.usuario, pessoa.senha, pessoa.confirmar_senha, pessoa.plano_assinatura))
-        conexao.commit()
-        return True
+        if self.verificar_usuario_existente(pessoa.usuario) == True:
+            return False
+        else:
+            cursor.execute('''INSERT INTO cadastro (nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)''', (pessoa.nome, pessoa.email, pessoa.endereco, pessoa.nascimento, pessoa.usuario, pessoa.senha, pessoa.confirmar_senha, pessoa.plano_assinatura))
+            conexao.commit()
+            return True
 
     def verificar_login(self, username, password):
         self.verificacao = self.verificar_usuario_existente(username)
@@ -38,7 +42,7 @@ class Operacoes():
             else:
                 return False
         else:
-            return 0
+            return False
 
     def verificar_usuario_existente(self,usuario):
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
