@@ -1,7 +1,7 @@
 import socket
 
-host = '10.180.44.221'
-port = 8086
+host = '10.180.46.41'
+port = 8089
 addr = (host, port)
 cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 cliente_socket.connect(addr)
