@@ -7,12 +7,13 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon, QPixmap
 from PyQt5.QtPrintSupport import *
 import sys
+import socket
 
 
 from tela_login import Tela_Login
 from tela_inicial import Tela_Inicial
 from tela_cadastro import Tela_Cadastro
-from operacoes import Operacoes
+from banco_de_dados import Operacoes
 from pessoa import Pessoa
 
 class Ui_Main(object):
@@ -39,6 +40,8 @@ class Ui_Main(object):
         self.QtStack.addWidget(self.stack1)
         self.QtStack.addWidget(self.stack2)
 
+        
+
 
 class Main(QtWidgets.QMainWindow, Ui_Main):
     def __init__(self,parent=None):
@@ -56,9 +59,18 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_2.clicked.connect(self.close)
 
 
+        self.host = 'localhost'
+        self.port = 9000
+        self.endereco = (self.host, self.port)
+        self.cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.cliente_socket.connect(self.endereco)
+
     def verificacao_login(self):
         username_login = self.tela_inicial.txt_user.text()
         password_login = self.tela_inicial.txt_password.text()
+        lista_login = [username_login, password_login]
+        self.cliente_socket.send(lista_login.encode())
+
         self.login = Operacoes()
         resultado = self.login.verificar_login(username_login, password_login)
         if username_login == "" or password_login == "":
