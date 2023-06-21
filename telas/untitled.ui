@@ -14,7 +14,8 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgb(220, 138, 221), stop:1 rgb(129, 61, 156));
+</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QFrame" name="frame">
@@ -84,7 +85,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: white;</string>
+     <string notr="true">background-color: rgba(0, 0, 0,0.3);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::StyledPanel</enum>
@@ -200,29 +201,6 @@ color: white;</string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>120</y>
-      <width>771</width>
-      <height>451</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: gray;</string>
-    </property>
-   </widget>
-   <zorder>widget</zorder>
-   <zorder>frame</zorder>
-   <zorder>frame_2</zorder>
-   <zorder>frame_3</zorder>
-   <zorder>frame_4</zorder>
-   <zorder>frame_5</zorder>
-   <zorder>frame_6</zorder>
-   <zorder>frame_7</zorder>
-   <zorder>label</zorder>
-   <zorder>label_2</zorder>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
