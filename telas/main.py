@@ -13,7 +13,7 @@ import socket
 from tela_login import Tela_Login
 from tela_inicial import Tela_Inicial
 from tela_cadastro import Tela_Cadastro
-from banco_de_dados import Operacoes
+from operacoes import Operacoes
 from pessoa import Pessoa
 
 class Ui_Main(object):
@@ -48,6 +48,12 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         super(Main,self).__init__(parent)
         self.setupUi(self)
 
+        ip = 'localhost'
+        port = 5000
+        addr = ((ip, port))
+        self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        self.client_socket.connect(addr)
+
         self.tela_inicial.button_login.clicked.connect(self.verificacao_login)
         self.tela_inicial.button_register.clicked.connect(self.abrir_tela_cadastro)
         self.tela_inicial.pushButton.clicked.connect(self.close)
@@ -58,31 +64,26 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
         self.tela_primaria.pushButton_2.clicked.connect(self.close)
 
-
-        self.host = 'localhost'
-        self.port = 9000
-        self.endereco = (self.host, self.port)
-        self.cliente_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        self.cliente_socket.connect(self.endereco)
-
     def verificacao_login(self):
         username_login = self.tela_inicial.txt_user.text()
         password_login = self.tela_inicial.txt_password.text()
-        lista_login = [username_login, password_login]
-        self.cliente_socket.send(lista_login.encode())
+        mensagem = f'1,{username_login},{password_login}'
+        if username_login and password_login:
+            if self.enviar_login(mensagem):
+                self.QtStack.setCurrentIndex(2)
+            else:
+                QMessageBox.about(self, "Erro", "E-mail ou senha incorretos")
+        else:
+            QMessageBox.about(self, "Erro", "Preencha todos os campos")
 
-        self.login = Operacoes()
-        resultado = self.login.verificar_login(username_login, password_login)
-        if username_login == "" or password_login == "":
-            QMessageBox.information(self, 'Erro', 'Preencha todos os campos!')
-        elif resultado == False:
-            QMessageBox.information(self, 'Erro', 'Usuário ou senha incorretos!')
-        elif resultado == True:
-            QMessageBox.information(
-                self, 'Login', 'Login realizado com sucesso!')
-            self.tela_inicial.txt_user.clear()
-            self.tela_inicial.txt_password.clear()
-            self.QtStack.setCurrentIndex(2)
+    def enviar_login(self, mensagem):
+        if mensagem.split(',')[0] == '1':
+            self.client_socket.send(mensagem.encode())
+            resposta = self.client_socket.recv(1024).decode()
+            if resposta and resposta == '1':
+                return True
+        return False
+
     def botaoCadastrar(self):
         nome = self.tela_cadastro.txt_nome.text()
         email = self.tela_cadastro.txt_email.text()

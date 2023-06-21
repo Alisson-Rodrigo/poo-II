@@ -18,7 +18,7 @@ class Tela_Login(object):
         Login.setStyleSheet("background-color:rgb(171, 177, 255);")
         self.frame = QtWidgets.QFrame(Login)
         self.frame.setGeometry(QtCore.QRect(140, 160, 411, 351))
-        self.frame.setStyleSheet("background-color: rgb(0, 0, 0,0.2);")
+        self.frame.setStyleSheet("background-color: rgba(0, 0, 0,0.2);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")

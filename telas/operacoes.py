@@ -3,7 +3,8 @@ import mysql.connector
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Curupira098*",
+    password="1234",
+    #linux: Curupira098*
     database="bdPOO" 
 )
 
@@ -50,5 +51,49 @@ class Operacoes():
         if resultado:
             return True
         return False
+    
+
+
+if __name__ == "__main__":
+    import socket
+
+    sistema = Operacoes()
+    host = 'localhost'
+    port = 5000
+    addr = (host, port)
+    serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    serv_socket.bind(addr)
+    serv_socket.listen(10)
+    print('Aguardando conexão...')
+    con, cliente = serv_socket.accept()
+    print('Conectado')
+    print('Aguardando interação...')
+
+    while True:
+        try:
+            mensagem = con.recv(1024)
+            mensagem_str = mensagem.decode().split(',')
+            if mensagem_str[0] == '1':
+                email = mensagem_str[1]
+                senha = mensagem_str[2]
+                enviar = ''
+                if sistema.verificar_login(email, senha):
+                    enviar = '1'
+                    print(f'Usuário {email} efetuou o login no sistema')
+                else:
+                    enviar = '0'
+                    print('Erro no login')
+                con.send(enviar.encode())
+            elif mensagem_str[0] == '2':
+                pass
+            elif mensagem_str[0] == '0':
+                pass
+            else:
+                raise Exception('Conexão finalizada pelo cliente')
+        except Exception as e:
+            print(str(e))
+            con.close()
+            serv_socket.close()
+            break
 
 
