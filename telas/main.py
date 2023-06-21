@@ -48,7 +48,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         super(Main,self).__init__(parent)
         self.setupUi(self)
 
-        ip = 'localhost'
+        ip = '10.0.0.184'
         port = 5000
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

@@ -58,7 +58,7 @@ if __name__ == "__main__":
     import socket
 
     sistema = Operacoes()
-    host = 'localhost'
+    host = '10.0.0.184'
     port = 5000
     addr = (host, port)
     serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
