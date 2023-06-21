@@ -114,13 +114,3 @@ class Tela_Login(object):
         self.label_2.setText(_translate("Login", "Or"))
         self.button_register.setText(_translate("Login", "Register"))
         self.pushButton.setText(_translate("Login", "Sair"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Login = QtWidgets.QWidget()
-    ui = Tela_Login()
-    ui.setupUi(Login)
-    Login.show()
-    sys.exit(app.exec_())
