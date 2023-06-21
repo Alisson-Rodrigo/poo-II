@@ -4,7 +4,7 @@ import mysql.connector
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="Curupira098*",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -78,10 +78,8 @@ if __name__ == "__main__":
                 enviar = ''
                 if sistema.verificar_login(email, senha):
                     enviar = '1'
-                    print(f'Usuário {email} efetuou o login no sistema')
                 else:
                     enviar = '0'
-                    print('Erro no login')
                 con.send(enviar.encode())
             elif mensagem_str[0] == '2':
                 nome = mensagem_str[1]
@@ -95,10 +93,8 @@ if __name__ == "__main__":
                 enviar = ''
                 if sistema.cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura):
                     enviar = '1'
-                    print(f'Usuário {email} efetuou o cadastro no sistema')
                 else:
                     enviar = '0'
-                    print('Usuário já cadastrado')
                 con.send(enviar.encode())
             else:
                 raise Exception('Conexão finalizada pelo cliente')
