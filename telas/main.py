@@ -85,6 +85,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         return False
 
     def botaoCadastrar(self):
+        pass
+        ''''
         nome = self.tela_cadastro.txt_nome.text()
         email = self.tela_cadastro.txt_email.text()
         endereco = self.tela_cadastro.txt_endereco.text()
@@ -115,6 +117,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             else:
                 QMessageBox.information(
                     self, 'Cadastro', 'Usuario já existente!')
+        '''
 
     def voltar_tela(self):
         self.QtStack.setCurrentIndex(0)

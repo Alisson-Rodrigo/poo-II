@@ -1,5 +1,4 @@
 import mysql.connector as mysql
-from modelos import Professor, Aluno
 
 
 tabelas = {}
