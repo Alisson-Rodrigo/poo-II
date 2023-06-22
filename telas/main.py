@@ -45,7 +45,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.setupUi(self)
 
         ip = 'localhost'
-        port = 8900
+        port = 8901
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -78,7 +78,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 QMessageBox.about(self, "Sucesso", "Login realizado com sucesso")
                 self.QtStack.setCurrentIndex(2)
             else:
-                QMessageBox.about(self, "Erro", "E-mail ou senha incorretos")
+                QMessageBox.about(self, "Erro", "Usuário ou senha incorretos")
         else:
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
 
