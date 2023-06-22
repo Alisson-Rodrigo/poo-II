@@ -61,7 +61,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_2.clicked.connect(self.close)
 
     
-    def enviar_login(self, mensagem):
+    def operacao_log(self, mensagem):
         if mensagem.split(',')[0] == '1':
             self.client_socket.send(mensagem.encode())
             resposta = self.client_socket.recv(1024).decode()
@@ -74,7 +74,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         password_login = self.tela_inicial.txt_password.text()
         mensagem = f'1,{username_login},{password_login}'
         if username_login and password_login:
-            if self.enviar_login(mensagem):
+            if self.operacao_log(mensagem):
                 self.QtStack.setCurrentIndex(2)
             else:
                 QMessageBox.about(self, "Erro", "E-mail ou senha incorretos")
