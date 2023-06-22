@@ -75,6 +75,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         mensagem = f'1,{username_login},{password_login}'
         if username_login and password_login:
             if self.operacao_log(mensagem):
+                QMessageBox.about(self, "Sucesso", "Login realizado com sucesso")
                 self.QtStack.setCurrentIndex(2)
             else:
                 QMessageBox.about(self, "Erro", "E-mail ou senha incorretos")
