@@ -100,11 +100,17 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         senha_confirmacao = self.tela_cadastro.txt_senhaconf.text()
         plano_assinatura = self.tela_cadastro.planos_assinatura.currentIndex()
         mensagem = f'2,{nome},{email},{endereco},{nascimento},{usuario},{senha},{senha_confirmacao},{plano_assinatura}'
-        if nome and email and endereco and nascimento and usuario and senha and senha_confirmacao:
+        if nome and email and endereco and nascimento and usuario and senha and senha_confirmacao and plano_assinatura:
             if senha == senha_confirmacao:
                 if self.enviar_cadastro(mensagem):
                     QMessageBox.about(self, "Sucesso", "Cadastro realizado com sucesso")
-                    self.QtStack.setCurrentIndex(0)
+                    self.tela_cadastro.txt_nome.clear()
+                    self.tela_cadastro.txt_email.clear()
+                    self.tela_cadastro.txt_endereco.clear()
+                    self.tela_cadastro.txt_nascimento.clear()
+                    self.tela_cadastro.txt_usuario.clear()
+                    self.tela_cadastro.txt_senha.clear()
+                    self.tela_cadastro.txt_senhaconf.clear()
                 else:
                     QMessageBox.about(self, "Erro", "Usuário já cadastrado")
             else:
