@@ -4,7 +4,7 @@ import mysql.connector
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="Curupira098*",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -22,15 +22,14 @@ class Operacoes():
             usuario VARCHAR(20),
             senha VARCHAR(20),
             confirmar_senha VARCHAR(20),
-            plano_assinatura VARCHAR(40)
         )""")
         conexao.commit()
 
-    def cadastramento (self, nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura):
+    def cadastramento (self, nome, email, endereco, nascimento, usuario, senha, confirmar_senha):
         if self.verificar_usuario_existente(usuario) == True:
             return False
         else:
-            cursor.execute('''INSERT INTO cadastro (nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)''', (nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura))
+            cursor.execute('''INSERT INTO cadastro (nome, email, endereco, nascimento, usuario, senha, confirmar_senha) VALUES (%s,%s,%s,%s,%s,%s,%s)''', (nome, email, endereco, nascimento, usuario, senha, confirmar_senha))
             conexao.commit()
             return True
 
@@ -89,9 +88,8 @@ if __name__ == "__main__":
                 usuario = mensagem_str[5]
                 senha = mensagem_str[6]
                 confirmar_senha = mensagem_str[7]
-                plano_assinatura = mensagem_str[8]
                 enviar = ''
-                if sistema.cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura):
+                if sistema.cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha):
                     enviar = '1'
                 else:
                     enviar = '0'

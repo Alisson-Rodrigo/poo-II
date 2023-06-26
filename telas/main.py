@@ -57,8 +57,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_cadastro.botao_cadastrar.clicked.connect(self.botaoCadastrar)
         self.tela_cadastro.pushButton_2.clicked.connect(self.voltar_tela)
 
-        self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
-        self.tela_primaria.pushButton_2.clicked.connect(self.close)
+        #self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
+        #self.tela_primaria.pushButton_2.clicked.connect(self.close)
 
     
     def operacao_log(self, mensagem):
@@ -99,9 +99,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         usuario = self.tela_cadastro.txt_usuario.text()
         senha = self.tela_cadastro.txt_senha.text()
         senha_confirmacao = self.tela_cadastro.txt_senhaconf.text()
-        plano_assinatura = self.tela_cadastro.planos_assinatura.currentIndex()
-        mensagem = f'2,{nome},{email},{endereco},{nascimento},{usuario},{senha},{senha_confirmacao},{plano_assinatura}'
-        if nome and email and endereco and nascimento and usuario and senha and senha_confirmacao and plano_assinatura:
+        mensagem = f'2,{nome},{email},{endereco},{nascimento},{usuario},{senha},{senha_confirmacao}'
+        if nome and email and endereco and nascimento and usuario and senha and senha_confirmacao:
             if senha == senha_confirmacao:
                 if self.enviar_cadastro(mensagem):
                     QMessageBox.about(self, "Sucesso", "Cadastro realizado com sucesso")

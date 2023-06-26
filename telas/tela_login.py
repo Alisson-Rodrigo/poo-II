@@ -15,10 +15,11 @@ class Tela_Login(object):
     def setupUi(self, Login):
         Login.setObjectName("Login")
         Login.resize(652, 614)
-        Login.setStyleSheet("background-color:rgb(171, 177, 255);")
+        Login.setStyleSheet("background-color: rgb(10, 3, 34);\n"
+"")
         self.frame = QtWidgets.QFrame(Login)
         self.frame.setGeometry(QtCore.QRect(140, 160, 411, 351))
-        self.frame.setStyleSheet("background-color: rgba(0, 0, 0,0.2);")
+        self.frame.setStyleSheet("background-color: gray;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -27,7 +28,8 @@ class Tela_Login(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.txt_user.setFont(font)
-        self.txt_user.setStyleSheet("color: white;")
+        self.txt_user.setStyleSheet("color: white;\n"
+"border: 1px solid white;")
         self.txt_user.setText("")
         self.txt_user.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_user.setObjectName("txt_user")
@@ -36,7 +38,8 @@ class Tela_Login(object):
         font = QtGui.QFont()
         font.setPointSize(11)
         self.txt_password.setFont(font)
-        self.txt_password.setStyleSheet("color: white;")
+        self.txt_password.setStyleSheet("color: white;\n"
+"border: 1px solid white;")
         self.txt_password.setText("")
         self.txt_password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.txt_password.setAlignment(QtCore.Qt.AlignCenter)
@@ -59,7 +62,8 @@ class Tela_Login(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_2.setFont(font)
-        self.label_2.setStyleSheet("background-color: none;")
+        self.label_2.setStyleSheet("background-color: none;\n"
+"color: white;")
         self.label_2.setObjectName("label_2")
         self.button_register = QtWidgets.QPushButton(self.frame)
         self.button_register.setGeometry(QtCore.QRect(170, 270, 75, 23))
@@ -75,12 +79,6 @@ class Tela_Login(object):
 "    background-color: lightgray;\n"
 "}")
         self.button_register.setObjectName("button_register")
-        self.label = QtWidgets.QLabel(Login)
-        self.label.setGeometry(QtCore.QRect(290, 60, 131, 131))
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../imagens/icon_title.png"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
         self.pushButton = QtWidgets.QPushButton(Login)
         self.pushButton.setGeometry(QtCore.QRect(10, 583, 61, 20))
         font = QtGui.QFont()
@@ -98,9 +96,14 @@ class Tela_Login(object):
 "    background-color: lightgray;\n"
 "}")
         self.pushButton.setObjectName("pushButton")
-        self.label.raise_()
-        self.frame.raise_()
-        self.pushButton.raise_()
+        self.label = QtWidgets.QLabel(Login)
+        self.label.setGeometry(QtCore.QRect(280, 50, 141, 131))
+        self.label.setStyleSheet("background-color: white;\n"
+"border-radius: 20px;")
+        self.label.setText("")
+        self.label.setPixmap(QtGui.QPixmap("../imagens/icon_title.png"))
+        self.label.setScaledContents(True)
+        self.label.setObjectName("label")
 
         self.retranslateUi(Login)
         QtCore.QMetaObject.connectSlotsByName(Login)

@@ -14,14 +14,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Tela_Cadastro(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1114, 894)
-        MainWindow.setStyleSheet("background-color:rgb(171, 177, 255);")
+        MainWindow.resize(1000, 600)
+        MainWindow.setMinimumSize(QtCore.QSize(1000, 600))
+        MainWindow.setMaximumSize(QtCore.QSize(1000, 600))
+        MainWindow.setStyleSheet("background-color: rgb(10, 3, 34);\n"
+"")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(350, 0, 601, 591))
-        self.frame.setStyleSheet("background-color: rgba(0, 0, 0,0.3);\n"
-"")
+        self.frame.setGeometry(QtCore.QRect(290, 0, 591, 521))
+        self.frame.setStyleSheet("background-color: gray;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
@@ -37,7 +39,8 @@ class Tela_Cadastro(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_nome.setFont(font)
-        self.txt_nome.setStyleSheet("color: white")
+        self.txt_nome.setStyleSheet("color: white;\n"
+"border:1px solid white;")
         self.txt_nome.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_nome.setObjectName("txt_nome")
         self.label_3 = QtWidgets.QLabel(self.frame)
@@ -80,7 +83,8 @@ class Tela_Cadastro(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_email.setFont(font)
-        self.txt_email.setStyleSheet("color: white")
+        self.txt_email.setStyleSheet("color: white;\n"
+"border:1px solid white;")
         self.txt_email.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_email.setObjectName("txt_email")
         self.txt_endereco = QtWidgets.QLineEdit(self.frame)
@@ -88,7 +92,8 @@ class Tela_Cadastro(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_endereco.setFont(font)
-        self.txt_endereco.setStyleSheet("color: white")
+        self.txt_endereco.setStyleSheet("color: white;\n"
+"border:1px solid white;")
         self.txt_endereco.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_endereco.setObjectName("txt_endereco")
         self.txt_nascimento = QtWidgets.QLineEdit(self.frame)
@@ -96,7 +101,8 @@ class Tela_Cadastro(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_nascimento.setFont(font)
-        self.txt_nascimento.setStyleSheet("color: white")
+        self.txt_nascimento.setStyleSheet("color: white;\n"
+"border:1px solid white;")
         self.txt_nascimento.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_nascimento.setObjectName("txt_nascimento")
         self.txt_usuario = QtWidgets.QLineEdit(self.frame)
@@ -104,7 +110,9 @@ class Tela_Cadastro(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_usuario.setFont(font)
-        self.txt_usuario.setStyleSheet("color: white")
+        self.txt_usuario.setStyleSheet("color: white;\n"
+"border:1px solid white;\n"
+"")
         self.txt_usuario.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_usuario.setObjectName("txt_usuario")
         self.txt_senha = QtWidgets.QLineEdit(self.frame)
@@ -112,7 +120,8 @@ class Tela_Cadastro(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_senha.setFont(font)
-        self.txt_senha.setStyleSheet("color: white")
+        self.txt_senha.setStyleSheet("color: white;\n"
+"border:1px solid white;")
         self.txt_senha.setEchoMode(QtWidgets.QLineEdit.Password)
         self.txt_senha.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_senha.setObjectName("txt_senha")
@@ -128,12 +137,13 @@ class Tela_Cadastro(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.txt_senhaconf.setFont(font)
-        self.txt_senhaconf.setStyleSheet("color: white")
+        self.txt_senhaconf.setStyleSheet("color: white;\n"
+"border:1px solid white;")
         self.txt_senhaconf.setEchoMode(QtWidgets.QLineEdit.Password)
         self.txt_senhaconf.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_senhaconf.setObjectName("txt_senhaconf")
         self.botao_cadastrar = QtWidgets.QPushButton(self.frame)
-        self.botao_cadastrar.setGeometry(QtCore.QRect(290, 540, 81, 23))
+        self.botao_cadastrar.setGeometry(QtCore.QRect(270, 470, 81, 23))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.botao_cadastrar.setFont(font)
@@ -150,45 +160,8 @@ class Tela_Cadastro(object):
 "\n"
 "")
         self.botao_cadastrar.setObjectName("botao_cadastrar")
-        self.planos_assinatura = QtWidgets.QComboBox(self.frame)
-        self.planos_assinatura.setGeometry(QtCore.QRect(180, 490, 311, 21))
-        font = QtGui.QFont()
-        font.setPointSize(11)
-        self.planos_assinatura.setFont(font)
-        self.planos_assinatura.setStyleSheet("color: black;\n"
-"background: white;")
-        self.planos_assinatura.setEditable(False)
-        self.planos_assinatura.setCurrentText("")
-        self.planos_assinatura.setObjectName("planos_assinatura")
-        self.planos_assinatura.addItem("")
-        self.planos_assinatura.addItem("")
-        self.planos_assinatura.setItemText(1, "Plano Básico (19,00)")
-        self.planos_assinatura.addItem("")
-        self.planos_assinatura.addItem("")
-        self.label_9 = QtWidgets.QLabel(self.frame)
-        self.label_9.setGeometry(QtCore.QRect(20, 490, 141, 21))
-        self.label_9.setStyleSheet("color: white;\n"
-"font: 11pt \"Arial\";\n"
-"border: 1px solid black;")
-        self.label_9.setAlignment(QtCore.Qt.AlignCenter)
-        self.label_9.setObjectName("label_9")
-        self.botao_saibamais = QtWidgets.QPushButton(self.frame)
-        self.botao_saibamais.setGeometry(QtCore.QRect(510, 490, 75, 23))
-        self.botao_saibamais.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.botao_saibamais.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: blue;\n"
-"    border-radius :10px\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: lightgray;\n"
-"}\n"
-"\n"
-"")
-        self.botao_saibamais.setObjectName("botao_saibamais")
         self.label = QtWidgets.QLabel(self.centralwidget)
-        self.label.setGeometry(QtCore.QRect(190, 180, 131, 151))
+        self.label.setGeometry(QtCore.QRect(140, 200, 131, 151))
         self.label.setText("")
         self.label.setPixmap(QtGui.QPixmap("../imagens/cadastro.png"))
         self.label.setScaledContents(True)
@@ -235,10 +208,4 @@ class Tela_Cadastro(object):
         self.label_8.setText(_translate("MainWindow", "Confirmar Senha"))
         self.txt_senhaconf.setPlaceholderText(_translate("MainWindow", "Digite sua senha novamente"))
         self.botao_cadastrar.setText(_translate("MainWindow", "Cadastrar"))
-        self.planos_assinatura.setPlaceholderText(_translate("MainWindow", "Selecione um plano"))
-        self.planos_assinatura.setItemText(0, _translate("MainWindow", "Selecione um Plano..."))
-        self.planos_assinatura.setItemText(2, _translate("MainWindow", "Plano Normal (25,00)"))
-        self.planos_assinatura.setItemText(3, _translate("MainWindow", "Plano Premium (35,00)"))
-        self.label_9.setText(_translate("MainWindow", "Planos de Assinatura"))
-        self.botao_saibamais.setText(_translate("MainWindow", "Saiba mais"))
         self.pushButton_2.setText(_translate("MainWindow", "Voltar"))
