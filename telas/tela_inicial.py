@@ -74,8 +74,8 @@ class Tela_Inicial(object):
         self.pushButton_2.setFont(font)
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setStyleSheet("QPushButton {\n"
-"    background-image: url(:/newPrefix/align-justify (3).svg);\n"
 "background-repeat: no-repeat;\n"
+"    background-image: url(align-justify(3).svg);\n"
 "color: white;\n"
 "border: none;\n"
 "border-radius: 3px;\n"
@@ -345,3 +345,11 @@ class Tela_Inicial(object):
         self.label_3.setText(_translate("MainWindow", "Em Alta"))
         self.label_4.setText(_translate("MainWindow", "Indicação Semanal"))
 
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Tela_Inicial()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())

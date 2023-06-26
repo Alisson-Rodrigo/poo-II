@@ -13,6 +13,7 @@ import socket
 from tela_login import Tela_Login
 from tela_inicial import Tela_Inicial
 from tela_cadastro import Tela_Cadastro
+from tela_categoria import Tela_Categoria
 
 class Ui_Main(object):
     def setupUi(self, Main):
@@ -24,6 +25,7 @@ class Ui_Main(object):
         self.stack0 = QtWidgets.QMainWindow()
         self.stack1 = QtWidgets.QMainWindow()
         self.stack2 = QtWidgets.QMainWindow()
+        self.stack3 = QtWidgets.QMainWindow()
 
         self.tela_inicial = Tela_Login()
         self.tela_inicial.setupUi(self.stack0)
@@ -34,9 +36,13 @@ class Ui_Main(object):
         self.tela_primaria = Tela_Inicial()
         self.tela_primaria.setupUi(self.stack2)
 
+        self.tela_categoria = Tela_Categoria()
+        self.tela_categoria.setupUi(self.stack3)
+
         self.QtStack.addWidget(self.stack0)
         self.QtStack.addWidget(self.stack1)
         self.QtStack.addWidget(self.stack2)
+        self.QtStack.addWidget(self.stack3)
 
 
 class Main(QtWidgets.QMainWindow, Ui_Main):
@@ -57,8 +63,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_cadastro.botao_cadastrar.clicked.connect(self.botaoCadastrar)
         self.tela_cadastro.pushButton_2.clicked.connect(self.voltar_tela)
 
-        #self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
-        #self.tela_primaria.pushButton_2.clicked.connect(self.close)
+        self.tela_primaria.pushButton_2.clicked.connect(self.abrir_tela_categoria)
 
     
     def operacao_log(self, mensagem):
@@ -122,6 +127,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.QtStack.setCurrentIndex(0)
     def abrir_tela_cadastro(self):
         self.QtStack.setCurrentIndex(1)
+    def abrir_tela_categoria(self):
+        self.QtStack.setCurrentIndex(3)
     def close (self):
         sys.exit(app.exec_())
 

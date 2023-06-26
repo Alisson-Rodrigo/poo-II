@@ -139,8 +139,8 @@ QPushButton:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	background-image: url(:/newPrefix/align-justify (3).svg);
 background-repeat: no-repeat;
+	background-image: url(:/newPrefix/align-justify(3).svg);
 color: white;
 border: none;
 border-radius: 3px;

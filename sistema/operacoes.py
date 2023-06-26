@@ -21,16 +21,23 @@ class Operacoes():
             nascimento varchar(20),
             usuario VARCHAR(20),
             senha VARCHAR(20),
-            confirmar_senha VARCHAR(20),
-            plano_assinatura VARCHAR(40)
+            confirmar_senha VARCHAR(20)
         )""")
+        cursor.execute("""CREATE TABLE IF NOT EXISTS filmes (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            titulo VARCHAR(100),
+            ano INT,
+            usuario_id INT
+        )""")
+
+
         conexao.commit()
 
-    def cadastramento (self, nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura):
+    def cadastramento (self, nome, email, endereco, nascimento, usuario, senha, confirmar_senha):
         if self.verificar_usuario_existente(usuario) == True:
             return False
         else:
-            cursor.execute('''INSERT INTO cadastro (nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura) VALUES (%s,%s,%s,%s,%s,%s,%s,%s)''', (nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura))
+            cursor.execute('''INSERT INTO cadastro (nome, email, endereco, nascimento, usuario, senha, confirmar_senha) VALUES (%s,%s,%s,%s,%s,%s,%s)''', (nome, email, endereco, nascimento, usuario, senha, confirmar_senha))
             conexao.commit()
             return True
 
@@ -89,9 +96,8 @@ if __name__ == "__main__":
                 usuario = mensagem_str[5]
                 senha = mensagem_str[6]
                 confirmar_senha = mensagem_str[7]
-                plano_assinatura = mensagem_str[8]
                 enviar = ''
-                if sistema.cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha, plano_assinatura):
+                if sistema.cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha):
                     enviar = '1'
                 else:
                     enviar = '0'
