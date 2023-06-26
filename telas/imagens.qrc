@@ -1,7 +1,6 @@
 <RCC>
-  <qresource prefix="imagens">
-    <file>png-transparent-user-user-people-linear-icon-user-infographic-people-monochrome.png</file>
-    <file>Captura_de_tela_de_2023-06-22_16-55-18-removebg-preview.png</file>
-    <file>icon_title.png</file>
+  <qresource prefix="newPrefix">
+    <file>align-justify (1).svg</file>
+    <file>align-justify.svg</file>
   </qresource>
 </RCC>
