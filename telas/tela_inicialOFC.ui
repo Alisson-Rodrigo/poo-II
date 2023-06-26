@@ -158,24 +158,32 @@ border-radius: 3px;
       </size>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QLabel" name="label_5">
      <property name="geometry">
       <rect>
-       <x>1180</x>
-       <y>70</y>
-       <width>31</width>
-       <height>21</height>
+       <x>580</x>
+       <y>40</y>
+       <width>181</width>
+       <height>51</height>
       </rect>
      </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
+     <property name="font">
+      <font>
+       <pointsize>28</pointsize>
+       <weight>75</weight>
+       <italic>true</italic>
+       <bold>true</bold>
+      </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-image: url(:/newPrefix/corner-down-left (1).svg);
-background-repeat: norepeat;</string>
+      <string notr="true">color: white;
+border-bottom: 1px solid yellow;</string>
      </property>
      <property name="text">
-      <string>PushButton</string>
+      <string>CAST</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
      </property>
     </widget>
    </widget>
@@ -348,64 +356,6 @@ border-radius:2px;
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
-   </widget>
-   <widget class="QFrame" name="frame_16">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>450</y>
-      <width>161</width>
-      <height>101</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: white;
-border: 1px solid yellow;</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
-    <widget class="QFrame" name="frame_18">
-     <property name="geometry">
-      <rect>
-       <x>210</x>
-       <y>60</y>
-       <width>161</width>
-       <height>101</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-    </widget>
-    <widget class="QFrame" name="frame_19">
-     <property name="geometry">
-      <rect>
-       <x>420</x>
-       <y>60</y>
-       <width>161</width>
-       <height>101</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;</string>
-     </property>
-     <property name="frameShape">
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Raised</enum>
-     </property>
-    </widget>
    </widget>
    <widget class="QFrame" name="frame_17">
     <property name="geometry">
@@ -795,6 +745,64 @@ border: 1px solid yellow;</string>
      </property>
     </widget>
    </widget>
+   <widget class="QFrame" name="frame_16">
+    <property name="geometry">
+     <rect>
+      <x>230</x>
+      <y>450</y>
+      <width>161</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border: 1px solid yellow;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QFrame" name="frame_18">
+     <property name="geometry">
+      <rect>
+       <x>210</x>
+       <y>60</y>
+       <width>161</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame_19">
+     <property name="geometry">
+      <rect>
+       <x>420</x>
+       <y>60</y>
+       <width>161</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+    </widget>
+   </widget>
    <zorder>frame_9</zorder>
    <zorder>frame_4</zorder>
    <zorder>frame</zorder>
@@ -803,7 +811,6 @@ border: 1px solid yellow;</string>
    <zorder>frame_6</zorder>
    <zorder>frame_7</zorder>
    <zorder>label_4</zorder>
-   <zorder>frame_16</zorder>
    <zorder>frame_17</zorder>
    <zorder>frame_24</zorder>
    <zorder>frame_28</zorder>
@@ -811,6 +818,7 @@ border: 1px solid yellow;</string>
    <zorder>frame_33</zorder>
    <zorder>frame_5</zorder>
    <zorder>frame_20</zorder>
+   <zorder>frame_16</zorder>
   </widget>
  </widget>
  <resources>
