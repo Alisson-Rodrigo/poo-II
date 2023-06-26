@@ -1,6 +1,6 @@
 <RCC>
   <qresource prefix="newPrefix">
-    <file>align-justify (1).svg</file>
-    <file>align-justify.svg</file>
+    <file>corner-down-left (1).svg</file>
+    <file>align-justify (3).svg</file>
   </qresource>
 </RCC>

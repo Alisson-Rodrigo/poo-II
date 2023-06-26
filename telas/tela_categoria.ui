@@ -33,7 +33,7 @@
    <widget class="QFrame" name="frame_4">
     <property name="geometry">
      <rect>
-      <x>0</x>
+      <x>-10</x>
       <y>0</y>
       <width>1251</width>
       <height>101</height>
@@ -150,10 +150,10 @@ QPushButton:hover {
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>1210</x>
+       <x>1220</x>
        <y>70</y>
        <width>21</width>
-       <height>21</height>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
@@ -168,19 +168,13 @@ QPushButton:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	background-image: url(:/newPrefix/align-justify (1).svg);
-background-image: url(:/newPrefix/align-justify.svg);
-background-color:white;
+background-image: url(:/newPrefix/align-justify (3).svg);
 background-repeat: no-repeat;
 color: white;
-border: 0.5px solid white;
 border-radius: 3px;
 }
 
-QPushButton:hover {
-	color:black;
-	background-color: white;
-}</string>
+</string>
      </property>
      <property name="text">
       <string/>
@@ -190,6 +184,28 @@ QPushButton:hover {
        <width>20</width>
        <height>20</height>
       </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_34">
+     <property name="geometry">
+      <rect>
+       <x>1180</x>
+       <y>70</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/newPrefix/corner-down-left (1).svg);</string>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+     <property name="autoExclusive">
+      <bool>false</bool>
      </property>
     </widget>
    </widget>
@@ -593,7 +609,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_15">
@@ -625,7 +641,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_16">
@@ -657,7 +673,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_17">
@@ -689,7 +705,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_18">
@@ -721,7 +737,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_12">
@@ -753,7 +769,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_19">
@@ -785,7 +801,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_20">
@@ -817,7 +833,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_21">
@@ -849,7 +865,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_22">
@@ -881,7 +897,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_23">
@@ -913,7 +929,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_24">
@@ -945,7 +961,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_25">
@@ -977,7 +993,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_26">
@@ -1009,7 +1025,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_27">
@@ -1041,7 +1057,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_28">
@@ -1073,7 +1089,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_29">
@@ -1105,7 +1121,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_30">
@@ -1137,7 +1153,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_31">
@@ -1169,7 +1185,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_32">
@@ -1201,7 +1217,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_33">
@@ -1233,13 +1249,15 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>---</string>
       </property>
      </widget>
     </widget>
    </widget>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="imagens.qrc"/>
+ </resources>
  <connections/>
 </ui>
