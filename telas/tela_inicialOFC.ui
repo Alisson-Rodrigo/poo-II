@@ -149,7 +149,7 @@ QPushButton:hover {
     <widget class="QPushButton" name="pushButton_2">
      <property name="geometry">
       <rect>
-       <x>1210</x>
+       <x>1220</x>
        <y>70</y>
        <width>21</width>
        <height>21</height>
@@ -167,19 +167,14 @@ QPushButton:hover {
      </property>
      <property name="styleSheet">
       <string notr="true">QPushButton {
-	background-image: url(:/newPrefix/align-justify (1).svg);
-background-image: url(:/newPrefix/align-justify.svg);
-background-color:white;
+	background-image: url(:/newPrefix/align-justify (3).svg);
 background-repeat: no-repeat;
 color: white;
-border: 0.5px solid white;
+border: none;
 border-radius: 3px;
 }
 
-QPushButton:hover {
-	color:black;
-	background-color: white;
-}</string>
+</string>
      </property>
      <property name="text">
       <string/>
@@ -189,6 +184,26 @@ QPushButton:hover {
        <width>20</width>
        <height>20</height>
       </size>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>1180</x>
+       <y>70</y>
+       <width>31</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/newPrefix/corner-down-left (1).svg);
+background-repeat: norepeat;</string>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
      </property>
     </widget>
    </widget>
@@ -213,9 +228,9 @@ QPushButton:hover {
     <widget class="QLabel" name="label_2">
      <property name="geometry">
       <rect>
-       <x>500</x>
-       <y>16</y>
-       <width>241</width>
+       <x>490</x>
+       <y>10</y>
+       <width>301</width>
        <height>21</height>
       </rect>
      </property>

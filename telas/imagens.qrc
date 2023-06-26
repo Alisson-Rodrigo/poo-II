@@ -1,6 +1,9 @@
 <RCC>
   <qresource prefix="newPrefix">
     <file>corner-down-left (1).svg</file>
+    <file>activity.svg</file>
+    <file>align-justify (3).svg</file>
+    <file>corner-down-left (1).svg</file>
     <file>align-justify (3).svg</file>
   </qresource>
 </RCC>
