@@ -13,22 +13,28 @@ cursor = conexao.cursor()
 
 class Operacoes():
     def __init__(self):
-        cursor.execute("""CREATE TABLE IF NOT EXISTS cadastro (
+        cursor.execute("""CREATE TABLE IF NOT EXISTS generos (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            nome VARCHAR(50),
-            email VARCHAR(50),
-            endereco VARCHAR(100),
-            nascimento varchar(20),
-            usuario VARCHAR(20),
-            senha VARCHAR(20),
-            confirmar_senha VARCHAR(20)
+            nome VARCHAR(50)
         )""")
+
+        cursor.execute("""CREATE TABLE IF NOT EXISTS diretores (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            nome VARCHAR(50)
+        )""")
+
         cursor.execute("""CREATE TABLE IF NOT EXISTS filmes (
             id INT AUTO_INCREMENT PRIMARY KEY,
             titulo VARCHAR(100),
             ano INT,
-            usuario_id INT
+            usuario_id INT,
+            genero_id INT,
+            diretor_id INT,
+            FOREIGN KEY (usuario_id) REFERENCES cadastro (id),
+            FOREIGN KEY (genero_id) REFERENCES generos (id),
+            FOREIGN KEY (diretor_id) REFERENCES diretores (id)
         )""")
+
 
 
         conexao.commit()
