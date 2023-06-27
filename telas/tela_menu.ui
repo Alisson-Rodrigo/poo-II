@@ -186,7 +186,7 @@ border-bottom: 1px solid yellow;</string>
     <string notr="true">border: 1px solid white;</string>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>1</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">

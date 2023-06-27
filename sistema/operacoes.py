@@ -60,6 +60,7 @@ class Operacoes():
             return True
         return False
     
+    
 if __name__ == "__main__":
     import socket
 

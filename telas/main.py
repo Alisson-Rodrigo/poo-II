@@ -86,6 +86,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_34.clicked.connect(self.voltar_tela2)
 
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_1)
+
         self.tela_categoria.pushButton.clicked.connect(self.showAcao)
         self.tela_categoria.pushButton_5.clicked.connect(self.showComedia)
         self.tela_categoria.pushButton_6.clicked.connect(self.showDrama)
@@ -118,12 +119,12 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         if username_login and password_login:
             if self.operacao_log(mensagem):
                 QMessageBox.about(self, "Sucesso", "Login realizado com sucesso")
+                self.nome_exibir = username_login
                 self.QtStack.setCurrentIndex(2)
             else:
                 QMessageBox.about(self, "Erro", "Usuário ou senha incorretos")
         else: 
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
-
 
     def enviar_cadastro(self, mensagem):
         if mensagem.split(',')[0] == '2':
@@ -167,6 +168,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def abrir_tela_cadastro(self):
         self.QtStack.setCurrentIndex(1)
     def abrir_tela_categoria(self):
+        self.tela_categoria.lineEdit.setText(f'OI{self.nome_exibir}')
         self.QtStack.setCurrentIndex(3)
     def abrir_tela_favoritos(self):
         self.QtStack.setCurrentIndex(4)

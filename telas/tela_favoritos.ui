@@ -239,9 +239,9 @@ border-bottom: 1px solid white;</string>
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>380</y>
+      <y>430</y>
       <width>1251</width>
-      <height>261</height>
+      <height>221</height>
      </rect>
     </property>
     <property name="widgetResizable">
@@ -253,13 +253,13 @@ border-bottom: 1px solid white;</string>
        <x>0</x>
        <y>0</y>
        <width>1249</width>
-       <height>259</height>
+       <height>219</height>
       </rect>
      </property>
      <widget class="QFrame" name="frame">
       <property name="geometry">
        <rect>
-        <x>30</x>
+        <x>40</x>
         <y>30</y>
         <width>120</width>
         <height>80</height>
@@ -284,6 +284,9 @@ border-bottom: 1px solid white;</string>
         <height>80</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid white;</string>
+      </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -294,11 +297,14 @@ border-bottom: 1px solid white;</string>
      <widget class="QFrame" name="frame_3">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>340</x>
         <y>30</y>
         <width>120</width>
         <height>80</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid white;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -310,11 +316,14 @@ border-bottom: 1px solid white;</string>
      <widget class="QFrame" name="frame_5">
       <property name="geometry">
        <rect>
-        <x>510</x>
+        <x>490</x>
         <y>30</y>
         <width>120</width>
         <height>80</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid white;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -326,11 +335,14 @@ border-bottom: 1px solid white;</string>
      <widget class="QFrame" name="frame_6">
       <property name="geometry">
        <rect>
-        <x>670</x>
+        <x>640</x>
         <y>30</y>
         <width>120</width>
         <height>80</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid white;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -342,11 +354,14 @@ border-bottom: 1px solid white;</string>
      <widget class="QFrame" name="frame_7">
       <property name="geometry">
        <rect>
-        <x>830</x>
+        <x>790</x>
         <y>30</y>
         <width>120</width>
         <height>80</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid white;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -358,11 +373,14 @@ border-bottom: 1px solid white;</string>
      <widget class="QFrame" name="frame_8">
       <property name="geometry">
        <rect>
-        <x>990</x>
+        <x>940</x>
         <y>30</y>
         <width>120</width>
         <height>80</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid white;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -371,17 +389,23 @@ border-bottom: 1px solid white;</string>
        <enum>QFrame::Raised</enum>
       </property>
      </widget>
-     <widget class="QScrollBar" name="horizontalScrollBar">
+     <widget class="QFrame" name="frame_9">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>240</y>
-        <width>1251</width>
-        <height>16</height>
+        <x>1090</x>
+        <y>30</y>
+        <width>120</width>
+        <height>80</height>
        </rect>
       </property>
-      <property name="orientation">
-       <enum>Qt::Horizontal</enum>
+      <property name="styleSheet">
+       <string notr="true">border: 1px solid white;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
       </property>
      </widget>
     </widget>

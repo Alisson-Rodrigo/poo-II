@@ -233,7 +233,7 @@ border-bottom: 1px solid yellow;</string>
        <x>60</x>
        <y>20</y>
        <width>251</width>
-       <height>491</height>
+       <height>471</height>
       </rect>
      </property>
      <property name="frameShape">
@@ -476,28 +476,31 @@ QPushButton:hover {
      <number>0</number>
     </property>
     <widget class="QWidget" name="page_1">
-     <widget class="QLabel" name="label_4">
+     <widget class="QLineEdit" name="lineEdit">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>20</y>
-        <width>471</width>
-        <height>41</height>
+        <x>60</x>
+        <y>10</y>
+        <width>781</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>17</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: white;</string>
+       <string notr="true">	color: white;</string>
       </property>
       <property name="text">
-       <string>ESCOLHA UMA CATEGORIA, USER!</string>
+       <string>SELECIONE UMA CATEGÓRIA, USER!</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -506,7 +509,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>100</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -538,7 +541,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>160</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -570,7 +573,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>220</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -602,7 +605,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>200</y>
+        <y>280</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -627,7 +630,34 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>---</string>
+       <string>FILME</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_2">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: white;</string>
+      </property>
+      <property name="text">
+       <string>AÇÃO</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -636,7 +666,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>100</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -668,7 +698,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>160</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -700,7 +730,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>220</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -732,7 +762,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>200</y>
+        <y>280</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -760,13 +790,40 @@ QPushButton:hover {
        <string>FILME</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineEdit_3">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: white;</string>
+      </property>
+      <property name="text">
+       <string>COMÉDIA</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page">
      <widget class="QPushButton" name="pushButton_24">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>220</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -798,7 +855,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>280</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -830,7 +887,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>100</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -862,7 +919,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>200</y>
+        <y>160</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -890,13 +947,40 @@ QPushButton:hover {
        <string>FILME</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineEdit_4">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: white;</string>
+      </property>
+      <property name="text">
+       <string>DRAMA</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QPushButton" name="pushButton_28">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>220</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -928,7 +1012,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>280</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -960,7 +1044,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>100</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -992,7 +1076,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>200</y>
+        <y>160</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1020,13 +1104,40 @@ QPushButton:hover {
        <string>FILME</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineEdit_5">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: white;</string>
+      </property>
+      <property name="text">
+       <string>TERROR</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_4">
      <widget class="QPushButton" name="pushButton_37">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>280</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1058,7 +1169,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>100</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1090,7 +1201,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>160</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1122,7 +1233,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>200</y>
+        <y>220</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1150,13 +1261,40 @@ QPushButton:hover {
        <string>FILME</string>
       </property>
      </widget>
+     <widget class="QLineEdit" name="lineEdit_6">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: white;</string>
+      </property>
+      <property name="text">
+       <string>INFANTIL</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_5">
      <widget class="QPushButton" name="pushButton_41">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
+        <y>280</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1188,7 +1326,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>80</y>
+        <y>220</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1220,7 +1358,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>140</y>
+        <y>100</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1252,7 +1390,7 @@ QPushButton:hover {
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>200</y>
+        <y>160</y>
         <width>251</width>
         <height>31</height>
        </rect>
@@ -1278,6 +1416,33 @@ QPushButton:hover {
       </property>
       <property name="text">
        <string>FILME</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="lineEdit_7">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>10</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color: white;</string>
+      </property>
+      <property name="text">
+       <string>COMÉDIA</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
