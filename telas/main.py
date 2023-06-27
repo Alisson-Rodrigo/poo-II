@@ -10,13 +10,19 @@ import sys
 import socket
 
 
+from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton
+from PyQt5.QtMultimediaWidgets import QVideoWidget
+from PyQt5.QtMultimedia import QMediaPlayer
+from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
+from PyQt5.QtCore import QUrl
+
+
 from tela_login import Tela_Login
 from tela_inicial import Tela_Inicial
 from tela_cadastro import Tela_Cadastro
 from tela_categoria import Tela_Categoria
 from tela_favoritos import Tela_Favoritos
 from tela_menu import Tela_Menu
-
 
 class Ui_Main(object):
     def setupUi(self, Main):
@@ -138,7 +144,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         if mensagem.split(',')[0] == '2':
             self.client_socket.send(mensagem.encode())
             resposta = self.client_socket.recv(1024).decode()
-            #dados_usu = self.client_socket.recv(1024).decode()
             if resposta and resposta == '1':
                 return True
         return False
@@ -207,6 +212,12 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     
     def close (self):
         sys.exit(app.exec_())
+
+    def play_video(self):
+        video_url = QUrl.fromLocalFile("MC-CJ-Apaixonou-eu-_Funk-Explode_-_720p_.mp4")  # Caminho do vídeo local
+        media_content = QMediaContent(video_url)
+        self.media_player.setMedia(media_content)
+        self.media_player.play()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)    

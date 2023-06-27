@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>png-transparent-user-user-people-linear-icon-user-infographic-people-monochrome.png</file>
+    <file>download.jpeg</file>
     <file>corner-down-left (1).svg</file>
     <file>corner-down-left (1).svg</file>
     <file>align-justify(3).svg</file>
