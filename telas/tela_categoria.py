@@ -22,7 +22,7 @@ class Tela_Categoria(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame_4 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_4.setGeometry(QtCore.QRect(10, 0, 1241, 131))
+        self.frame_4.setGeometry(QtCore.QRect(0, -10, 1251, 131))
         self.frame_4.setStyleSheet("background-color: black;")
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -680,3 +680,13 @@ class Tela_Categoria(object):
         self.pushButton_42.setText(_translate("MainWindow", "FILME"))
         self.pushButton_43.setText(_translate("MainWindow", "FILME"))
         self.pushButton_44.setText(_translate("MainWindow", "FILME"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Tela_Categoria()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
