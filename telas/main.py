@@ -85,8 +85,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_categoria.pushButton_34.clicked.connect(self.voltar_tela2)
 
-        self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_1)
-
         self.tela_categoria.pushButton.clicked.connect(self.showAcao)
         self.tela_categoria.pushButton_5.clicked.connect(self.showComedia)
         self.tela_categoria.pushButton_6.clicked.connect(self.showDrama)
@@ -99,6 +97,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_favoritos.pushButton_34.clicked.connect(self.voltar_tela2)
 
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page)
+
         self.tela_menu.pushButton_2.clicked.connect(self.showPerfil)
         self.tela_menu.pushButton_3.clicked.connect(self.showSobre)
         self.tela_menu.pushButton_4.clicked.connect(self.voltar_tela2)
@@ -112,24 +111,34 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 return True
         return False
 
+
     def verificacao_login(self):
-        username_login = self.tela_inicial.txt_user.text()
+        self.username_login = self.tela_inicial.txt_user.text()
         password_login = self.tela_inicial.txt_password.text()
-        mensagem = f'1,{username_login},{password_login}'
-        if username_login and password_login:
+        mensagem = f'1,{self.username_login},{password_login}'
+
+        if self.username_login and password_login:
             if self.operacao_log(mensagem):
-                QMessageBox.about(self, "Sucesso", "Login realizado com sucesso")
-                self.nome_exibir = username_login
+                QMessageBox.about(self, "Sucesso", f"Login realizado com sucesso")
                 self.QtStack.setCurrentIndex(2)
+                
             else:
                 QMessageBox.about(self, "Erro", "Usuário ou senha incorretos")
         else: 
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
 
+    def exibir_dados(self):
+        msg = f'3,{self.username_login}'
+        self.client_socket.send(msg.encode())
+        self.resposta2 = self.client_socket.recv(1024).decode().split(',')
+        print (self.resposta2)
+        return self.resposta2
+    
     def enviar_cadastro(self, mensagem):
         if mensagem.split(',')[0] == '2':
             self.client_socket.send(mensagem.encode())
             resposta = self.client_socket.recv(1024).decode()
+            #dados_usu = self.client_socket.recv(1024).decode()
             if resposta and resposta == '1':
                 return True
         return False
@@ -168,13 +177,16 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def abrir_tela_cadastro(self):
         self.QtStack.setCurrentIndex(1)
     def abrir_tela_categoria(self):
-        self.tela_categoria.lineEdit.setText(f'OI{self.nome_exibir}')
         self.QtStack.setCurrentIndex(3)
+        self.showInicial()
     def abrir_tela_favoritos(self):
         self.QtStack.setCurrentIndex(4)
     def abrir_menu(self):
         self.QtStack.setCurrentIndex(5)
 
+    def showInicial(self):
+        self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_1)
+        self.tela_categoria.lineEdit.setText(f'ESCOLHA UMA CATEGORIA, {self.exibir_dados()[5]}')
     def showAcao(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page1_2)
     def showComedia(self):
@@ -192,7 +204,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_2)
     def showSobre(self):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_3)
-
+    
     def close (self):
         sys.exit(app.exec_())
 

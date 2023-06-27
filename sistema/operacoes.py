@@ -59,8 +59,11 @@ class Operacoes():
         if resultado:
             return True
         return False
-    
-    
+
+    def exibir_dados(self,usuario):
+        cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
+        resultado = cursor.fetchall()
+        return resultado
     
 if __name__ == "__main__":
     import socket
@@ -104,6 +107,10 @@ if __name__ == "__main__":
                 else:
                     enviar = '0'
                 con.send(enviar.encode())
+            elif mensagem_str[0] == '3':
+                username = mensagem_str[1]
+                dados = f'{sistema.exibir_dados(username)}'
+                con.send(dados.encode())
             else:
                 raise Exception('Conexão finalizada pelo cliente')
         except Exception as e:
