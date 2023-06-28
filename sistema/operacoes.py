@@ -75,7 +75,7 @@ if __name__ == "__main__":
 
     sistema = Operacoes()
     host = 'localhost'
-    port = 8901
+    port = 8902
     addr = (host, port)
     serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     serv_socket.bind(addr)

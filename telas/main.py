@@ -25,9 +25,6 @@ from tela_favoritos import Tela_Favoritos
 from tela_menu import Tela_Menu
 from media_player import tela_media
 
-class video(QWidget):
-    pass
-
 
 class Ui_Main(object):
     def setupUi(self, Main):
@@ -42,6 +39,7 @@ class Ui_Main(object):
         self.stack3 = QtWidgets.QMainWindow()
         self.stack4 = QtWidgets.QMainWindow()
         self.stack5 = QtWidgets.QMainWindow()
+        self.stack6 = QtWidgets.QMainWindow()
 
 
         self.tela_inicial = Tela_Login()
@@ -62,12 +60,16 @@ class Ui_Main(object):
         self.tela_menu = Tela_Menu()
         self.tela_menu.setupUi(self.stack5)
 
+        self.tela_media = tela_media()
+        self.tela_media.setupUi(self.stack6)
+
         self.QtStack.addWidget(self.stack0)
         self.QtStack.addWidget(self.stack1)
         self.QtStack.addWidget(self.stack2)
         self.QtStack.addWidget(self.stack3)
         self.QtStack.addWidget(self.stack4)
         self.QtStack.addWidget(self.stack5)
+        self.QtStack.addWidget(self.stack6)
 
 
 class Main(QtWidgets.QMainWindow, Ui_Main):
@@ -76,7 +78,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.setupUi(self)
 
         ip = 'localhost'
-        port = 8901
+        port = 8902
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -91,6 +93,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
+        self.tela_primaria.pushButton.clicked.connect(self.abrir_tela_midia)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_categoria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
@@ -194,6 +197,37 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.QtStack.setCurrentIndex(5)
         self.showInicial_menu()
 
+    def abrir_tela_midia(self):
+        self.setWindowTitle("Media Player")
+        self.setGeometry(100, 100, 800, 600)
+
+        # Criar o layout e o widget de vídeo
+        layout = QVBoxLayout()
+        self.video_widget = QVideoWidget()
+        layout.addWidget(self.video_widget)
+
+        # Criar o botão para iniciar a reprodução
+        play_button = QPushButton("Play")
+        play_button.clicked.connect(self.play_video)
+        layout.addWidget(play_button)
+
+        # Criar o widget central
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
+
+        # Criar o player de mídia
+        self.media_player = QMediaPlayer(self)
+        self.media_player.setVideoOutput(self.video_widget)
+        self.show()
+
+    def play_video(self,caminho):
+        video_url = QUrl.fromLocalFile(f"{caminho}")  # Caminho do vídeo local
+        media_content = QMediaContent(video_url)
+        self.media_player.setMedia(media_content)
+        self.media_player.play()
+
+
     def showInicial(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_1)
         nome = self.exibir_dados()[5].replace("'", "")
@@ -236,11 +270,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def close (self):
         sys.exit(app.exec_())
 
-    def play_video(self):
-        video_url = QUrl.fromLocalFile("MC-CJ-Apaixonou-eu-_Funk-Explode_-_720p_.mp4")  # Caminho do vídeo local
-        media_content = QMediaContent(video_url)
-        self.media_player.setMedia(media_content)
-        self.media_player.play()
 
 
 

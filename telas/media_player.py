@@ -19,47 +19,6 @@ class tela_media(object):
         MainWindow.setMaximumSize(QtCore.QSize(1250, 640))
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
-        self.frame = QtWidgets.QFrame(self.centralwidget)
-        self.frame.setGeometry(QtCore.QRect(0, 0, 1251, 551))
-        self.frame.setStyleSheet("background-color: rgb(10, 11, 70);")
-        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame.setObjectName("frame")
-        self.frame_2 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_2.setGeometry(QtCore.QRect(0, 550, 1251, 91))
-        self.frame_2.setStyleSheet("background-color: black;\n"
-"")
-        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.pushButton = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton.setGeometry(QtCore.QRect(0, 10, 31, 31))
-        self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton.setStyleSheet("background-image: url(:/newPrefix/play.svg);\n"
-"background-repeat: no-repeat;")
-        self.pushButton.setText("")
-        self.pushButton.setObjectName("pushButton")
-        self.label = QtWidgets.QLabel(self.frame_2)
-        self.label.setGeometry(QtCore.QRect(-20, 40, 1291, 20))
-        self.label.setStyleSheet("border-bottom: 1px solid white;")
-        self.label.setObjectName("label")
-        self.pushButton_2 = QtWidgets.QPushButton(self.frame_2)
-        self.pushButton_2.setGeometry(QtCore.QRect(30, 10, 31, 31))
-        self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_2.setStyleSheet("background-image: url(:/newPrefix/pause.svg);\n"
-"background-repeat: no-repeat;")
-        self.pushButton_2.setText("")
-        self.pushButton_2.setObjectName("pushButton_2")
-        self.horizontalSlider = QtWidgets.QSlider(self.frame_2)
-        self.horizontalSlider.setGeometry(QtCore.QRect(70, 20, 1131, 16))
-        self.horizontalSlider.setOrientation(QtCore.Qt.Horizontal)
-        self.horizontalSlider.setObjectName("horizontalSlider")
-        self.radioButton = QtWidgets.QRadioButton(self.frame_2)
-        self.radioButton.setGeometry(QtCore.QRect(1150, 10, 91, 20))
-        self.radioButton.setStyleSheet("color: black;\n"
-"background-color: white;\n"
-"border-radius: 2px;")
-        self.radioButton.setObjectName("radioButton")
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
@@ -68,5 +27,3 @@ class tela_media(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label.setText(_translate("MainWindow", "TextLabel"))
-        self.radioButton.setText(_translate("MainWindow", "Favoritar"))
