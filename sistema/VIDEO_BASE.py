@@ -33,7 +33,7 @@ class MediaPlayer(QMainWindow):
         self.media_player.setVideoOutput(self.video_widget)
 
     def play_video(self):
-        video_url = QUrl.fromLocalFile("MC-CJ-Apaixonou-eu-_Funk-Explode_-_720p_.mp4")  # Caminho do vídeo local
+        video_url = QUrl.fromLocalFile("MC-CJ-Apaixonou-eu-_Funk-Explode_-_720p_.avi")  # Caminho do vídeo local
         media_content = QMediaContent(video_url)
         self.media_player.setMedia(media_content)
         self.media_player.play()
