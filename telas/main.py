@@ -23,6 +23,11 @@ from tela_cadastro import Tela_Cadastro
 from tela_categoria import Tela_Categoria
 from tela_favoritos import Tela_Favoritos
 from tela_menu import Tela_Menu
+from media_player import tela_media
+
+class video(QWidget):
+    pass
+
 
 class Ui_Main(object):
     def setupUi(self, Main):
@@ -236,6 +241,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         media_content = QMediaContent(video_url)
         self.media_player.setMedia(media_content)
         self.media_player.play()
+
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)    
