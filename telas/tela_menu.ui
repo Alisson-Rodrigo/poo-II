@@ -186,15 +186,15 @@ border-bottom: 1px solid yellow;</string>
     <string notr="true">border: 1px solid white;</string>
    </property>
    <property name="currentIndex">
-    <number>1</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="page">
     <widget class="QLabel" name="label">
      <property name="geometry">
       <rect>
-       <x>110</x>
+       <x>10</x>
        <y>10</y>
-       <width>331</width>
+       <width>511</width>
        <height>31</height>
       </rect>
      </property>
@@ -393,11 +393,11 @@ border-bottom: 1px solid white;</string>
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;Cast é uma plataforma de streaming inovadora que oferece uma ampla variedade de conteúdo audiovisual para os seus usuários. Com um catálogo diversificado que abrange filmes, séries, documentários, programas de TV e muito mais, Cast se destaca como uma opção abrangente para aqueles que buscam entretenimento de qualidade.&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;A plataforma é projetada para oferecer uma experiência de usuário imersiva e personalizada, adaptando-se aos interesses e preferências individuais de cada usuário. Uma das características únicas da plataforma Cast é a sua interface intuitiva e fácil de usar. Os usuários podem navegar facilmente pelo catálogo, explorar diferentes categorias, descobrir novos lançamentos e encontrar seus programas favoritos com apenas alguns cliques&lt;/span&gt;&lt;/p&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Ubuntu'; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Cast é uma plataforma de streaming inovadora que oferece uma ampla variedade de conteúdo audiovisual para os seus usuários. Com um catálogo diversificado que abrange filmes, séries, documentários, programas de TV e muito mais, Cast se destaca como uma opção abrangente para aqueles que buscam entretenimento de qualidade.&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;A plataforma é projetada para oferecer uma experiência de usuário imersiva e personalizada, adaptando-se aos interesses e preferências individuais de cada usuário. Uma das características únicas da plataforma Cast é a sua interface intuitiva e fácil de usar. Os usuários podem navegar facilmente pelo catálogo, explorar diferentes categorias, descobrir novos lançamentos e encontrar seus programas favoritos com apenas alguns cliques&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>

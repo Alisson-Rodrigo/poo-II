@@ -85,7 +85,7 @@ class Tela_Menu(object):
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
         self.label = QtWidgets.QLabel(self.page)
-        self.label.setGeometry(QtCore.QRect(110, 10, 331, 31))
+        self.label.setGeometry(QtCore.QRect(10, 10, 511, 31))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.label.setFont(font)
@@ -158,7 +158,7 @@ class Tela_Menu(object):
         self.stackedWidget.addWidget(self.page_3)
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -177,8 +177,8 @@ class Tela_Menu(object):
         self.textBrowser.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:11pt;\">Cast é uma plataforma de streaming inovadora que oferece uma ampla variedade de conteúdo audiovisual para os seus usuários. Com um catálogo diversificado que abrange filmes, séries, documentários, programas de TV e muito mais, Cast se destaca como uma opção abrangente para aqueles que buscam entretenimento de qualidade.</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Ubuntu\'; font-size:11pt;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:11pt;\">A plataforma é projetada para oferecer uma experiência de usuário imersiva e personalizada, adaptando-se aos interesses e preferências individuais de cada usuário. Uma das características únicas da plataforma Cast é a sua interface intuitiva e fácil de usar. Os usuários podem navegar facilmente pelo catálogo, explorar diferentes categorias, descobrir novos lançamentos e encontrar seus programas favoritos com apenas alguns cliques</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:11pt;\"><br /></span></p></body></html>"))
+"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Cast é uma plataforma de streaming inovadora que oferece uma ampla variedade de conteúdo audiovisual para os seus usuários. Com um catálogo diversificado que abrange filmes, séries, documentários, programas de TV e muito mais, Cast se destaca como uma opção abrangente para aqueles que buscam entretenimento de qualidade.</p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">A plataforma é projetada para oferecer uma experiência de usuário imersiva e personalizada, adaptando-se aos interesses e preferências individuais de cada usuário. Uma das características únicas da plataforma Cast é a sua interface intuitiva e fácil de usar. Os usuários podem navegar facilmente pelo catálogo, explorar diferentes categorias, descobrir novos lançamentos e encontrar seus programas favoritos com apenas alguns cliques</p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))

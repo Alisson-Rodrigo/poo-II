@@ -1,21 +1,17 @@
+import sys
+from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton
 from PyQt5.QtMultimediaWidgets import QVideoWidget
-from PyQt5.QtMultimedia import QMediaPlayer
 from PyQt5.QtMultimedia import QMediaPlayer, QMediaContent
 from PyQt5.QtCore import QUrl
-from video2 import tela_video
 
 
-class MainWindow(QMainWindow):
+class MediaPlayer(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("Reprodução de Vídeo")
-        self.setGeometry(100, 100, 1250, 640)
-
-        # Criar a tela de vídeo
-        self.tela_video = tela_video()
-        self.tela_video.setupUi(self)
+        self.setWindowTitle("Media Player")
+        self.setGeometry(100, 100, 800, 600)
 
         # Criar o layout e o widget de vídeo
         layout = QVBoxLayout()
@@ -23,11 +19,14 @@ class MainWindow(QMainWindow):
         layout.addWidget(self.video_widget)
 
         # Criar o botão para iniciar a reprodução
-        #play_button = QPushButton("Play")
-        self.tela_video.pushButton.clicked.connect(self.play_video)
+        play_button = QPushButton("Play")
+        play_button.clicked.connect(self.play_video)
+        layout.addWidget(play_button)
 
-        # Definir o widget de vídeo como widget central
-        self.tela_video.frame.setLayout(layout)
+        # Criar o widget central
+        widget = QWidget()
+        widget.setLayout(layout)
+        self.setCentralWidget(widget)
 
         # Criar o player de mídia
         self.media_player = QMediaPlayer(self)
@@ -41,7 +40,7 @@ class MainWindow(QMainWindow):
 
 
 if __name__ == "__main__":
-    app = QApplication([])
-    window = MainWindow()
+    app = QApplication(sys.argv)
+    window = MediaPlayer()
     window.show()
-    app.exec_()
+    sys.exit(app.exec_())
