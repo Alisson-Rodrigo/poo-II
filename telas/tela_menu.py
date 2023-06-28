@@ -124,18 +124,28 @@ class Tela_Menu(object):
 "border: none;\n"
 "border-bottom: 1px solid white;")
         self.label_8.setObjectName("label_8")
-        self.label_9 = QtWidgets.QLabel(self.frame_2)
-        self.label_9.setGeometry(QtCore.QRect(70, 22, 281, 20))
-        self.label_9.setObjectName("label_9")
-        self.label_10 = QtWidgets.QLabel(self.frame_2)
-        self.label_10.setGeometry(QtCore.QRect(70, 51, 281, 20))
-        self.label_10.setObjectName("label_10")
-        self.label_11 = QtWidgets.QLabel(self.frame_2)
-        self.label_11.setGeometry(QtCore.QRect(80, 81, 281, 20))
-        self.label_11.setObjectName("label_11")
-        self.label_12 = QtWidgets.QLabel(self.frame_2)
-        self.label_12.setGeometry(QtCore.QRect(140, 111, 281, 20))
-        self.label_12.setObjectName("label_12")
+        self.lineEdit = QtWidgets.QLineEdit(self.frame_2)
+        self.lineEdit.setGeometry(QtCore.QRect(90, 21, 291, 20))
+        self.lineEdit.setStyleSheet("color: white;")
+        self.lineEdit.setText("")
+        self.lineEdit.setReadOnly(True)
+        self.lineEdit.setObjectName("lineEdit")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.frame_2)
+        self.lineEdit_2.setGeometry(QtCore.QRect(90, 51, 291, 20))
+        self.lineEdit_2.setStyleSheet("color: white;")
+        self.lineEdit_2.setText("")
+        self.lineEdit_2.setReadOnly(True)
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.frame_2)
+        self.lineEdit_3.setGeometry(QtCore.QRect(90, 81, 291, 20))
+        self.lineEdit_3.setStyleSheet("color: white;")
+        self.lineEdit_3.setReadOnly(True)
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.frame_2)
+        self.lineEdit_4.setGeometry(QtCore.QRect(140, 111, 261, 20))
+        self.lineEdit_4.setStyleSheet("color: white;")
+        self.lineEdit_4.setReadOnly(True)
+        self.lineEdit_4.setObjectName("lineEdit_4")
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -148,7 +158,7 @@ class Tela_Menu(object):
         self.stackedWidget.addWidget(self.page_3)
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -164,10 +174,6 @@ class Tela_Menu(object):
         self.label_6.setText(_translate("Form", "Email:"))
         self.label_7.setText(_translate("Form", "Usuário:"))
         self.label_8.setText(_translate("Form", "Data nascimento:"))
-        self.label_9.setText(_translate("Form", "TextLabel"))
-        self.label_10.setText(_translate("Form", "TextLabel"))
-        self.label_11.setText(_translate("Form", "TextLabel"))
-        self.label_12.setText(_translate("Form", "TextLabel"))
         self.textBrowser.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
@@ -176,13 +182,3 @@ class Tela_Menu(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Ubuntu\'; font-size:11pt;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:11pt;\">A plataforma é projetada para oferecer uma experiência de usuário imersiva e personalizada, adaptando-se aos interesses e preferências individuais de cada usuário. Uma das características únicas da plataforma Cast é a sua interface intuitiva e fácil de usar. Os usuários podem navegar facilmente pelo catálogo, explorar diferentes categorias, descobrir novos lançamentos e encontrar seus programas favoritos com apenas alguns cliques</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:11pt;\"><br /></span></p></body></html>"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    Form = QtWidgets.QWidget()
-    ui = Tela_Menu()
-    ui.setupUi(Form)
-    Form.show()
-    sys.exit(app.exec_())

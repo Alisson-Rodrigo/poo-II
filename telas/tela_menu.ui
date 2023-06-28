@@ -302,56 +302,74 @@ border-bottom: 1px solid white;</string>
        <string>Data nascimento:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_9">
+     <widget class="QLineEdit" name="lineEdit">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>22</y>
-        <width>281</width>
+        <x>90</x>
+        <y>21</y>
+        <width>291</width>
         <height>20</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_10">
+     <widget class="QLineEdit" name="lineEdit_2">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>90</x>
         <y>51</y>
-        <width>281</width>
+        <width>291</width>
         <height>20</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_11">
+     <widget class="QLineEdit" name="lineEdit_3">
       <property name="geometry">
        <rect>
-        <x>80</x>
+        <x>90</x>
         <y>81</y>
-        <width>281</width>
+        <width>291</width>
         <height>20</height>
        </rect>
       </property>
-      <property name="text">
-       <string>TextLabel</string>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_12">
+     <widget class="QLineEdit" name="lineEdit_4">
       <property name="geometry">
        <rect>
         <x>140</x>
         <y>111</y>
-        <width>281</width>
+        <width>261</width>
         <height>20</height>
        </rect>
       </property>
-      <property name="text">
-       <string>TextLabel</string>
+      <property name="styleSheet">
+       <string notr="true">color: white;</string>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>

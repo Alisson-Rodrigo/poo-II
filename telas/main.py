@@ -137,7 +137,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         msg = f'3,{self.username_login}'
         self.client_socket.send(msg.encode())
         self.resposta2 = self.client_socket.recv(1024).decode().split(',')
-        print (self.resposta2)
         return self.resposta2
     
     def enviar_cadastro(self, mensagem):
@@ -188,10 +187,14 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.QtStack.setCurrentIndex(4)
     def abrir_menu(self):
         self.QtStack.setCurrentIndex(5)
+        self.showInicial_menu()
 
     def showInicial(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_1)
-        self.tela_categoria.lineEdit.setText(f'ESCOLHA UMA CATEGORIA, {self.exibir_dados()[5]}')
+        nome = self.exibir_dados()[5].replace("'", "")
+        self.tela_categoria.lineEdit.setText(f'ESCOLHA UMA CATEGORIA, {nome.upper()}')
+
+        
     def showAcao(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page1_2)
     def showComedia(self):
@@ -205,8 +208,23 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def showAnime(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_5)
 
+    def showInicial_menu(self):
+        self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page)
+        nome = self.exibir_dados()[5].replace("'", "")
+        self.tela_menu.label.setText(f'SEJA BEM-VINDO, {nome.upper()}')
     def showPerfil(self):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_2)
+        nome = self.exibir_dados()[1].replace("'", "")
+        email = self.exibir_dados()[2].replace("'", "")
+        endereco = self.exibir_dados()[3].replace("'", "")
+        nascimento = self.exibir_dados()[4].replace("'", "")
+        self.tela_menu.lineEdit.setText(f'{nome.upper()}')
+        self.tela_menu.lineEdit_2.setText(f'{email.upper()}')
+        self.tela_menu.lineEdit_3.setText(f'{endereco.upper()}')
+        self.tela_menu.lineEdit_4.setText(f'{nascimento.upper()}')
+
+
+
     def showSobre(self):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_3)
     

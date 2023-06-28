@@ -69,6 +69,7 @@ class Operacoes():
     def exibir_dados(self,usuario):
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
         resultado = cursor.fetchall()
+        print(resultado)
         return resultado
     
 if __name__ == "__main__":
