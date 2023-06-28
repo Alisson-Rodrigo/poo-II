@@ -12,6 +12,18 @@ cursor = conexao.cursor()
 
 class Operacoes():
     def __init__(self):
+
+        cursor.execute("""CREATE TABLE IF NOT EXISTS cadastro (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            nome VARCHAR(50),
+            email VARCHAR(50),
+            endereco VARCHAR(50),
+            nascimento VARCHAR(50),
+            usuario VARCHAR(50),
+            senha VARCHAR(50),
+            confirmar_senha VARCHAR(50)
+        )""")
+
         cursor.execute("""CREATE TABLE IF NOT EXISTS generos (
             id INT AUTO_INCREMENT PRIMARY KEY,
             nome VARCHAR(50)
@@ -75,7 +87,7 @@ if __name__ == "__main__":
 
     sistema = Operacoes()
     host = 'localhost'
-    port = 8902
+    port = 8903
     addr = (host, port)
     serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     serv_socket.bind(addr)
