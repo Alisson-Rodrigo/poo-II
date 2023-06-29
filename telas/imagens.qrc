@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>videocerto2.jpg</file>
     <file>pause.svg</file>
     <file>play.svg</file>
     <file>png-transparent-user-user-people-linear-icon-user-infographic-people-monochrome.png</file>
