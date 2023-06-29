@@ -94,7 +94,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_primaria.pushButton.clicked.connect(self.abrir_tela_midia)
+        self.tela_primaria.pushButton.clicked.connect(lambda: self.abrir_tela_midia("../videos/Landscapes_Volume4K(UHD)(1).mp4"))
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_categoria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
@@ -223,7 +223,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.show()
 
     def play_video(self,caminho):
-        video_url = QUrl.fromLocalFile("Transient3_ExtendedandUnused.mp4")  # Caminho do vídeo local
+        video_url = QUrl.fromLocalFile(caminho)  # Caminho do vídeo local
         media_content = QMediaContent(video_url)
         self.media_player.setMedia(media_content)
         self.media_player.play()

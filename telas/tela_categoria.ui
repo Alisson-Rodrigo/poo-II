@@ -534,7 +534,7 @@ QPushButton:hover {
 }</string>
       </property>
       <property name="text">
-       <string>FILME</string>
+       <string>VIDEOS TEMPORAIS</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_21">
@@ -1436,7 +1436,7 @@ QPushButton:hover {
        <string notr="true">	color: white;</string>
       </property>
       <property name="text">
-       <string>COMÉDIA</string>
+       <string>ANIMES</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>

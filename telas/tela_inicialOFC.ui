@@ -151,6 +151,23 @@ border-bottom: 1px solid yellow;</string>
       <set>Qt::AlignCenter</set>
      </property>
     </widget>
+    <widget class="QPushButton" name="pushButton">
+     <property name="geometry">
+      <rect>
+       <x>1220</x>
+       <y>20</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-image: url(:/newPrefix/log-out.svg);
+background-repeat: no-repeat;</string>
+     </property>
+     <property name="text">
+      <string>PushButton</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QFrame" name="frame">
     <property name="geometry">
@@ -253,7 +270,7 @@ border: 1px solid yellow;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton_5">
+    <widget class="QPushButton" name="pushButton_3">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -262,11 +279,9 @@ border: 1px solid yellow;</string>
        <height>101</height>
       </rect>
      </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/thumbSAUDE.jpg);
+</string>
      </property>
      <property name="text">
       <string/>
@@ -276,7 +291,7 @@ border: 1px solid yellow;</string>
    <widget class="QFrame" name="frame_6">
     <property name="geometry">
      <rect>
-      <x>650</x>
+      <x>640</x>
       <y>240</y>
       <width>161</width>
       <height>101</height>
@@ -292,7 +307,7 @@ border: 1px solid yellow;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="pushButton_7">
+    <widget class="QPushButton" name="pushButton_18">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -305,7 +320,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/ESTOICISMOthumb.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -363,7 +378,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/thumbRATOS.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -430,26 +445,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_13">
-     <property name="geometry">
-      <rect>
-       <x>150</x>
-       <y>60</y>
-       <width>161</width>
-       <height>101</height>
-      </rect>
-     </property>
-     <property name="cursor">
-      <cursorShape>PointingHandCursor</cursorShape>
-     </property>
-     <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/Meu projeto (3).jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -513,7 +509,7 @@ border: 1px solid yellow;</string>
       <enum>QFrame::Raised</enum>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton_18">
+    <widget class="QPushButton" name="pushButton_5">
      <property name="geometry">
       <rect>
        <x>0</x>
@@ -526,7 +522,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/Meu projeto (1).jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -622,7 +618,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/Meu projeto (6).jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -699,7 +695,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/Meu projeto (5).jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -776,7 +772,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/tuhmKIDS.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -815,7 +811,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/Meu projeto.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -854,7 +850,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/thumbNEVE.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -950,7 +946,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/thumbTEJ.jpg);</string>
      </property>
      <property name="text">
       <string/>
@@ -1027,7 +1023,7 @@ border: 1px solid yellow;</string>
       <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">background-image: url(:/newPrefix/Meu projeto (2).jpg);</string>
      </property>
      <property name="text">
       <string/>
