@@ -21,7 +21,7 @@ from PyQt5.QtCore import QUrl
 from tela_login import Tela_Login
 from tela_inicial import Tela_Inicial
 from tela_cadastro import Tela_Cadastro
-from tela_categoria import Tela_Categoria
+from tela_categorias import Tela_Categoria
 from tela_favoritos import Tela_Favoritos
 from tela_menu import Tela_Menu
 from media_player import tela_media
@@ -94,7 +94,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_primaria.pushButton.clicked.connect(lambda: self.abrir_tela_midia("../videos/Landscapes_Volume4K(UHD)(1).mp4"))
+        self.tela_primaria.pushButton_19.clicked.connect(lambda: self.abrir_tela_midia("../videos/Landscapes_Volume4K(UHD)(1).mp4"))
+        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia("../videos/Transient3_ExtendedandUnused.mp4"))
+        self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_categoria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
@@ -106,6 +108,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_7.clicked.connect(self.showTerror)
         self.tela_categoria.pushButton_8.clicked.connect(self.showInfantil)
         self.tela_categoria.pushButton_9.clicked.connect(self.showAnime)
+        self.tela_categoria.pushButton_20.clicked.connect(lambda: self.abrir_tela_midia("../videos/Transient3_ExtendedandUnused.mp4"))
 
         self.tela_favoritos.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_favoritos.pushButton_4.clicked.connect(self.abrir_tela_categoria)

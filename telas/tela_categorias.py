@@ -693,7 +693,7 @@ class Tela_Categoria(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget_2.setCurrentIndex(0)
+        self.stackedWidget_2.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -711,7 +711,7 @@ class Tela_Categoria(object):
         self.pushButton_9.setText(_translate("MainWindow", "ANIMES"))
         self.label_2.setText(_translate("MainWindow", "EXPLORE"))
         self.lineEdit.setText(_translate("MainWindow", "SELECIONE UMA CATEGÓRIA, USER!"))
-        self.pushButton_20.setText(_translate("MainWindow", "FILME"))
+        self.pushButton_20.setText(_translate("MainWindow", "VIDEOS TEMPORAIS"))
         self.pushButton_21.setText(_translate("MainWindow", "FILME"))
         self.pushButton_22.setText(_translate("MainWindow", "FILME"))
         self.pushButton_23.setText(_translate("MainWindow", "FILME"))
@@ -740,14 +740,4 @@ class Tela_Categoria(object):
         self.pushButton_42.setText(_translate("MainWindow", "FILME"))
         self.pushButton_43.setText(_translate("MainWindow", "FILME"))
         self.pushButton_44.setText(_translate("MainWindow", "FILME"))
-        self.lineEdit_7.setText(_translate("MainWindow", "COMÉDIA"))
-
-
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
-    ui = Tela_Categoria()
-    ui.setupUi(MainWindow)
-    MainWindow.show()
-    sys.exit(app.exec_())
+        self.lineEdit_7.setText(_translate("MainWindow", "ANIMES"))

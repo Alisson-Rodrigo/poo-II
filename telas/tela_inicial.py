@@ -22,7 +22,7 @@ class Tela_Inicial(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame_4 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_4.setGeometry(QtCore.QRect(-10, 0, 1251, 101))
+        self.frame_4.setGeometry(QtCore.QRect(-10, 0, 1261, 101))
         self.frame_4.setStyleSheet("background-color: black;")
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -56,7 +56,7 @@ class Tela_Inicial(object):
         self.pushButton_2.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_2.setStyleSheet("QPushButton {\n"
 "background-repeat: no-repeat;\n"
-"    background-image: url(:/newPrefix/align-justify(3).svg);\n"
+"    background-image: url(align-justify(3).svg);\n"
 "color: white;\n"
 "border: none;\n"
 "border-radius: 3px;\n"
@@ -80,9 +80,28 @@ class Tela_Inicial(object):
         self.label_5.setObjectName("label_5")
         self.pushButton = QtWidgets.QPushButton(self.frame_4)
         self.pushButton.setGeometry(QtCore.QRect(1220, 20, 31, 31))
-        self.pushButton.setStyleSheet("background-image: url(:/newPrefix/log-out.svg);\n"
+        self.pushButton.setStyleSheet("background-image: url(log-out.svg);\n"
 "background-repeat: no-repeat;")
         self.pushButton.setObjectName("pushButton")
+        self.pushButton_3 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_3.setGeometry(QtCore.QRect(130, 70, 101, 25))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_3.setFont(font)
+        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_3.setStyleSheet("QPushButton {\n"
+"color: white;\n"
+"border: 0.5px solid white;\n"
+"border-radius: 3px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    color:black;\n"
+"    background-color: white;\n"
+"}")
+        self.pushButton_3.setObjectName("pushButton_3")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(0, 590, 1251, 51))
         self.frame.setStyleSheet("background-color: rgb(0, 0, 0);")
@@ -127,12 +146,13 @@ class Tela_Inicial(object):
         self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_3.setObjectName("frame_3")
-        self.pushButton_3 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_3.setGeometry(QtCore.QRect(0, 0, 161, 101))
-        self.pushButton_3.setStyleSheet("background-image: url(:/newPrefix/thumbSAUDE.jpg);\n"
+        self.pushButton_37 = QtWidgets.QPushButton(self.frame_3)
+        self.pushButton_37.setGeometry(QtCore.QRect(0, 0, 161, 101))
+        self.pushButton_37.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_37.setStyleSheet("background-image: url(thumbSAUDE.jpg);\n"
 "")
-        self.pushButton_3.setText("")
-        self.pushButton_3.setObjectName("pushButton_3")
+        self.pushButton_37.setText("")
+        self.pushButton_37.setObjectName("pushButton_37")
         self.frame_6 = QtWidgets.QFrame(self.centralwidget)
         self.frame_6.setGeometry(QtCore.QRect(640, 240, 161, 101))
         self.frame_6.setStyleSheet("background-color: white;\n"
@@ -143,7 +163,7 @@ class Tela_Inicial(object):
         self.pushButton_18 = QtWidgets.QPushButton(self.frame_6)
         self.pushButton_18.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_18.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_18.setStyleSheet("background-image: url(:/newPrefix/ESTOICISMOthumb.jpg);")
+        self.pushButton_18.setStyleSheet("background-image: url(ESTOICISMOthumb.jpg);")
         self.pushButton_18.setText("")
         self.pushButton_18.setObjectName("pushButton_18")
         self.frame_7 = QtWidgets.QFrame(self.centralwidget)
@@ -162,7 +182,7 @@ class Tela_Inicial(object):
         self.pushButton_15 = QtWidgets.QPushButton(self.frame_7)
         self.pushButton_15.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_15.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_15.setStyleSheet("background-image: url(:/newPrefix/thumbRATOS.jpg);")
+        self.pushButton_15.setStyleSheet("background-image: url(thumbRATOS.jpg);")
         self.pushButton_15.setText("")
         self.pushButton_15.setObjectName("pushButton_15")
         self.label_4 = QtWidgets.QLabel(self.centralwidget)
@@ -187,7 +207,7 @@ class Tela_Inicial(object):
         self.pushButton_12 = QtWidgets.QPushButton(self.frame_17)
         self.pushButton_12.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_12.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_12.setStyleSheet("background-image: url(:/newPrefix/Meu projeto (3).jpg);")
+        self.pushButton_12.setStyleSheet("background-image: url(Meuprojeto(3).jpg);")
         self.pushButton_12.setText("")
         self.pushButton_12.setObjectName("pushButton_12")
         self.frame_24 = QtWidgets.QFrame(self.centralwidget)
@@ -212,7 +232,7 @@ class Tela_Inicial(object):
         self.pushButton_5 = QtWidgets.QPushButton(self.frame_24)
         self.pushButton_5.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_5.setStyleSheet("background-image: url(:/newPrefix/Meu projeto (1).jpg);")
+        self.pushButton_5.setStyleSheet("background-image: url(Meuprojeto(1).jpg);")
         self.pushButton_5.setText("")
         self.pushButton_5.setObjectName("pushButton_5")
         self.frame_28 = QtWidgets.QFrame(self.centralwidget)
@@ -243,7 +263,7 @@ class Tela_Inicial(object):
         self.pushButton_17 = QtWidgets.QPushButton(self.frame_28)
         self.pushButton_17.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_17.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_17.setStyleSheet("background-image: url(:/newPrefix/Meu projeto (6).jpg);")
+        self.pushButton_17.setStyleSheet("background-image: url(Meuprojeto(6).jpg);")
         self.pushButton_17.setText("")
         self.pushButton_17.setObjectName("pushButton_17")
         self.frame_32 = QtWidgets.QFrame(self.centralwidget)
@@ -268,7 +288,7 @@ class Tela_Inicial(object):
         self.pushButton_16 = QtWidgets.QPushButton(self.frame_32)
         self.pushButton_16.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_16.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_16.setStyleSheet("background-image: url(:/newPrefix/Meu projeto (5).jpg);")
+        self.pushButton_16.setStyleSheet("background-image: url(Meuprojeto(5).jpg);")
         self.pushButton_16.setText("")
         self.pushButton_16.setObjectName("pushButton_16")
         self.frame_33 = QtWidgets.QFrame(self.centralwidget)
@@ -293,7 +313,7 @@ class Tela_Inicial(object):
         self.pushButton_8 = QtWidgets.QPushButton(self.frame_33)
         self.pushButton_8.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_8.setStyleSheet("background-image: url(:/newPrefix/tuhmKIDS.jpg);")
+        self.pushButton_8.setStyleSheet("background-image: url(tuhmKIDS.jpg);")
         self.pushButton_8.setText("")
         self.pushButton_8.setObjectName("pushButton_8")
         self.frame_9 = QtWidgets.QFrame(self.centralwidget)
@@ -306,7 +326,7 @@ class Tela_Inicial(object):
         self.pushButton_19 = QtWidgets.QPushButton(self.frame_9)
         self.pushButton_19.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_19.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_19.setStyleSheet("background-image: url(:/newPrefix/Meu projeto.jpg);")
+        self.pushButton_19.setStyleSheet("background-image: url(Meuprojeto.jpg);")
         self.pushButton_19.setText("")
         self.pushButton_19.setObjectName("pushButton_19")
         self.frame_5 = QtWidgets.QFrame(self.centralwidget)
@@ -319,7 +339,7 @@ class Tela_Inicial(object):
         self.pushButton_6 = QtWidgets.QPushButton(self.frame_5)
         self.pushButton_6.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_6.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_6.setStyleSheet("background-image: url(:/newPrefix/thumbNEVE.jpg);")
+        self.pushButton_6.setStyleSheet("background-image: url(thumbNEVE.jpg);")
         self.pushButton_6.setText("")
         self.pushButton_6.setObjectName("pushButton_6")
         self.frame_20 = QtWidgets.QFrame(self.centralwidget)
@@ -350,7 +370,7 @@ class Tela_Inicial(object):
         self.pushButton_14 = QtWidgets.QPushButton(self.frame_20)
         self.pushButton_14.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_14.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_14.setStyleSheet("background-image: url(:/newPrefix/thumbTEJ.jpg);")
+        self.pushButton_14.setStyleSheet("background-image: url(thumbTEJ.jpg);")
         self.pushButton_14.setText("")
         self.pushButton_14.setObjectName("pushButton_14")
         self.frame_16 = QtWidgets.QFrame(self.centralwidget)
@@ -375,7 +395,7 @@ class Tela_Inicial(object):
         self.pushButton_10 = QtWidgets.QPushButton(self.frame_16)
         self.pushButton_10.setGeometry(QtCore.QRect(0, 0, 161, 101))
         self.pushButton_10.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_10.setStyleSheet("background-image: url(:/newPrefix/Meu projeto (2).jpg);")
+        self.pushButton_10.setStyleSheet("background-image: url(Meuprojeto(2).jpg);")
         self.pushButton_10.setText("")
         self.pushButton_10.setObjectName("pushButton_10")
         self.frame_9.raise_()
@@ -405,6 +425,7 @@ class Tela_Inicial(object):
         self.pushButton_4.setText(_translate("MainWindow", "Categórias"))
         self.label_5.setText(_translate("MainWindow", "CAST"))
         self.pushButton.setText(_translate("MainWindow", "PushButton"))
+        self.pushButton_3.setText(_translate("MainWindow", "Favoritos"))
         self.label_2.setText(_translate("MainWindow", "Desenvolvido por Alisson Rodrigo"))
         self.label_3.setText(_translate("MainWindow", "Em Alta"))
         self.label_4.setText(_translate("MainWindow", "Indicação Semanal"))
