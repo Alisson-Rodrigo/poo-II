@@ -137,8 +137,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
         if self.username_login and password_login:
             if self.operacao_log(mensagem):
-                QMessageBox.about(self, "Sucesso", f"Login realizado com sucesso")
                 self.QtStack.setCurrentIndex(2)
+                self.tela_inicial.txt_user.clear()
+                self.tela_inicial.txt_password.clear()
                 
             else:
                 QMessageBox.about(self, "Erro", "Usuário ou senha incorretos")
