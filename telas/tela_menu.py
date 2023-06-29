@@ -182,3 +182,6 @@ class Tela_Menu(object):
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">A plataforma é projetada para oferecer uma experiência de usuário imersiva e personalizada, adaptando-se aos interesses e preferências individuais de cada usuário. Uma das características únicas da plataforma Cast é a sua interface intuitiva e fácil de usar. Os usuários podem navegar facilmente pelo catálogo, explorar diferentes categorias, descobrir novos lançamentos e encontrar seus programas favoritos com apenas alguns cliques</p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        
+
+

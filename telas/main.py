@@ -38,7 +38,7 @@ class Ui_Main(object):
         self.stack1 = QtWidgets.QMainWindow()
         self.stack2 = QtWidgets.QMainWindow()
         self.stack3 = QtWidgets.QMainWindow()
-        self.stack4 = QtWidgets.QMainWindow()
+        #self.stack4 = QtWidgets.QMainWindow()
         self.stack5 = QtWidgets.QMainWindow()
         self.stack6 = QtWidgets.QMainWindow()
 
@@ -55,8 +55,8 @@ class Ui_Main(object):
         self.tela_categoria = Tela_Categoria()
         self.tela_categoria.setupUi(self.stack3)
 
-        self.tela_favoritos = Tela_Favoritos()
-        self.tela_favoritos.setupUi(self.stack4)
+        #self.tela_favoritos = Tela_Favoritos()
+        #self.tela_favoritos.setupUi(self.stack4)
 
         self.tela_menu = Tela_Menu()
         self.tela_menu.setupUi(self.stack5)
@@ -68,7 +68,7 @@ class Ui_Main(object):
         self.QtStack.addWidget(self.stack1)
         self.QtStack.addWidget(self.stack2)
         self.QtStack.addWidget(self.stack3)
-        self.QtStack.addWidget(self.stack4)
+        #self.QtStack.addWidget(self.stack4)
         self.QtStack.addWidget(self.stack5)
         self.QtStack.addWidget(self.stack6)
 
@@ -92,12 +92,12 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_cadastro.pushButton_2.clicked.connect(self.voltar_tela)
 
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
-        self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
+        #self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_primaria.pushButton.clicked.connect(self.abrir_tela_midia)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_categoria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
+        #self.tela_categoria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_categoria.pushButton_34.clicked.connect(self.voltar_tela2)
 
         self.tela_categoria.pushButton.clicked.connect(self.showAcao)
@@ -107,9 +107,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_8.clicked.connect(self.showInfantil)
         self.tela_categoria.pushButton_9.clicked.connect(self.showAnime)
 
-        self.tela_favoritos.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_favoritos.pushButton_4.clicked.connect(self.abrir_tela_categoria)
-        self.tela_favoritos.pushButton_34.clicked.connect(self.voltar_tela2)
+        #self.tela_favoritos.pushButton_2.clicked.connect(self.abrir_menu)
+        #self.tela_favoritos.pushButton_4.clicked.connect(self.abrir_tela_categoria)
+        #self.tela_favoritos.pushButton_34.clicked.connect(self.voltar_tela2)
 
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page)
 
@@ -192,8 +192,10 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def abrir_tela_categoria(self):
         self.QtStack.setCurrentIndex(3)
         self.showInicial()
+    '''
     def abrir_tela_favoritos(self):
         self.QtStack.setCurrentIndex(4)
+    '''
     def abrir_menu(self):
         self.QtStack.setCurrentIndex(5)
         self.showInicial_menu()
@@ -201,23 +203,15 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def abrir_tela_midia(self, caminho):
         self.setWindowTitle("Media Player")
         self.setGeometry(100, 100, 1250, 640)
-
-        # Criar o layout e o widget de vídeo
         layout = QVBoxLayout()
         self.video_widget = QVideoWidget()
         layout.addWidget(self.video_widget)
-
-        # Criar o botão para iniciar a reprodução
         play_button = QPushButton("Play")
         play_button.clicked.connect(lambda: self.play_video(caminho))
         layout.addWidget(play_button)
-
-        # Criar o widget central
         widget = QWidget()
         widget.setLayout(layout)
         self.setCentralWidget(widget)
-
-        # Criar o player de mídia
         self.media_player = QMediaPlayer(self)
         self.media_player.setVideoOutput(self.video_widget)
         self.show()
@@ -262,9 +256,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_menu.lineEdit_2.setText(f'{email.upper()}')
         self.tela_menu.lineEdit_3.setText(f'{endereco.upper()}')
         self.tela_menu.lineEdit_4.setText(f'{nascimento.upper()}')
-
-
-
+ 
     def showSobre(self):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_3)
     
