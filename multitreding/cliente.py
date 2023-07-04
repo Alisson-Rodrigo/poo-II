@@ -1,8 +1,8 @@
 import socket
  
  
-ip = '192.168.1.113'
-port = 5500
+ip = '10.0.0.182'
+port = 7000
 # ip = 'localhost'
 # port = 5000
 addr = ((ip, port))
