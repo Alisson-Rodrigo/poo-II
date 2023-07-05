@@ -13,7 +13,7 @@ client_socket.connect((host, port))
 print('Conexão estabelecida com o servidor.')
 
 # Abre o arquivo para salvar o vídeo recebido
-video_file = open('video_received.mp4', 'wb')
+video_file = open('filme.mp4', 'wb')
 
 # Recebe os pacotes de dados do servidor e escreve no arquivo
 while True:
