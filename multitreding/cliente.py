@@ -1,18 +1,10 @@
 import socket
-<<<<<<< HEAD
- 
- 
+import threading
+
 ip = '10.0.0.182'
-port = 7000
-# ip = 'localhost'
-# port = 5000
-addr = ((ip, port))
-=======
-ip = input("Digite o IP do servidor: ")
-port = 7017
+port = 10000
 nome = input("Digite seu nome: ")
 addr = ((ip,port))
->>>>>>> 6aca37cb3bd764d444adbc8f84c68a7f921474ec
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect(addr)
 client_socket.send(nome.encode())
