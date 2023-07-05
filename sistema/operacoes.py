@@ -132,11 +132,9 @@ class MyThread(threading.Thread):
                 server_socket.close()
                 break
  
-
 if __name__ == "__main__":
-
     sistema = Operacoes()
-    ip = 'localhost'
+    ip = '10.0.0.182'
     port = 10000
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
