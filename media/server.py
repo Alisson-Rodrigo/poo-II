@@ -2,7 +2,7 @@ import socket
 
 # Configurações do servidor
 host = '192.168.1.112'
-port = 7000
+port = 7001
 
 # Tamanho do buffer para leitura e envio dos dados
 buffer_size = 4096
@@ -24,6 +24,7 @@ video_file = open('/home/purehito/Documentos/GitHub/poo-II/media/videoplayback.a
 while True:
     # Lê o próximo bloco de dados do arquivo
     data = video_file.read(buffer_size)
+    print(data)
     if not data:
         # Fim do arquivo
         break

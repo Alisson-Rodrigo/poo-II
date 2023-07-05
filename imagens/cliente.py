@@ -1,8 +1,8 @@
 import socket
 
 # Configurações do cliente
-host = 'localhost'
-port = 7000
+host = '192.168.1.112'
+port = 7001
 
 # Tamanho do buffer para leitura e recebimento dos dados
 buffer_size = 4096

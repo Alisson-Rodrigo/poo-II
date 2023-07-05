@@ -87,7 +87,7 @@ class Operacoes():
     
     def enviar_filme(self, caminho):
         buffer_size = 4096
-        video_file = open('/home/purehito/Documentos/GitHub/poo-II/media/videoplayback.avi', 'rb')
+        video_file = open('/home/purehito/Documentos/GitHub/poo-II/sistema/videoplayback.avi', 'rb')
         data = video_file.read(buffer_size)
         print(data)
         if not data:
