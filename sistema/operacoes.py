@@ -5,7 +5,7 @@ import threading, socket
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="Curupira098*",
     #linux: Curupira098*
     database="bdPOO" 
 )
