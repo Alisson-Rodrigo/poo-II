@@ -86,13 +86,19 @@ class Operacoes():
         return resultado
     
     def enviar_filme(self, caminho):
-        buffer_size = 4096
         video_file = open('/home/purehito/Documentos/GitHub/poo-II/sistema/videoplayback.avi', 'rb')
-        data = video_file.read(buffer_size)
-        print(data)
-        if not data:
-            return False
-        return data
+        buffer_size = 4096
+        # Envia os pacotes de dados para o cliente
+        while True:
+            # Lê o próximo bloco de dados do arquivo
+            data = video_file.read(buffer_size)
+            print(data)
+            if not data:
+                # Fim do arquivo
+                break
+            # Envia os dados para o cliente
+            return data
+
 
 class MyThread(threading.Thread):
     def __init__(self, client_address, client_socket):
