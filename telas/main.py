@@ -79,7 +79,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.setupUi(self)
 
         ip = 'localhost'
-        port = 8903
+        port = 10000
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)

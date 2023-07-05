@@ -1,9 +1,11 @@
 import mysql.connector
+import threading, socket
+
 
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Curupira098*",
+    password="1234",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -81,59 +83,68 @@ class Operacoes():
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
         resultado = cursor.fetchall()
         return resultado
-    
+
+class MyThread(threading.Thread):
+    def __init__(self, client_address, client_socket):
+        threading.Thread.__init__(self)
+        self.name = ''
+        self.client_socket = client_socket
+        print('Nova conexão, endereço: ', client_address)
+ 
+    def run(self):
+        con = self.client_socket
+        while True:
+            try:
+                mensagem = con.recv(1024)
+                mensagem_str = mensagem.decode().split(',')
+                if mensagem_str[0] == '1':
+                    email = mensagem_str[1]
+                    senha = mensagem_str[2]
+                    enviar = ''
+                    if sistema.verificar_login(email, senha):
+                        enviar = '1'
+                    else:
+                        enviar = '0'
+                    con.send(enviar.encode())
+                elif mensagem_str[0] == '2':
+                    nome = mensagem_str[1]
+                    email = mensagem_str[2]
+                    endereco = mensagem_str[3]
+                    nascimento = mensagem_str[4]
+                    usuario = mensagem_str[5]
+                    senha = mensagem_str[6]
+                    confirmar_senha = mensagem_str[7]
+                    enviar = ''
+                    if sistema.cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha):
+                        enviar = '1'
+                    else:
+                        enviar = '0'
+                    con.send(enviar.encode())
+                elif mensagem_str[0] == '3':
+                    username = mensagem_str[1]
+                    dados = f'{sistema.exibir_dados(username)}'
+                    con.send(dados.encode())
+                else:
+                    raise Exception('Conexão finalizada pelo cliente')
+            except Exception as e:
+                print(str(e))
+                con.close()
+                server_socket.close()
+                break
+ 
+
 if __name__ == "__main__":
-    import socket
 
     sistema = Operacoes()
-    host = 'localhost'
-    port = 8903
-    addr = (host, port)
-    serv_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    serv_socket.bind(addr)
-    serv_socket.listen(10)
+    ip = 'localhost'
+    port = 10000
+    addr = ((ip, port))
+    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    server_socket.bind(addr)
     print('Aguardando conexão...')
-    con, cliente = serv_socket.accept()
-    print('Conectado')
-    print('Aguardando interação...')
-
     while True:
-        try:
-            mensagem = con.recv(1024)
-            mensagem_str = mensagem.decode().split(',')
-            if mensagem_str[0] == '1':
-                email = mensagem_str[1]
-                senha = mensagem_str[2]
-                enviar = ''
-                if sistema.verificar_login(email, senha):
-                    enviar = '1'
-                else:
-                    enviar = '0'
-                con.send(enviar.encode())
-            elif mensagem_str[0] == '2':
-                nome = mensagem_str[1]
-                email = mensagem_str[2]
-                endereco = mensagem_str[3]
-                nascimento = mensagem_str[4]
-                usuario = mensagem_str[5]
-                senha = mensagem_str[6]
-                confirmar_senha = mensagem_str[7]
-                enviar = ''
-                if sistema.cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha):
-                    enviar = '1'
-                else:
-                    enviar = '0'
-                con.send(enviar.encode())
-            elif mensagem_str[0] == '3':
-                username = mensagem_str[1]
-                dados = f'{sistema.exibir_dados(username)}'
-                con.send(dados.encode())
-            else:
-                raise Exception('Conexão finalizada pelo cliente')
-        except Exception as e:
-            print(str(e))
-            con.close()
-            serv_socket.close()
-            break
-
+        server_socket.listen(10)
+        client_socket, addr = server_socket.accept()
+        my_thread = MyThread(addr, client_socket)
+        my_thread.start()
 
