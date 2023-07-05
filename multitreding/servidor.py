@@ -20,8 +20,8 @@ class MyThread(threading.Thread):
  
  
 if __name__ == '__main__':
-    ip = 'localhost'
-    port = 9000
+    ip = '10.0.0.182'
+    port = 10000
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)

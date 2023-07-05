@@ -1,6 +1,6 @@
 import socket
-ip = '127.0.0.1'
-port = 9000
+ip = '10.0.0.176'
+port = 10000
 nome = input("Digite seu nome: ")
 addr = ((ip,port))
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
