@@ -5,7 +5,7 @@ import threading, socket
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="Curupira098*",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -39,6 +39,7 @@ class Operacoes():
         cursor.execute("""CREATE TABLE IF NOT EXISTS filmes (
             id INT AUTO_INCREMENT PRIMARY KEY,
             titulo VARCHAR(100),
+            caminho VARCHAR(60),
             ano INT,
             usuario_id INT,
             genero_id INT,
@@ -83,6 +84,21 @@ class Operacoes():
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
         resultado = cursor.fetchall()
         return resultado
+    
+    def enviar_filme(self, caminho):
+        video_file = open('/home/purehito/Documentos/GitHub/poo-II/sistema/videoplayback.avi', 'rb')
+        buffer_size = 4096
+        # Envia os pacotes de dados para o cliente
+        while True:
+            # Lê o próximo bloco de dados do arquivo
+            data = video_file.read(buffer_size)
+            print(data)
+            if not data:
+                # Fim do arquivo
+                break
+            # Envia os dados para o cliente
+            return data
+
 
 class MyThread(threading.Thread):
     def __init__(self, client_address, client_socket):
@@ -124,6 +140,14 @@ class MyThread(threading.Thread):
                     username = mensagem_str[1]
                     dados = f'{sistema.exibir_dados(username)}'
                     con.send(dados.encode())
+                elif mensagem_str[0] == '4':
+                    caminho = mensagem_str[1]
+                    dados = f'{sistema.enviar_filme(caminho)}'
+                    if dados == 'False':
+                        con.send('0'.encode())
+                    else:
+                        con.send(dados)
+
                 else:
                     raise Exception('Conexão finalizada pelo cliente')
             except Exception as e:
@@ -134,8 +158,8 @@ class MyThread(threading.Thread):
  
 if __name__ == "__main__":
     sistema = Operacoes()
-    ip = '10.0.0.182'
-    port = 10000
+    ip = '192.168.1.112'
+    port = 10003
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
