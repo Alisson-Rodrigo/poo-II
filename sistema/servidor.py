@@ -160,7 +160,7 @@ class MyThread(threading.Thread):
  
 if __name__ == "__main__":
     sistema = Operacoes()
-    ip = '10.0.0.176'
+    ip = '192.168.1.112'
     port = 10003
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
