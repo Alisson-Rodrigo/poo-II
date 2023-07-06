@@ -1,7 +1,7 @@
 import socket
 
 host = '10.180.44.22'
-port = 7001
+port = 7002
 
 buffer_size = 4096
 
