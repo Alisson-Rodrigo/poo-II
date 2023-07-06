@@ -79,7 +79,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.setupUi(self)
 
         ip = '10.0.0.182'
-        port = 10000
+        port = 10003
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -94,8 +94,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_primaria.pushButton_19.clicked.connect(lambda: self.abrir_tela_midia("../videos/Landscapes_Volume4K(UHD)(1).mp4"))
-        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia("../videos/Transient3_ExtendedandUnused.mp4"))
+        self.tela_primaria.pushButton_19.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("videoplayback.avi")))
+        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("videoplayback.avi")))
         self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
@@ -129,6 +129,19 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 return True
         return False
 
+    
+    def buscar_video(self, caminho):
+        msg = f'4,{caminho}'
+        self.client_socket.send(msg.encode())
+        buffer_size = 4096
+        file_name = 'video.avi'  
+        with open(file_name, 'wb') as file:
+            while True:
+                data = self.client_socket.recv(buffer_size)
+                if not data:
+                    break
+                file.write(data)
+        return file_name
 
     def verificacao_login(self):
         self.username_login = self.tela_inicial.txt_user.text()
@@ -273,6 +286,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_3)
     
     def close (self):
+        self.client_socket.close()
         sys.exit(app.exec_())
 
 

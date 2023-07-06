@@ -125,6 +125,7 @@ class MyThread(threading.Thread):
                     dados = f'{sistema.exibir_dados(username)}'
                     con.send(dados.encode())
                 else:
+                    self.client_socket.close()
                     raise Exception('Conexão finalizada pelo cliente')
             except Exception as e:
                 print(str(e))
@@ -141,8 +142,12 @@ if __name__ == "__main__":
     server_socket.bind(addr)
     print('Aguardando conexão...')
     while True:
-        server_socket.listen(10)
-        client_socket, addr = server_socket.accept()
-        my_thread = MyThread(addr, client_socket)
-        my_thread.start()
-
+        try:
+            server_socket.listen(10)
+            client_socket, addr = server_socket.accept()
+            my_thread = MyThread(addr, client_socket)
+            my_thread.start()
+        except Exception as e:
+            print(str(e))
+            server_socket.close()
+            break
