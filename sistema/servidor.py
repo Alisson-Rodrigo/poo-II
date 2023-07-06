@@ -5,7 +5,7 @@ import threading, socket
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="Curupira098*",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -160,7 +160,7 @@ class MyThread(threading.Thread):
  
 if __name__ == "__main__":
     sistema = Operacoes()
-    ip = '10.0.0.182'
+    ip = '10.0.0.176'
     port = 10003
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
