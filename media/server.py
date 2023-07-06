@@ -1,7 +1,7 @@
 import socket
 
 # Configurações do servidor
-host = '192.168.1.112'
+host = '10.0.0.182'
 port = 7001
 
 # Tamanho do buffer para leitura e envio dos dados
@@ -18,13 +18,12 @@ client_socket, addr = server_socket.accept()
 print('Conexão estabelecida com:', addr)
 
 # Abre o arquivo de vídeo em modo binário
-video_file = open('/home/purehito/Documentos/GitHub/poo-II/media/videoplayback.avi', 'rb')
+video_file = open('videoplayback.avi', 'rb')
 
 # Envia os pacotes de dados para o cliente
 while True:
     # Lê o próximo bloco de dados do arquivo
     data = video_file.read(buffer_size)
-    print(data)
     if not data:
         # Fim do arquivo
         break
