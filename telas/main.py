@@ -78,13 +78,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         super(Main,self).__init__(parent)
         self.setupUi(self)
 
-<<<<<<< HEAD
-        ip = '10.0.0.176'
-        port = 10003
-=======
         ip = '10.0.0.182'
-        port = 10000
->>>>>>> cf6630fc02f617c5e03ed9dff5e36406b3c24fc9
+        port = 10003
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -99,8 +94,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_primaria.pushButton_19.clicked.connect(lambda: self.abrir_tela_midia("../videos/Landscapes_Volume4K(UHD)(1).mp4"))
-        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia("../videos/Transient3_ExtendedandUnused.mp4"))
+        self.tela_primaria.pushButton_19.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD).mp4")))
+        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("../sistema/Transient3_ExtendedandUnused.mp4")))
         self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
@@ -133,6 +128,19 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             if resposta and resposta == '1':
                 return True
         return False
+
+    
+    def buscar_video(self,caminho):
+        msg = f'4,{caminho}'
+        buffer_size = 4096
+        self.client_socket.send(msg.encode())
+        video_file = open('filme.mp4', 'wb')
+        data = self.client_socket.recv(buffer_size)
+        if data == '0':
+            video_file.close()
+            return False
+        video_file.write(data)
+        return video_file.name
 
 
     def verificacao_login(self):
@@ -278,6 +286,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_3)
     
     def close (self):
+        self.client_socket.close()
         sys.exit(app.exec_())
 
 
