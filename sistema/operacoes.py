@@ -5,7 +5,7 @@ import threading, socket
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Curupira098*",
+    password="1234",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -85,20 +85,14 @@ class Operacoes():
         resultado = cursor.fetchall()
         return resultado
     
-    def enviar_filme(self, caminho):
-        video_file = open('/home/purehito/Documentos/GitHub/poo-II/sistema/videoplayback.avi', 'rb')
+    def enviar_dados_arquivo(self,caminho):
         buffer_size = 4096
-        # Envia os pacotes de dados para o cliente
-        while True:
-            # Lê o próximo bloco de dados do arquivo
-            data = video_file.read(buffer_size)
-            print(data)
-            if not data:
-                # Fim do arquivo
-                break
-            # Envia os dados para o cliente
-            return data
-
+        with open(caminho, 'rb') as arquivo:
+            while True:
+                dados = arquivo.read(buffer_size)
+                if not dados:
+                    break
+                return dados
 
 class MyThread(threading.Thread):
     def __init__(self, client_address, client_socket):
@@ -108,6 +102,7 @@ class MyThread(threading.Thread):
         print('Nova conexão, endereço: ', client_address)
  
     def run(self):
+        sistema = Operacoes()
         con = self.client_socket
         while True:
             try:
@@ -142,12 +137,7 @@ class MyThread(threading.Thread):
                     con.send(dados.encode())
                 elif mensagem_str[0] == '4':
                     caminho = mensagem_str[1]
-                    dados = f'{sistema.enviar_filme(caminho)}'
-                    if dados == 'False':
-                        con.send('0'.encode())
-                    else:
-                        con.send(dados)
-
+                    sistema.enviar_dados_arquivo(caminho)
                 else:
                     raise Exception('Conexão finalizada pelo cliente')
             except Exception as e:
@@ -157,16 +147,20 @@ class MyThread(threading.Thread):
                 break
  
 if __name__ == "__main__":
-    sistema = Operacoes()
-    ip = '192.168.1.112'
+    ip = '10.0.0.182'
     port = 10003
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
     print('Aguardando conexão...')
     while True:
-        server_socket.listen(10)
-        client_socket, addr = server_socket.accept()
-        my_thread = MyThread(addr, client_socket)
-        my_thread.start()
+        try:
+            server_socket.listen(10)
+            client_socket, addr = server_socket.accept()
+            my_thread = MyThread(addr, client_socket)
+            my_thread.start()
+        except OSError as e:
+            # Ocorreu um erro de conexão
+            print("Erro de conexão:", str(e))
+            break
 

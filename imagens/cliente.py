@@ -1,7 +1,7 @@
 import socket
 
 # Configurações do cliente
-host = '192.168.1.112'
+host = '10.0.0.182'
 port = 7001
 
 # Tamanho do buffer para leitura e recebimento dos dados
@@ -23,8 +23,8 @@ while True:
         # Fim da transmissão
         break
     # Escreve os dados no arquivo
+    print (data)
     video_file.write(data)
-
 # Fecha o arquivo e o socket
 video_file.close()
 client_socket.close()
