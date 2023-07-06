@@ -273,7 +273,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_3)
     
     def close (self):
-        self.client_socket.close()
         sys.exit(app.exec_())
 
 

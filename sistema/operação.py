@@ -119,20 +119,20 @@ class MyThread(threading.Thread):
                         enviar = '1'
                     else:
                         enviar = '0'
-                    con.send(enviar.encode())
+                        con.send(enviar.encode())
                 elif mensagem_str[0] == '3':
                     username = mensagem_str[1]
                     dados = f'{sistema.exibir_dados(username)}'
                     con.send(dados.encode())
                 else:
-                    self.client_socket.close()
                     raise Exception('Conexão finalizada pelo cliente')
             except Exception as e:
-                print(str(e))
+                print(e)
                 con.close()
                 server_socket.close()
                 break
- 
+
+
 if __name__ == "__main__":
     sistema = Operacoes()
     ip = '10.0.0.182'
@@ -142,12 +142,8 @@ if __name__ == "__main__":
     server_socket.bind(addr)
     print('Aguardando conexão...')
     while True:
-        try:
-            server_socket.listen(10)
-            client_socket, addr = server_socket.accept()
-            my_thread = MyThread(addr, client_socket)
-            my_thread.start()
-        except Exception as e:
-            print(str(e))
-            server_socket.close()
-            break
+        server_socket.listen(10)
+        client_socket, addr = server_socket.accept()
+        my_thread = MyThread(addr, client_socket)
+        my_thread.start()
+
