@@ -23,7 +23,6 @@ while True:
         # Fim da transmissão
         break
     # Escreve os dados no arquivo
-    print (data)
     video_file.write(data)
 # Fecha o arquivo e o socket
 video_file.close()
