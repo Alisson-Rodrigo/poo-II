@@ -17,8 +17,7 @@ print('Conexão estabelecida com:', addr)
 
 buffer_size = 4096
 video_file_path = 'videoplayback.avi'
-video_file_size = os.path.getsize(video_file_path)
-        
+video_file_size = os.path.getsize(video_file_path)       
 with open(video_file_path, 'rb') as video_file:
     client_socket.send(str(video_file_size).encode())            
     while True:
