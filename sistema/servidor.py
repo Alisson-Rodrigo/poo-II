@@ -2,6 +2,7 @@ import mysql.connector
 import threading, socket
 
 
+
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
