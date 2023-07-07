@@ -78,7 +78,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         super(Main,self).__init__(parent)
         self.setupUi(self)
 
-        ip = '10.0.0.182'
+        ip = '10.180.44.22'
         port = 10003
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -136,6 +136,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.client_socket.send(msg.encode())
         video_file = open('filme.mp4', 'wb')
         data = self.client_socket.recv(buffer_size)
+        print (data)
         if data == '0':
             video_file.close()
             return False
