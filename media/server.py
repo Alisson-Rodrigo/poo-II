@@ -1,6 +1,8 @@
 import socket
-
-host = '10.180.44.22'
+import os
+hostname = socket.gethostname()
+ip_Adress = socket.gethostbyname(hostname)
+host = ip_Adress
 port = 7002
 
 buffer_size = 4096
@@ -13,15 +15,18 @@ print('Aguardando conexão...')
 client_socket, addr = server_socket.accept()
 print('Conexão estabelecida com:', addr)
 
-video_file = open('videoplayback.avi', 'rb')
-
-while True:
-    data = video_file.read(buffer_size)
-    if not data:
-        # Fim do arquivo
-        break
-    # Envia os dados para o cliente
-    client_socket.send(data)
+buffer_size = 4096
+video_file_path = 'videoplayback.avi'
+video_file_size = os.path.getsize(video_file_path)
+        
+with open(video_file_path, 'rb') as video_file:
+    client_socket.send(str(video_file_size).encode())            
+    while True:
+        data = video_file.read(buffer_size)
+        if not data:
+            break
+        client_socket.send(data)
+        print (data)
 
 # Fecha o arquivo e o socket
 video_file.close()

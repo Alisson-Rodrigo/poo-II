@@ -1,6 +1,8 @@
 import socket
 
-host = '10.180.44.22'
+hostname = socket.gethostname()
+ip_Adress = socket.gethostbyname(hostname)
+host = ip_Adress
 port = 7002
 
 buffer_size = 4096
@@ -9,14 +11,11 @@ client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect((host, port))
 print('Conexão estabelecida com o servidor.')
 
-video_file = open('filme.mp4', 'wb')
-
-while True:
-    data = client_socket.recv(buffer_size)
-    if not data:
-        break
-    # Escreve os dados no arquivo
-    video_file.write(data)
-# Fecha o arquivo e o socket
-video_file.close()
-client_socket.close()
+tamanho_arquivo = int(client_socket.recv(1024).decode())   
+with open('video.avi', 'wb') as video_file:
+    bytes_recebidos = 0
+    while bytes_recebidos < tamanho_arquivo:
+        data = client_socket.recv(4096)
+        bytes_recebidos += len(data)
+        video_file.write(data)   
+print('Vídeo recebido e salvo com sucesso!')

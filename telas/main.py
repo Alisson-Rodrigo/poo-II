@@ -80,7 +80,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
         ip = ip_Adress
-        port = 10004
+        port = 10005
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -95,8 +95,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_primaria.pushButton_19.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD).mp4")))
-        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("../sistema/Transient3_ExtendedandUnused.mp4")))
+        self.tela_primaria.pushButton_19.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("videoplayback.avi")))
+        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD).mp4")))
         self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
@@ -109,7 +109,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_7.clicked.connect(self.showTerror)
         self.tela_categoria.pushButton_8.clicked.connect(self.showInfantil)
         self.tela_categoria.pushButton_9.clicked.connect(self.showAnime)
-        self.tela_categoria.pushButton_20.clicked.connect(lambda: self.abrir_tela_midia("../videos/Transient3_ExtendedandUnused.mp4"))
+        self.tela_categoria.pushButton_20.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("videoplayback.avi")))
 
         self.tela_favoritos.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_favoritos.pushButton_4.clicked.connect(self.abrir_tela_categoria)
@@ -133,17 +133,16 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     
     def buscar_video(self,caminho):
         msg = f'4,{caminho}'
-        buffer_size = 4096
         self.client_socket.send(msg.encode())
-        video_file = open('filme.mp4', 'wb')
-        data = self.client_socket.recv(buffer_size)
-        if data == '0':
-            video_file.close()
-            return False
-        video_file.write(data)
-        video_file.close()
-        print(data)
-        return 'filme.mp4'
+        tamanho_arquivo = int(self.client_socket.recv(1024).decode())   
+        with open(caminho, 'wb') as video_file:
+            bytes_recebidos = 0
+            while bytes_recebidos < tamanho_arquivo:
+                data = self.client_socket.recv(4096)
+                bytes_recebidos += len(data)
+                video_file.write(data)
+            print('Vídeo recebido e salvo com sucesso!')
+        return caminho
 
 
     def verificacao_login(self):
