@@ -15,11 +15,7 @@ while True:
     data = client_socket.recv(buffer_size)
     if not data:
         break
-<<<<<<< HEAD
     # Escreve os dados no arquivo
-=======
-    print (data)
->>>>>>> 6d42d63f91a378ce3b755254b5c8ff7e10dea8bd
     video_file.write(data)
 # Fecha o arquivo e o socket
 video_file.close()

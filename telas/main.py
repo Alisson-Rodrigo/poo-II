@@ -77,9 +77,10 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def __init__(self,parent=None):
         super(Main,self).__init__(parent)
         self.setupUi(self)
-
-        ip = '10.180.44.22'
-        port = 10003
+        hostname = socket.gethostname()
+        ip_Adress = socket.gethostbyname(hostname)
+        ip = ip_Adress
+        port = 10004
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -136,12 +137,13 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.client_socket.send(msg.encode())
         video_file = open('filme.mp4', 'wb')
         data = self.client_socket.recv(buffer_size)
-        print (data)
         if data == '0':
             video_file.close()
             return False
         video_file.write(data)
-        return video_file.name
+        video_file.close()
+        print(data)
+        return 'filme.mp4'
 
 
     def verificacao_login(self):
