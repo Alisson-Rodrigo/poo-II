@@ -96,7 +96,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_primaria.pushButton_19.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("videoplayback.avi")))
-        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD).mp4")))
+        self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD)(1).mp4")))
         self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
