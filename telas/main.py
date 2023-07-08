@@ -5,7 +5,7 @@ from PyQt5.QtMultimediaWidgets import QVideoWidget
 from PyQt5.QtCore import pyqtSlot
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
-from PyQt5.QtGui import QIcon, QPixmap
+from PyQt5.QtGui import QIcon, QPixmap, QPalette, QColor
 from PyQt5.QtPrintSupport import *
 import sys
 import socket
@@ -219,17 +219,36 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
     def abrir_tela_midia(self, caminho):
         self.setWindowTitle("Media Player")
-        self.setGeometry(100, 100, 1250, 640)
+        self.setGeometry(100, 100, 800, 600)
 
-        # Criar o layout e o widget de vídeo
+        # Definir o background na cor preta
+        palette = self.palette()
+        palette.setColor(QPalette.Background, QColor(0, 0, 0))
+        self.setPalette(palette)
+
+        # Criar o layout principal
         layout = QVBoxLayout()
         self.video_widget = QVideoWidget()
         layout.addWidget(self.video_widget)
 
+        # Criar o widget para as opções
+        options_widget = QWidget()
+        options_layout = QHBoxLayout(options_widget)
+        options_widget.setStyleSheet("background-color: black;")  # Definir o background como preto
+        options_widget.setMaximumHeight(40)
+
+        # Criar a barra de reprodução
+        slider = QSlider(Qt.Horizontal)
+        options_layout.addWidget(slider)
+
         # Criar o botão para iniciar a reprodução
         play_button = QPushButton("Play")
-        play_button.clicked.connect(lambda: self.play_video(caminho))
-        layout.addWidget(play_button)
+        play_button.setFixedWidth(50)
+        play_button.clicked.connect(lambda: self.play_video("videoplayback.avi"))  # Substitua "videoplayback.avi" pelo caminho do seu vídeo
+        options_layout.addWidget(play_button)
+
+        # Adicionar o widget de opções ao layout principal
+        layout.addWidget(options_widget)
 
         # Criar o widget central
         widget = QWidget()
@@ -239,14 +258,14 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         # Criar o player de mídia
         self.media_player = QMediaPlayer(self)
         self.media_player.setVideoOutput(self.video_widget)
+
         self.show()
 
-    def play_video(self,caminho):
-        video_url = QUrl.fromLocalFile(caminho)  # Caminho do vídeo local
+    def play_video(self, video_path):
+        video_url = QUrl.fromLocalFile(video_path)
         media_content = QMediaContent(video_url)
         self.media_player.setMedia(media_content)
         self.media_player.play()
-
 
     def showInicial(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_1)
