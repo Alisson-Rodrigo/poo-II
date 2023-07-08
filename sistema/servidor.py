@@ -146,7 +146,7 @@ class MyThread(threading.Thread):
 
     def enviar_filme(self,caminho):
         buffer_size = 4096
-        video_file_path = caminho
+        video_file_path = f'C:/Users/PurooLight/Documents/estudos/pooII/poo-II/sistema/videos/{caminho}'
         video_file_size = os.path.getsize(video_file_path)       
         with open(video_file_path, 'rb') as video_file:
             client_socket.send(str(video_file_size).encode())            
