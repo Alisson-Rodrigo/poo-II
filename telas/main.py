@@ -24,7 +24,6 @@ from tela_cadastro import Tela_Cadastro
 from tela_categorias import Tela_Categoria
 from tela_favoritos import Tela_Favoritos
 from tela_menu import Tela_Menu
-from media_player import tela_media
 
 
 class Ui_Main(object):
@@ -40,7 +39,6 @@ class Ui_Main(object):
         self.stack3 = QtWidgets.QMainWindow()
         self.stack4 = QtWidgets.QMainWindow()
         self.stack5 = QtWidgets.QMainWindow()
-        self.stack6 = QtWidgets.QMainWindow()
 
 
         self.tela_inicial = Tela_Login()
@@ -61,8 +59,7 @@ class Ui_Main(object):
         self.tela_menu = Tela_Menu()
         self.tela_menu.setupUi(self.stack5)
 
-        self.tela_media = tela_media()
-        self.tela_media.setupUi(self.stack6)
+
 
         self.QtStack.addWidget(self.stack0)
         self.QtStack.addWidget(self.stack1)
@@ -70,7 +67,6 @@ class Ui_Main(object):
         self.QtStack.addWidget(self.stack3)
         self.QtStack.addWidget(self.stack4)
         self.QtStack.addWidget(self.stack5)
-        self.QtStack.addWidget(self.stack6)
 
 
 class Main(QtWidgets.QMainWindow, Ui_Main):
@@ -217,62 +213,11 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.QtStack.setCurrentIndex(5)
         self.showInicial_menu()
 
-    def abrir_tela_midia(self, caminho):
-        self.setWindowTitle("Media Player")
-        self.setGeometry(100, 100, 800, 600)
-
-        # Definir o background na cor preta
-        palette = self.palette()
-        palette.setColor(QPalette.Background, QColor(0, 0, 0))
-        self.setPalette(palette)
-
-        # Criar o layout principal
-        layout = QVBoxLayout()
-        self.video_widget = QVideoWidget()
-        layout.addWidget(self.video_widget)
-
-        # Criar o widget para as opções
-        options_widget = QWidget()
-        options_layout = QHBoxLayout(options_widget)
-        options_widget.setStyleSheet("background-color: black;")  # Definir o background como preto
-        options_widget.setMaximumHeight(40)
-
-        # Criar a barra de reprodução
-        slider = QSlider(Qt.Horizontal)
-        options_layout.addWidget(slider)
-
-        # Criar o botão para iniciar a reprodução
-        play_button = QPushButton("Play")
-        play_button.setFixedWidth(50)
-        play_button.clicked.connect(lambda: self.play_video("videoplayback.avi"))  # Substitua "videoplayback.avi" pelo caminho do seu vídeo
-        options_layout.addWidget(play_button)
-
-        # Adicionar o widget de opções ao layout principal
-        layout.addWidget(options_widget)
-
-        # Criar o widget central
-        widget = QWidget()
-        widget.setLayout(layout)
-        self.setCentralWidget(widget)
-
-        # Criar o player de mídia
-        self.media_player = QMediaPlayer(self)
-        self.media_player.setVideoOutput(self.video_widget)
-
-        self.show()
-
-    def play_video(self, video_path):
-        video_url = QUrl.fromLocalFile(video_path)
-        media_content = QMediaContent(video_url)
-        self.media_player.setMedia(media_content)
-        self.media_player.play()
-
     def showInicial(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_1)
         nome = self.exibir_dados()[5].replace("'", "")
         self.tela_categoria.lineEdit.setText(f'ESCOLHA UMA CATEGORIA, {nome.upper()}')
-
-        
+   
     def showAcao(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page1_2)
     def showComedia(self):
@@ -301,14 +246,104 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_menu.lineEdit_3.setText(f'{endereco.upper()}')
         self.tela_menu.lineEdit_4.setText(f'{nascimento.upper()}')
 
-
-
     def showSobre(self):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_3)
     
     def close (self):
         self.client_socket.close()
         sys.exit(app.exec_())
+
+    def abrir_tela_midia(self, caminho):
+        self.player = VideoPlayer(caminho)
+
+class VideoPlayer(QWidget):
+    def __init__(self, video_path):
+        super().__init__()
+        self.setWindowTitle("Video Player")
+        self.resize(800, 600)
+
+        self.video_path = video_path
+        
+        # Definindo o background na cor preta
+        palette = self.palette()
+        palette.setColor(QPalette.Background, QColor(0, 0, 0))
+        self.setPalette(palette)
+
+        # Criando o layout principal
+        self.layout = QVBoxLayout()
+        self.setLayout(self.layout)
+
+        # Criando o widget de vídeo
+        self.video_widget = QVideoWidget()
+        self.layout.addWidget(self.video_widget)
+
+        # Criando o layout para as opções
+        self.options_layout = QHBoxLayout()
+        self.layout.addLayout(self.options_layout)
+
+        # Criando o botão para reproduzir/pausar o vídeo
+        self.play_pause_button = QPushButton()
+        self.play_pause_button.setFixedSize(32, 32)
+        self.play_pause_button.setStyleSheet("background-color: black")
+        self.play_pause_button.clicked.connect(self.toggle_play_pause)
+        self.options_layout.addWidget(self.play_pause_button)
+
+        # Criando a barra de reprodução
+        self.slider = QSlider(Qt.Horizontal)
+        self.slider.setRange(0, 0)
+        self.slider.sliderMoved.connect(self.set_position)
+        self.options_layout.addWidget(self.slider)
+
+        # Carregando as imagens dos botões de reprodução e pausa
+        self.play_image = QIcon(QPixmap("play.svg"))
+        self.pause_image = QIcon(QPixmap("pause.svg"))
+
+        # Criando o player de mídia
+        self.media_player = QMediaPlayer()
+        self.media_player.setVideoOutput(self.video_widget)
+        self.media_player.stateChanged.connect(self.video_state_changed)
+        self.media_player.positionChanged.connect(self.update_position)
+        self.media_player.durationChanged.connect(self.update_duration)
+
+        # Flag para controlar a reprodução do vídeo
+        self.is_playing = False
+
+        self.set_video_path(self.video_path)
+        self.show()
+
+    def closeEvent(self, event):
+        self.media_player.stop()
+        event.accept()
+
+    def toggle_play_pause(self):
+        if self.is_playing:
+            self.media_player.pause()
+        else:
+            self.media_player.play()
+
+    def update_position(self, position):
+        self.slider.setValue(position)
+
+    def update_duration(self, duration):
+        self.slider.setRange(0, duration)
+
+    def set_position(self, position):
+        self.media_player.setPosition(position)
+
+    def set_video_path(self, video_path):
+        video_url = QUrl.fromLocalFile(video_path)
+        video_content = QMediaContent(video_url)
+        self.media_player.setMedia(video_content)
+        self.is_playing = False
+        self.media_player.pause()
+
+    def video_state_changed(self, state):
+        if state == QMediaPlayer.PlayingState:
+            self.is_playing = True
+            self.play_pause_button.setIcon(self.pause_image)
+        else:
+            self.is_playing = False
+            self.play_pause_button.setIcon(self.play_image)
 
 
 if __name__ == '__main__':
