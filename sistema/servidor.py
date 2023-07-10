@@ -1,11 +1,13 @@
 import mysql.connector
 import threading, socket
+import os
+
 
 
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Curupira098*",
+    password="1234",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -85,20 +87,6 @@ class Operacoes():
         resultado = cursor.fetchall()
         return resultado
     
-    def enviar_filme(self, caminho):
-        video_file = open('/home/purehito/Documentos/GitHub/poo-II/sistema/videoplayback.avi', 'rb')
-        buffer_size = 4096
-        # Envia os pacotes de dados para o cliente
-        while True:
-            # Lê o próximo bloco de dados do arquivo
-            data = video_file.read(buffer_size)
-            print(data)
-            if not data:
-                # Fim do arquivo
-                break
-            # Envia os dados para o cliente
-            return data
-
 
 class MyThread(threading.Thread):
     def __init__(self, client_address, client_socket):
@@ -142,13 +130,11 @@ class MyThread(threading.Thread):
                     con.send(dados.encode())
                 elif mensagem_str[0] == '4':
                     caminho = mensagem_str[1]
-                    dados = f'{sistema.enviar_filme(caminho)}'
-                    if dados == 'False':
-                        con.send('0'.encode())
-                    else:
-                        con.send(dados)
+                    print(caminho)
+                    self.enviar_filme(caminho)
+                    
                 else:
-                    raise Exception('Conexão finalizada pelo cliente')
+                    raise Exception('Conexão finalizada pelo cliente')                
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
                 con.close()
@@ -157,11 +143,28 @@ class MyThread(threading.Thread):
                 print(str(e))
                 con.close()
                 break
- 
+
+    def enviar_filme(self,caminho):
+        buffer_size = 4096
+        video_file_path = f'C:/Users/PurooLight/Documents/estudos/pooII/poo-II/sistema/videos/{caminho}'
+        video_file_size = os.path.getsize(video_file_path)       
+        with open(video_file_path, 'rb') as video_file:
+            client_socket.send(str(video_file_size).encode())            
+            while True:
+                data = video_file.read(buffer_size)
+                if not data:
+                    break
+                client_socket.send(data)
+                print (data)
+        # Fecha o arquivo e o socket
+        video_file.close()
+
 if __name__ == "__main__":
     sistema = Operacoes()
-    ip = '10.180.44.22'
-    port = 10003
+    hostname = socket.gethostname()
+    ip_Adress = socket.gethostbyname(hostname)
+    ip = ip_Adress
+    port = 10005
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
