@@ -1,6 +1,7 @@
 import socket
 ip = '10.0.0.176'
 import threading
+
 ip = '10.0.0.182'
 port = 10000
 nome = input("Digite seu nome: ")
