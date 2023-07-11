@@ -14,51 +14,55 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Tela_Login(object):
     def setupUi(self, Login):
         Login.setObjectName("Login")
-        Login.resize(652, 614)
+        Login.resize(652, 618)
         Login.setStyleSheet("background-color: rgb(10, 3, 34);\n"
 "")
         self.frame = QtWidgets.QFrame(Login)
-        self.frame.setGeometry(QtCore.QRect(140, 160, 411, 351))
-        self.frame.setStyleSheet("background-color: gray;")
+        self.frame.setGeometry(QtCore.QRect(120, 80, 411, 441))
+        self.frame.setStyleSheet("background-color: rgb(66, 66, 66)")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.txt_user = QtWidgets.QLineEdit(self.frame)
-        self.txt_user.setGeometry(QtCore.QRect(100, 100, 221, 21))
+        self.txt_user.setGeometry(QtCore.QRect(100, 190, 221, 21))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.txt_user.setFont(font)
         self.txt_user.setStyleSheet("color: white;\n"
-"border: 1px solid white;")
+"border: 1px solid white;\n"
+"border-radius: 4px;")
         self.txt_user.setText("")
         self.txt_user.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_user.setObjectName("txt_user")
         self.txt_password = QtWidgets.QLineEdit(self.frame)
-        self.txt_password.setGeometry(QtCore.QRect(100, 150, 221, 21))
+        self.txt_password.setGeometry(QtCore.QRect(100, 240, 221, 21))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.txt_password.setFont(font)
         self.txt_password.setStyleSheet("color: white;\n"
-"border: 1px solid white;")
+"border: 1px solid white;\n"
+"border-radius: 4px;")
         self.txt_password.setText("")
         self.txt_password.setEchoMode(QtWidgets.QLineEdit.Password)
         self.txt_password.setAlignment(QtCore.Qt.AlignCenter)
         self.txt_password.setObjectName("txt_password")
         self.button_login = QtWidgets.QPushButton(self.frame)
-        self.button_login.setGeometry(QtCore.QRect(170, 200, 75, 23))
+        self.button_login.setGeometry(QtCore.QRect(170, 300, 75, 23))
         self.button_login.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.button_login.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: blue;\n"
+"    background-color: rgba(255, 255, 0,0.60);\n"
+"    color: black;\n"
 "    border-radius :10px\n"
 "}\n"
 "\n"
 "QPushButton:hover {\n"
 "    background-color: lightgray;\n"
-"}")
+"}\n"
+"\n"
+"")
         self.button_login.setObjectName("button_login")
         self.label_2 = QtWidgets.QLabel(self.frame)
-        self.label_2.setGeometry(QtCore.QRect(200, 230, 21, 31))
+        self.label_2.setGeometry(QtCore.QRect(200, 330, 21, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_2.setFont(font)
@@ -66,12 +70,13 @@ class Tela_Login(object):
 "color: white;")
         self.label_2.setObjectName("label_2")
         self.button_register = QtWidgets.QPushButton(self.frame)
-        self.button_register.setGeometry(QtCore.QRect(170, 270, 75, 23))
+        self.button_register.setGeometry(QtCore.QRect(170, 370, 75, 23))
         self.button_register.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.button_register.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: blue;\n"
+"    background-color: rgba(255, 255, 0,0.60);\n"
+"    color: black;\n"
 "    border-radius :10px\n"
+"\n"
 "}\n"
 "\n"
 "\n"
@@ -79,15 +84,42 @@ class Tela_Login(object):
 "    background-color: lightgray;\n"
 "}")
         self.button_register.setObjectName("button_register")
+        self.label_5 = QtWidgets.QLabel(self.frame)
+        self.label_5.setGeometry(QtCore.QRect(0, -10, 411, 71))
+        font = QtGui.QFont()
+        font.setPointSize(28)
+        font.setBold(True)
+        font.setItalic(True)
+        font.setWeight(75)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("color: white;\n"
+"border-bottom: 1px solid yellow;\n"
+"background-color: black;")
+        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_5.setObjectName("label_5")
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setGeometry(QtCore.QRect(60, 240, 21, 31))
+        self.label.setStyleSheet("background-image: url(lock.svg);\n"
+"background-repeat: no-repeat;\n"
+"border-bottom: 1px black;")
+        self.label.setText("")
+        self.label.setObjectName("label")
+        self.label_3 = QtWidgets.QLabel(self.frame)
+        self.label_3.setGeometry(QtCore.QRect(60, 190, 31, 21))
+        self.label_3.setStyleSheet("background-image: url(user.svg);\n"
+"background-repeat: no-repeat;\n"
+"border-bottom: 1px black;")
+        self.label_3.setText("")
+        self.label_3.setObjectName("label_3")
         self.pushButton = QtWidgets.QPushButton(Login)
-        self.pushButton.setGeometry(QtCore.QRect(10, 583, 61, 20))
+        self.pushButton.setGeometry(QtCore.QRect(570, 580, 61, 20))
         font = QtGui.QFont()
         font.setPointSize(11)
         self.pushButton.setFont(font)
         self.pushButton.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton.setStyleSheet("QPushButton {\n"
-"    background-color: white;\n"
-"    color: blue;\n"
+"    background-color: rgba(255, 255, 0,0.60);\n"
+"    color: black;\n"
 "    border-radius :10px\n"
 "}\n"
 "\n"
@@ -96,14 +128,6 @@ class Tela_Login(object):
 "    background-color: lightgray;\n"
 "}")
         self.pushButton.setObjectName("pushButton")
-        self.label = QtWidgets.QLabel(Login)
-        self.label.setGeometry(QtCore.QRect(280, 50, 141, 131))
-        self.label.setStyleSheet("background-color: white;\n"
-"border-radius: 20px;")
-        self.label.setText("")
-        self.label.setPixmap(QtGui.QPixmap("../imagens/icon_title.png"))
-        self.label.setScaledContents(True)
-        self.label.setObjectName("label")
 
         self.retranslateUi(Login)
         QtCore.QMetaObject.connectSlotsByName(Login)
@@ -116,4 +140,5 @@ class Tela_Login(object):
         self.button_login.setText(_translate("Login", "Login"))
         self.label_2.setText(_translate("Login", "Or"))
         self.button_register.setText(_translate("Login", "Register"))
+        self.label_5.setText(_translate("Login", "CAST"))
         self.pushButton.setText(_translate("Login", "Sair"))

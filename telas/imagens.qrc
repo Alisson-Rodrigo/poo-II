@@ -1,5 +1,7 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>user.svg</file>
+    <file>lock.svg</file>
     <file>Meu projeto (6).jpg</file>
     <file>Meu projeto (5).jpg</file>
     <file>Meu projeto (4).jpg</file>

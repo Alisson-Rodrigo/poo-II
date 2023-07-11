@@ -43,7 +43,7 @@ class Tela_Menu(object):
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.pushButton_3 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_3.setGeometry(QtCore.QRect(20, 150, 111, 23))
+        self.pushButton_3.setGeometry(QtCore.QRect(20, 140, 111, 23))
         self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_3.setStyleSheet("QPushButton {\n"
 "    color:white;\n"
@@ -55,7 +55,7 @@ class Tela_Menu(object):
 "}")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.frame)
-        self.pushButton_4.setGeometry(QtCore.QRect(20, 200, 111, 23))
+        self.pushButton_4.setGeometry(QtCore.QRect(20, 220, 111, 23))
         self.pushButton_4.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_4.setStyleSheet("QPushButton {\n"
 "    color:white;\n"
@@ -66,6 +66,18 @@ class Tela_Menu(object):
 "    background-color: white;\n"
 "}")
         self.pushButton_4.setObjectName("pushButton_4")
+        self.pushButton_5 = QtWidgets.QPushButton(self.frame)
+        self.pushButton_5.setGeometry(QtCore.QRect(20, 180, 111, 23))
+        self.pushButton_5.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_5.setStyleSheet("QPushButton {\n"
+"    color:white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"    color:black;\n"
+"    background-color: white;\n"
+"}")
+        self.pushButton_5.setObjectName("pushButton_5")
         self.label_2 = QtWidgets.QLabel(Form)
         self.label_2.setGeometry(QtCore.QRect(280, 10, 181, 51))
         font = QtGui.QFont()
@@ -147,10 +159,22 @@ class Tela_Menu(object):
         self.lineEdit_4.setReadOnly(True)
         self.lineEdit_4.setObjectName("lineEdit_4")
         self.stackedWidget.addWidget(self.page_2)
+        self.page_4 = QtWidgets.QWidget()
+        self.page_4.setObjectName("page_4")
+        self.label_5 = QtWidgets.QLabel(self.page_4)
+        self.label_5.setGeometry(QtCore.QRect(10, 20, 511, 281))
+        font = QtGui.QFont()
+        font.setPointSize(20)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("color: white;\n"
+"border: None;")
+        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_5.setObjectName("label_5")
+        self.stackedWidget.addWidget(self.page_4)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
         self.textBrowser = QtWidgets.QTextBrowser(self.page_3)
-        self.textBrowser.setGeometry(QtCore.QRect(0, 30, 531, 301))
+        self.textBrowser.setGeometry(QtCore.QRect(0, 20, 531, 311))
         self.textBrowser.setStyleSheet("color: white;\n"
 "border: none;\n"
 "border-bottom: 1px solid white;")
@@ -158,7 +182,7 @@ class Tela_Menu(object):
         self.stackedWidget.addWidget(self.page_3)
 
         self.retranslateUi(Form)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(Form)
 
     def retranslateUi(self, Form):
@@ -167,18 +191,20 @@ class Tela_Menu(object):
         self.pushButton_2.setText(_translate("Form", "PERFIL"))
         self.label_3.setText(_translate("Form", "MENU"))
         self.pushButton_3.setText(_translate("Form", "SOBRE NÓS"))
-        self.pushButton_4.setText(_translate("Form", "SAIR"))
+        self.pushButton_4.setText(_translate("Form", "VOLTAR"))
+        self.pushButton_5.setText(_translate("Form", "CONTATO"))
         self.label_2.setText(_translate("Form", "CAST"))
         self.label.setText(_translate("Form", "SEJA BEM-VINDO, USER!"))
         self.label_4.setText(_translate("Form", "Nome:"))
         self.label_6.setText(_translate("Form", "Email:"))
         self.label_7.setText(_translate("Form", "Usuário:"))
         self.label_8.setText(_translate("Form", "Data nascimento:"))
+        self.label_5.setText(_translate("Form", "VOCÊ SERÁ REDIRECIONADO ..."))
         self.textBrowser.setHtml(_translate("Form", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:11pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Cast é uma plataforma de streaming inovadora que oferece uma ampla variedade de conteúdo audiovisual para os seus usuários. Com um catálogo diversificado que abrange filmes, séries, documentários, programas de TV e muito mais, Cast se destaca como uma opção abrangente para aqueles que buscam entretenimento de qualidade.</p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">A plataforma é projetada para oferecer uma experiência de usuário imersiva e personalizada, adaptando-se aos interesses e preferências individuais de cada usuário. Uma das características únicas da plataforma Cast é a sua interface intuitiva e fácil de usar. Os usuários podem navegar facilmente pelo catálogo, explorar diferentes categorias, descobrir novos lançamentos e encontrar seus programas favoritos com apenas alguns cliques</p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:11pt;\">Cast é uma plataforma de streaming inovadora que oferece uma ampla variedade de conteúdo audiovisual para os seus usuários. Com um catálogo diversificado que abrange filmes, séries, documentários, programas de TV e muito mais, Cast se destaca como uma opção abrangente para aqueles que buscam entretenimento de qualidade.</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'Ubuntu\'; font-size:11pt;\"><br /></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:11pt;\">A plataforma é projetada para oferecer uma experiência de usuário imersiva e personalizada, adaptando-se aos interesses e preferências individuais de cada usuário. Uma das características únicas da plataforma Cast é a sua interface intuitiva e fácil de usar. Os usuários podem navegar facilmente pelo catálogo, explorar diferentes categorias, descobrir novos lançamentos e encontrar seus programas favoritos com apenas alguns cliques</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'Ubuntu\'; font-size:11pt;\"><br /></span></p></body></html>"))

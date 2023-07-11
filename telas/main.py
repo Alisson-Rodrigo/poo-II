@@ -7,9 +7,12 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QIcon, QPixmap, QPalette, QColor
 from PyQt5.QtPrintSupport import *
+
 import sys
 import socket
-
+import webbrowser
+import threading
+import time
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton
 from PyQt5.QtMultimediaWidgets import QVideoWidget
@@ -115,6 +118,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
         self.tela_menu.pushButton_2.clicked.connect(self.showPerfil)
         self.tela_menu.pushButton_3.clicked.connect(self.showSobre)
+        self.tela_menu.pushButton_5.clicked.connect(self.showContato)
         self.tela_menu.pushButton_4.clicked.connect(self.voltar_tela2)
 
     
@@ -248,7 +252,12 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
     def showSobre(self):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_3)
-    
+
+    def showContato(self):
+        self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_4)
+        url = "https://wa.me/5589981186169"
+        webbrowser.open(url)
+                
     def close (self):
         self.client_socket.close()
         sys.exit(app.exec_())

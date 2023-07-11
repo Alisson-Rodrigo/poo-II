@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>652</width>
-    <height>614</height>
+    <height>618</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,14 +20,14 @@
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
-     <x>140</x>
-     <y>160</y>
+     <x>120</x>
+     <y>80</y>
      <width>411</width>
-     <height>351</height>
+     <height>441</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: gray;</string>
+    <string notr="true">background-color: rgb(66, 66, 66)</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -39,7 +39,7 @@
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>100</y>
+      <y>190</y>
       <width>221</width>
       <height>21</height>
      </rect>
@@ -51,7 +51,8 @@
     </property>
     <property name="styleSheet">
      <string notr="true">color: white;
-border: 1px solid white;</string>
+border: 1px solid white;
+border-radius: 4px;</string>
     </property>
     <property name="text">
      <string/>
@@ -67,7 +68,7 @@ border: 1px solid white;</string>
     <property name="geometry">
      <rect>
       <x>100</x>
-      <y>150</y>
+      <y>240</y>
       <width>221</width>
       <height>21</height>
      </rect>
@@ -79,7 +80,8 @@ border: 1px solid white;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">color: white;
-border: 1px solid white;</string>
+border: 1px solid white;
+border-radius: 4px;</string>
     </property>
     <property name="text">
      <string/>
@@ -98,7 +100,7 @@ border: 1px solid white;</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>200</y>
+      <y>300</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -108,14 +110,16 @@ border: 1px solid white;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-color: white;
-	color: blue;
+	background-color: rgb(255, 255, 0,0.60);
+	color: black;
 	border-radius :10px
 }
 
 QPushButton:hover {
 	background-color: lightgray;
-}</string>
+}
+
+</string>
     </property>
     <property name="text">
      <string>Login</string>
@@ -125,7 +129,7 @@ QPushButton:hover {
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>230</y>
+      <y>330</y>
       <width>21</width>
       <height>31</height>
      </rect>
@@ -147,7 +151,7 @@ color: white;</string>
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>270</y>
+      <y>370</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -157,9 +161,10 @@ color: white;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-	background-color: white;
-	color: blue;
+	background-color: rgb(255, 255, 0,0.60);
+	color: black;
 	border-radius :10px
+
 }
 
 
@@ -171,12 +176,77 @@ QPushButton:hover {
      <string>Register</string>
     </property>
    </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>-10</y>
+      <width>411</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>28</pointsize>
+      <weight>75</weight>
+      <italic>true</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: white;
+border-bottom: 1px solid yellow;
+background-color: black;</string>
+    </property>
+    <property name="text">
+     <string>CAST</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>240</y>
+      <width>21</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/newPrefix/lock.svg);
+background-repeat: no-repeat;
+border-bottom: 1px black;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>190</y>
+      <width>31</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(:/newPrefix/user.svg);
+background-repeat: no-repeat;
+border-bottom: 1px black;</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
   </widget>
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>583</y>
+     <x>570</x>
+     <y>580</y>
      <width>61</width>
      <height>20</height>
     </rect>
@@ -191,8 +261,8 @@ QPushButton:hover {
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-	background-color: white;
-	color: blue;
+	background-color: rgb(255, 255, 0,0.60);
+	color: black;
 	border-radius :10px
 }
 
@@ -205,30 +275,9 @@ QPushButton:hover {
     <string>Sair</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>50</y>
-     <width>141</width>
-     <height>131</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">background-color: white;
-border-radius: 20px;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-   <property name="pixmap">
-    <pixmap>../imagens/icon_title.png</pixmap>
-   </property>
-   <property name="scaledContents">
-    <bool>true</bool>
-   </property>
-  </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="imagens.qrc"/>
+ </resources>
  <connections/>
 </ui>
