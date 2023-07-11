@@ -79,7 +79,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
         ip = '10.180.44.22'
-        port = 10006
+        port = 10010
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
