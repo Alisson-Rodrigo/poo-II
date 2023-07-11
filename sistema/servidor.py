@@ -132,11 +132,11 @@ class MyThread(threading.Thread):
                     print(caminho)
                     self.enviar_filme(caminho)
                 elif mensagem_str[0] == '5':
-                    enviar = 'liberado'
-                    con.send(enviar.encode())
+                    lock = threading.Lock()
+                    lock.acquire()
                     try:
-                        lock = threading.Lock()
-                        lock.acquire()
+                        enviar = 'liberado'
+                        con.send(enviar.encode())
                     finally:
                         lock.release()
 

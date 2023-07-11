@@ -260,6 +260,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         mensagem = f'5,exibir_contato'
         self.client_socket.send(mensagem.encode())
         resposta = self.client_socket.recv(1024).decode()
+        if resposta == 'liberado':
+            self.exibir_contato()
     
     def exibir_contato(self):
         url = "https://wa.me/5589981186169"
