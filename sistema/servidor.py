@@ -6,7 +6,7 @@ import time
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="Curupira098*",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -131,9 +131,6 @@ class MyThread(threading.Thread):
                     caminho = mensagem_str[1]
                     print(caminho)
                     self.enviar_filme(caminho)
-                else:
-                    print (f'Conexão finalizada pelo cliente, {self.client_socket}')
-                    con.close()
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
                 con.close()
@@ -144,7 +141,7 @@ class MyThread(threading.Thread):
 
     def enviar_filme(self,caminho):
         buffer_size = 4096
-        video_file_path = f'C:/Users/PurooLight/Documents/estudos/pooII/poo-II/sistema/videos/{caminho}'
+        video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
         video_file_size = os.path.getsize(video_file_path)       
         with open(video_file_path, 'rb') as video_file:
             client_socket.send(str(video_file_size).encode())            
@@ -161,7 +158,7 @@ if __name__ == "__main__":
     sistema = Operacoes()
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
-    ip = ip_Adress
+    ip = '10.0.0.176'
     port = 10005
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
