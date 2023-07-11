@@ -140,18 +140,19 @@ class MyThread(threading.Thread):
                 break
 
     def enviar_filme(self,caminho):
-        buffer_size = 4096
-        video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
-        video_file_size = os.path.getsize(video_file_path)       
-        with open(video_file_path, 'rb') as video_file:
-            client_socket.send(str(video_file_size).encode())            
-            while True:
-                data = video_file.read(buffer_size)
-                if not data:
-                    break
-                client_socket.send(data)
-                print (data)
-        video_file.close()
+        while True:
+            buffer_size = 4096
+            video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
+            video_file_size = os.path.getsize(video_file_path)       
+            with open(video_file_path, 'rb') as video_file:
+                client_socket.send(str(video_file_size).encode())            
+                while True:
+                    data = video_file.read(buffer_size)
+                    if not data:
+                        break
+                    client_socket.send(data)
+                    print (data)
+            video_file.close()
 
 if __name__ == "__main__":
     sistema = Operacoes()

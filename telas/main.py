@@ -136,14 +136,15 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         msg = f'4,{caminho}'
         self.client_socket.send(msg.encode())
         tamanho_arquivo = int(self.client_socket.recv(1024).decode())   
-        with open(caminho, 'wb') as video_file:
-            bytes_recebidos = 0
-            while bytes_recebidos < tamanho_arquivo:
-                data = self.client_socket.recv(4096)
-                bytes_recebidos += len(data)
-                video_file.write(data)
-            print('Vídeo recebido e salvo com sucesso!')
-        return caminho
+        while True:
+            with open(caminho, 'wb') as video_file:
+                bytes_recebidos = 0
+                while bytes_recebidos < tamanho_arquivo:
+                    data = self.client_socket.recv(4096)
+                    bytes_recebidos += len(data)
+                    video_file.write(data)
+                print('Vídeo recebido e salvo com sucesso!')
+            return caminho
 
 
     def verificacao_login(self):
