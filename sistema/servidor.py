@@ -151,7 +151,6 @@ class MyThread(threading.Thread):
                     break
                 client_socket.send(data)
                 print (data)
-        # Fecha o arquivo e o socket
         video_file.close()
 
 if __name__ == "__main__":
