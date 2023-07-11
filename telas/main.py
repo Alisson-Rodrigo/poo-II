@@ -79,7 +79,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
         ip = '10.180.44.22'
-        port = 10011
+        port = 10012
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -136,15 +136,14 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         msg = f'4,{caminho}'
         self.client_socket.send(msg.encode())
         tamanho_arquivo = int(self.client_socket.recv(1024).decode())   
-        while True:
-            with open(caminho, 'wb') as video_file:
-                bytes_recebidos = 0
-                while bytes_recebidos < tamanho_arquivo:
-                    data = self.client_socket.recv(4096)
-                    bytes_recebidos += len(data)
-                    video_file.write(data)
-                print('Vídeo recebido e salvo com sucesso!')
-            return caminho
+        with open(caminho, 'wb') as video_file:
+            bytes_recebidos = 0
+            while bytes_recebidos < tamanho_arquivo:
+                data = self.client_socket.recv(4096)
+                bytes_recebidos += len(data)
+                video_file.write(data)
+            print('Vídeo recebido e salvo com sucesso!')
+        return caminho
 
 
     def verificacao_login(self):
