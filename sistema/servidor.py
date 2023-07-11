@@ -150,10 +150,10 @@ class MyThread(threading.Thread):
                 break
 
     def enviar_filme(self,caminho):
-        while True:
-            buffer_size = 4096
-            video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
-            video_file_size = os.path.getsize(video_file_path)       
+        buffer_size = 4096
+        video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
+        video_file_size = os.path.getsize(video_file_path)
+        while True:       
             with open(video_file_path, 'rb') as video_file:
                 client_socket.send(str(video_file_size).encode())            
                 while True:
@@ -169,7 +169,7 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = '10.180.44.22'
-    port = 10010
+    port = 10011
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
