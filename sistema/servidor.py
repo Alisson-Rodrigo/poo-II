@@ -127,10 +127,22 @@ class MyThread(threading.Thread):
                     username = mensagem_str[1]
                     dados = f'{sistema.exibir_dados(username)}'
                     con.send(dados.encode())
+
                 elif mensagem_str[0] == '4':
                     caminho = mensagem_str[1]
-                    print(caminho)
-                    self.enviar_filme(caminho)
+                    buffer_size = 4096
+                    video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
+                    video_file_size = os.path.getsize(video_file_path)
+                    with open(video_file_path, 'rb') as video_file:
+                        client_socket.send(str(video_file_size).encode())            
+                        while True:
+                            data = video_file.read(buffer_size)
+                            if not data:
+                                break
+                            self.client_socket.send(data)
+                            print (data)
+                    video_file.close()
+
                 elif mensagem_str[0] == '5':
                     lock = threading.Lock()
                     lock.acquire()
@@ -149,6 +161,7 @@ class MyThread(threading.Thread):
                 con.close()
                 break
 
+    '''
     def enviar_filme(self,caminho):
         buffer_size = 4096
         video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
@@ -162,13 +175,14 @@ class MyThread(threading.Thread):
                 client_socket.send(data)
                 print (data)
         video_file.close()
+    '''
 
 if __name__ == "__main__":
     sistema = Operacoes()
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = '10.180.44.22'
-    port = 10012
+    port = 10013
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
