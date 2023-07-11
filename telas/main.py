@@ -79,7 +79,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
         ip = '10.0.0.176'
-        port = 10005
+        port = 10006
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -94,8 +94,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_primaria.pushButton_10.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("videoplayback.mp4")))
+        self.tela_primaria.pushButton_10.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("ShaunOCarneiro-ClipedeEstreia-TVMarcelito2-FaixaInfantil.mp4")))
         self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD)(1).mp4")))
+        self.tela_primaria.pushButton_14.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("AberturaOShowDeTomeJerryBomDiaeCiaSbt.mp4")))
         self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
