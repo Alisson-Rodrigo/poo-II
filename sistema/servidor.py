@@ -131,6 +131,16 @@ class MyThread(threading.Thread):
                     caminho = mensagem_str[1]
                     print(caminho)
                     self.enviar_filme(caminho)
+                elif mensagem_str[0] == '5':
+                    enviar = 'liberado'
+                    con.send(enviar.encode())
+                    try:
+                        lock = threading.Lock()
+                        lock.acquire()
+                    finally:
+                        lock.release()
+
+                    
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
                 con.close()

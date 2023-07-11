@@ -257,8 +257,14 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
     def showContato(self):
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_4)
+        mensagem = f'5,exibir_contato'
+        self.client_socket.send(mensagem.encode())
+        resposta = self.client_socket.recv(1024).decode()
+    
+    def exibir_contato(self):
         url = "https://wa.me/5589981186169"
         webbrowser.open(url)
+
                 
     def close (self):
         self.client_socket.close()
