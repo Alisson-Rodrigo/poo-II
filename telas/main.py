@@ -266,7 +266,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def exibir_contato(self):
         url = "https://wa.me/5589981186169"
         webbrowser.open(url)
-
                 
     def close (self):
         self.client_socket.close()
