@@ -158,7 +158,7 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = '10.180.44.22'
-    port = 10006
+    port = 10010
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
