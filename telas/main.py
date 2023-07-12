@@ -78,8 +78,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.setupUi(self)
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
-        ip = '10.180.44.22'
-        port = 10013
+        ip = ip_Adress
+        port = 10006
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -94,9 +94,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
         self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_primaria.pushButton_10.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("ShaunOCarneiro-ClipedeEstreia-TVMarcelito2-FaixaInfantil.avi")))
+        self.tela_primaria.pushButton_10.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("ShaunOCarneiro-ClipedeEstreia-TVMarcelito2-FaixaInfantil.mp4")))
         self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD)(1).mp4")))
-        self.tela_primaria.pushButton_14.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Abertura-O-Show-De-Tom-e-Jerry-Bom-Dia-e-Cia-Sbt.avi")))
+        self.tela_primaria.pushButton_14.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("AberturaOShowDeTomeJerryBomDiaeCiaSbt.mp4")))
         self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
@@ -109,7 +109,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_7.clicked.connect(self.showTerror)
         self.tela_categoria.pushButton_8.clicked.connect(self.showInfantil)
         self.tela_categoria.pushButton_9.clicked.connect(self.showAnime)
-        self.tela_categoria.pushButton_20.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("videoplayback.mp4")))
+        self.tela_categoria.pushButton_20.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Transient3_ExtendedandUnused.mp4")))
 
         self.tela_favoritos.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_favoritos.pushButton_4.clicked.connect(self.abrir_tela_categoria)
