@@ -166,7 +166,6 @@ class MyThread(threading.Thread):
                 print(data)
         video_file.close()
 
-
 if __name__ == "__main__":
     sistema = Operacoes()
     hostname = socket.gethostname()
