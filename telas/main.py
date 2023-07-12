@@ -24,7 +24,7 @@ from PyQt5.QtCore import QUrl
 from tela_login import Tela_Login
 from tela_inicial import Tela_Inicial
 from tela_cadastro import Tela_Cadastro
-from tela_categorias import Tela_Categoria
+from tela_categoria import Tela_Categoria
 from tela_favoritos import Tela_Favoritos
 from tela_menu import Tela_Menu
 
@@ -92,7 +92,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_cadastro.pushButton_2.clicked.connect(self.voltar_tela)
 
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
-        self.tela_primaria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_primaria.pushButton_10.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("ShaunOCarneiro-ClipedeEstreia-TVMarcelito2-FaixaInfantil.mp4")))
         self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD)(1).mp4")))
@@ -100,7 +99,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_primaria.pushButton.clicked.connect(self.voltar_tela)
 
         self.tela_categoria.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_categoria.pushButton_3.clicked.connect(self.abrir_tela_favoritos)
         self.tela_categoria.pushButton_34.clicked.connect(self.voltar_tela2)
 
         self.tela_categoria.pushButton.clicked.connect(self.showAcao)
@@ -111,9 +109,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_9.clicked.connect(self.showAnime)
         self.tela_categoria.pushButton_20.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Transient3_ExtendedandUnused.mp4")))
 
-        self.tela_favoritos.pushButton_2.clicked.connect(self.abrir_menu)
-        self.tela_favoritos.pushButton_4.clicked.connect(self.abrir_tela_categoria)
-        self.tela_favoritos.pushButton_34.clicked.connect(self.voltar_tela2)
 
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page)
 
@@ -212,8 +207,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def abrir_tela_categoria(self):
         self.QtStack.setCurrentIndex(3)
         self.showInicial()
-    def abrir_tela_favoritos(self):
-        self.QtStack.setCurrentIndex(4)
     def abrir_menu(self):
         self.QtStack.setCurrentIndex(5)
         self.showInicial_menu()

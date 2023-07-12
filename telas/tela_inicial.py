@@ -83,25 +83,6 @@ class Tela_Inicial(object):
         self.pushButton.setStyleSheet("background-image: url(log-out.svg);\n"
 "background-repeat: no-repeat;")
         self.pushButton.setObjectName("pushButton")
-        self.pushButton_3 = QtWidgets.QPushButton(self.frame_4)
-        self.pushButton_3.setGeometry(QtCore.QRect(130, 70, 101, 25))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        font.setBold(True)
-        font.setWeight(75)
-        self.pushButton_3.setFont(font)
-        self.pushButton_3.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_3.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"border: 0.5px solid white;\n"
-"border-radius: 3px;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    color:black;\n"
-"    background-color: white;\n"
-"}")
-        self.pushButton_3.setObjectName("pushButton_3")
         self.frame = QtWidgets.QFrame(self.centralwidget)
         self.frame.setGeometry(QtCore.QRect(0, 590, 1251, 51))
         self.frame.setStyleSheet("background-color: rgb(0, 0, 0);")
@@ -425,7 +406,6 @@ class Tela_Inicial(object):
         self.pushButton_4.setText(_translate("MainWindow", "Categórias"))
         self.label_5.setText(_translate("MainWindow", "CAST"))
         self.pushButton.setText(_translate("MainWindow", "PushButton"))
-        self.pushButton_3.setText(_translate("MainWindow", "Favoritos"))
         self.label_2.setText(_translate("MainWindow", "Desenvolvido por Alisson Rodrigo"))
         self.label_3.setText(_translate("MainWindow", "Em Alta"))
         self.label_4.setText(_translate("MainWindow", "Indicação Semanal"))
