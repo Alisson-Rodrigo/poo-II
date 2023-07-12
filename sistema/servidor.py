@@ -3,6 +3,7 @@ import threading, socket
 import os
 import time
 
+
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
@@ -25,6 +26,14 @@ class Operacoes():
             usuario VARCHAR(50),
             senha VARCHAR(50),
             confirmar_senha VARCHAR(50)
+        )""")
+
+        cursor.execute("""CREATE TABLE IF NOT EXISTS favoritos (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            usuario_id INT,
+            filme_id INT,
+            FOREIGN KEY (usuario_id) REFERENCES cadastro (id),
+            FOREIGN KEY (filme_id) REFERENCES filmes (id)
         )""")
 
         cursor.execute("""CREATE TABLE IF NOT EXISTS generos (
@@ -86,9 +95,11 @@ class Operacoes():
         resultado = cursor.fetchall()
         return resultado
     
-
-import threading
-import os
+    def favoritar_Fav(self,filme_id, usuario_id):
+        cursor.execute('''INSERT INTO favoritos (filme_id, usuario_id) VALUES (%s,%s)''', (filme_id, usuario_id))
+        conexao.commit()
+        print('Favoritado com sucesso!')
+        return True
 
 class MyThread(threading.Thread):
     def __init__(self, client_address, client_socket):
@@ -144,6 +155,13 @@ class MyThread(threading.Thread):
                         con.send(enviar.encode())
                     finally:
                         self.lock.release()
+                elif mensagem_str[0] == '6':
+                    video_path = mensagem_str[1]
+                    usuario_id = mensagem_str[2]
+                    sistema.favoritar_Fav(video_path, usuario_id)
+                    enviar = '1'
+                    con.send(enviar.encode())
+
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
                 con.close()
@@ -163,7 +181,6 @@ class MyThread(threading.Thread):
                 if not data:
                     break
                 client_socket.send(data)
-                print(data)
         video_file.close()
 
 if __name__ == "__main__":
@@ -171,7 +188,7 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = ip_Adress
-    port = 10007
+    port = 10008
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
