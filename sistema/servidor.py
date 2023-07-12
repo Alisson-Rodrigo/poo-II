@@ -96,10 +96,12 @@ class MyThread(threading.Thread):
         self.name = ''
         self.client_socket = client_socket
         print('Nova conexão, endereço: ', client_address)
+        self.lock = threading.Lock()
+
  
     def run(self):
-        con = self.client_socket
         while True:
+            con = self.client_socket
             try:
                 mensagem = con.recv(1024)
                 mensagem_str = mensagem.decode().split(',')
@@ -134,6 +136,14 @@ class MyThread(threading.Thread):
                     caminho = mensagem_str[1]
                     print(caminho)
                     self.enviar_filme(caminho, con)
+                elif mensagem_str[0] == '5':
+                    self.lock
+                    self.lock.acquire()
+                    try:
+                        enviar = 'liberado'
+                        con.send(enviar.encode())
+                    finally:
+                        self.lock.release()
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
                 con.close()
