@@ -6,7 +6,7 @@ import time
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Curupira098*",
+    password="1234",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -87,6 +87,9 @@ class Operacoes():
         return resultado
     
 
+import threading
+import os
+
 class MyThread(threading.Thread):
     def __init__(self, client_address, client_socket):
         threading.Thread.__init__(self)
@@ -127,32 +130,10 @@ class MyThread(threading.Thread):
                     username = mensagem_str[1]
                     dados = f'{sistema.exibir_dados(username)}'
                     con.send(dados.encode())
-
                 elif mensagem_str[0] == '4':
                     caminho = mensagem_str[1]
-                    buffer_size = 4096
-                    video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
-                    video_file_size = os.path.getsize(video_file_path)
-                    with open(video_file_path, 'rb') as video_file:
-                        client_socket.send(str(video_file_size).encode())            
-                        while True:
-                            data = video_file.read(buffer_size)
-                            if not data:
-                                break
-                            self.client_socket.send(data)
-                            print (data)
-                    video_file.close()
-
-                elif mensagem_str[0] == '5':
-                    lock = threading.Lock()
-                    lock.acquire()
-                    try:
-                        enviar = 'liberado'
-                        con.send(enviar.encode())
-                    finally:
-                        lock.release()
-
-                    
+                    print(caminho)
+                    self.enviar_filme(caminho, con)
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
                 con.close()
@@ -161,11 +142,10 @@ class MyThread(threading.Thread):
                 con.close()
                 break
 
-    '''
-    def enviar_filme(self,caminho):
+    def enviar_filme(self, caminho, client_socket):
         buffer_size = 4096
-        video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
-        video_file_size = os.path.getsize(video_file_path)
+        video_file_path = f'C:/Users/PurooLight/Documents/estudos/pooII/poo-II/sistema/videos/{caminho}'
+        video_file_size = os.path.getsize(video_file_path)       
         with open(video_file_path, 'rb') as video_file:
             client_socket.send(str(video_file_size).encode())            
             while True:
@@ -173,16 +153,16 @@ class MyThread(threading.Thread):
                 if not data:
                     break
                 client_socket.send(data)
-                print (data)
+                print(data)
         video_file.close()
-    '''
+
 
 if __name__ == "__main__":
     sistema = Operacoes()
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
-    ip = '10.180.44.22'
-    port = 10013
+    ip = ip_Adress
+    port = 10006
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
