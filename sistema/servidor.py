@@ -140,7 +140,6 @@ class MyThread(threading.Thread):
                     con.send(dados.encode())
                 elif mensagem_str[0] == '4':
                     caminho = mensagem_str[1]
-                    print(caminho)
                     self.enviar_filme(caminho, con)
                 elif mensagem_str[0] == '5':
                     self.lock
