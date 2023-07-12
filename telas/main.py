@@ -273,13 +273,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def abrir_tela_midia(self, caminho):
         self.player = VideoPlayer(caminho)
 
-    def favoritos (self, resposta, caminho):
-        retorno = self.player.salvar_Fav()
-        retorno[2] = self.username_login
-        if retorno[1] == QMessageBox.Yes:
-            self.client_socket.send(f'6,{retorno[1]},{retorno[2]}'.encode())
-        else:
-            pass
 
 class VideoPlayer(QWidget):
     def __init__(self, video_path):
@@ -330,17 +323,7 @@ class VideoPlayer(QWidget):
     def closeEvent(self, event):
         self.media_player.stop()
         event.accept()
-        message_box = QMessageBox()
-        message_box.setIcon(QMessageBox.Question)
-        message_box.setText("Você gostou do video?")
-        message_box.setStandardButtons(QMessageBox.No | QMessageBox.Yes)
-        self.resposta = message_box.exec_()
-        if self.resposta == QMessageBox.Yes:
-            self.resposta = 'sim'
-            favoritar = Main()
-            favoritar.favoritos(self, self.resposta, self.video_path)
                   
-
     def toggle_play_pause(self):
         if self.is_playing:
             self.media_player.pause()

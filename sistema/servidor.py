@@ -94,12 +94,7 @@ class Operacoes():
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
         resultado = cursor.fetchall()
         return resultado
-    
-    def favoritar_Fav(self,filme_id, usuario_id):
-        cursor.execute('''INSERT INTO favoritos (filme_id, usuario_id) VALUES (%s,%s)''', (filme_id, usuario_id))
-        conexao.commit()
-        print('Favoritado com sucesso!')
-        return True
+
 
 class MyThread(threading.Thread):
     def __init__(self, client_address, client_socket):
@@ -155,12 +150,6 @@ class MyThread(threading.Thread):
                         con.send(enviar.encode())
                     finally:
                         self.lock.release()
-                elif mensagem_str[0] == '6':
-                    video_path = mensagem_str[1]
-                    usuario_id = mensagem_str[2]
-                    sistema.favoritar_Fav(video_path, usuario_id)
-                    enviar = '1'
-                    con.send(enviar.encode())
 
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
