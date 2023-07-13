@@ -32,6 +32,39 @@ from tela_admin import Tela_Admin
 
 
 class Ui_Main(object):
+    """
+    Nessa classe, e criado o layout principal do programa.
+
+    ...
+    
+    Classe detalhada:
+    - A classe Ui_Main e responsavel por criar o layout principal do programa, onde sao adicionadas as telas de login, cadastro, menu, categorias e admin. Nessa classe é onde será chamada todas as telas.
+
+    Attributes
+    ----------
+    - self.QtStack: e um objeto do tipo QStackedLayout, que e responsavel por adicionar as telas do programa.
+    - self.stack0: e um objeto do tipo QMainWindow, que e responsavel por adicionar a tela de login.
+    - self.stack1: e um objeto do tipo QMainWindow, que e responsavel por adicionar a tela de cadastro.
+    - self.stack2: e um objeto do tipo QMainWindow, que e responsavel por adicionar a tela de menu.
+    - self.stack3: e um objeto do tipo QMainWindow, que e responsavel por adicionar a tela de categorias.
+    - self.stack4: e um objeto do tipo QMainWindow, que e responsavel por adicionar a tela de favoritos.
+    - self.stack5: e um objeto do tipo QMainWindow, que e responsavel por adicionar a tela de menu.
+    - self.stack6: e um objeto do tipo QMainWindow, que e responsavel por adicionar a tela de admin.
+
+    - self.tela_inicial: e um objeto do tipo Tela_Login, que e responsavel por chamar a tela de login.
+    - self.tela_cadastro: e um objeto do tipo Tela_Cadastro, que e responsavel por chamar a tela de cadastro.
+    - self.tela_primaria: e um objeto do tipo Tela_Inicial, que e responsavel por chamar a tela de menu.
+    - self.tela_categoria: e um objeto do tipo Tela_Categoria, que e responsavel por chamar a tela de categorias.
+    - self.tela_favoritos: e um objeto do tipo Tela_Favoritos, que e responsavel por chamar a tela de favoritos.
+    - self.tela_menu: e um objeto do tipo Tela_Menu, que e responsavel por chamar a tela de menu.
+    - self.tela_admin: e um objeto do tipo Tela_Admin, que e responsavel por chamar a tela de admin.
+
+    Methods
+    -------
+    - setupUi(self, Main): e um metodo que cria o layout principal do programa, onde sao adicionadas as telas de login, cadastro, menu, categorias e admin.
+
+
+    """
     def setupUi(self, Main):
         Main.setObjectName("Main")
         Main.resize(600, 400) 
@@ -221,7 +254,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.client_socket.send(msg.encode())
         resposta = self.client_socket.recv(1024).decode()
         lista_dados = ast.literal_eval(resposta)
-
 
         existing_layout = self.tela_admin.scrollAreaWidgetContents_3.layout()
         if existing_layout is not None:
