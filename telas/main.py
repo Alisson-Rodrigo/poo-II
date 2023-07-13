@@ -223,25 +223,21 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         lista_dados = ast.literal_eval(resposta)
 
 
-        # Verifique se já existe um layout e remova-o, se necessário
         existing_layout = self.tela_admin.scrollAreaWidgetContents_3.layout()
         if existing_layout is not None:
             QWidget().setLayout(existing_layout)
         
-        # Crie um layout vertical para a área de conteúdo da scrollArea
         layout = QVBoxLayout(self.tela_admin.scrollAreaWidgetContents_3)
         layout.setObjectName("layout")
 
-        # Itere sobre a lista de usuários e crie um QLabel para cada um
         for usuario in lista_dados:
-            label = QLabel(usuario, self.tela_admin.scrollAreaWidgetContents_3)
+            nomes = usuario.upper()
+            label = QLabel(nomes, self.tela_admin.scrollAreaWidgetContents_3)
             layout.addWidget(label)
-            label.setStyleSheet("font-size: 20px; color: white; border:none; border-bottom: 1px solid yellow;")  # Defina o tamanho da fonte e a cor do texto
-            label.setAlignment(Qt.AlignCenter)  # Centralize o texto
-            label.setMinimumSize(30, 160)  # Defina o tamanho mínimo desejado para o QLabel
-            label.setFixedSize(100, 30)  # Defina o tamanho fixo desejado para o QLabel
+            label.setStyleSheet("font-size: 20px; color: white; border:none; border-bottom: 1px solid yellow;")  
+            label.setAlignment(Qt.AlignCenter)  
+            label.setFixedSize(140, 30)  
 
-        # Configure o widget como conteúdo da scrollArea
         self.tela_admin.scrollArea.setWidget(self.tela_admin.scrollAreaWidgetContents_3)
 
     def voltar_tela(self):
