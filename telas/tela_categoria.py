@@ -22,7 +22,7 @@ class Tela_Categoria(object):
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.frame_4 = QtWidgets.QFrame(self.centralwidget)
-        self.frame_4.setGeometry(QtCore.QRect(0, -10, 1251, 131))
+        self.frame_4.setGeometry(QtCore.QRect(0, 0, 1251, 131))
         self.frame_4.setStyleSheet("background-color: black;")
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -217,79 +217,26 @@ class Tela_Categoria(object):
         self.stackedWidget_2.addWidget(self.page_1)
         self.page1_2 = QtWidgets.QWidget()
         self.page1_2.setObjectName("page1_2")
-        self.pushButton_20 = QtWidgets.QPushButton(self.page1_2)
-        self.pushButton_20.setGeometry(QtCore.QRect(10, 100, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_20.setFont(font)
-        self.pushButton_20.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_20.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_20.setObjectName("pushButton_20")
-        self.pushButton_21 = QtWidgets.QPushButton(self.page1_2)
-        self.pushButton_21.setGeometry(QtCore.QRect(10, 160, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_21.setFont(font)
-        self.pushButton_21.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_21.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_21.setObjectName("pushButton_21")
-        self.pushButton_22 = QtWidgets.QPushButton(self.page1_2)
-        self.pushButton_22.setGeometry(QtCore.QRect(10, 220, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_22.setFont(font)
-        self.pushButton_22.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_22.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_22.setObjectName("pushButton_22")
-        self.pushButton_23 = QtWidgets.QPushButton(self.page1_2)
-        self.pushButton_23.setGeometry(QtCore.QRect(10, 280, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_23.setFont(font)
-        self.pushButton_23.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_23.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_23.setObjectName("pushButton_23")
-        self.lineEdit_2 = QtWidgets.QLineEdit(self.page1_2)
-        self.lineEdit_2.setGeometry(QtCore.QRect(390, 10, 131, 41))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_2.setFont(font)
-        self.lineEdit_2.setStyleSheet("    color: white;")
-        self.lineEdit_2.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEdit_2.setReadOnly(True)
-        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.scrollArea = QtWidgets.QScrollArea(self.page1_2)
+        self.scrollArea.setGeometry(QtCore.QRect(0, 0, 901, 521))
+        self.scrollArea.setStyleSheet("border: none;")
+        self.scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setObjectName("scrollArea")
+        self.scrollAreaWidgetContents = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 887, 521))
+        self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.pushButton_10 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
+        self.pushButton_10.setMinimumSize(QtCore.QSize(300, 30))
+        self.pushButton_10.setMaximumSize(QtCore.QSize(300, 30))
+        self.pushButton_10.setStyleSheet("color: white;\n"
+"border: 1px solid rgba(246, 239, 18, 106);\n"
+"")
+        self.pushButton_10.setObjectName("pushButton_10")
+        self.verticalLayout.addWidget(self.pushButton_10)
+        self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.stackedWidget_2.addWidget(self.page1_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -691,11 +638,7 @@ class Tela_Categoria(object):
         self.pushButton_9.setText(_translate("MainWindow", "ANIMES"))
         self.label_2.setText(_translate("MainWindow", "EXPLORE"))
         self.lineEdit.setText(_translate("MainWindow", "SELECIONE UMA CATEGÓRIA, USER!"))
-        self.pushButton_20.setText(_translate("MainWindow", "VIDEOS TEMPORAIS"))
-        self.pushButton_21.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_22.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_23.setText(_translate("MainWindow", "FILME"))
-        self.lineEdit_2.setText(_translate("MainWindow", "AÇÃO"))
+        self.pushButton_10.setText(_translate("MainWindow", "Teste"))
         self.pushButton_30.setText(_translate("MainWindow", "FILME"))
         self.pushButton_31.setText(_translate("MainWindow", "FILME"))
         self.pushButton_32.setText(_translate("MainWindow", "FILME"))

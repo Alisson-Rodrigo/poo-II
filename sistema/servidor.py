@@ -35,37 +35,13 @@ class Operacoes():
             confirmar_senha VARCHAR(50)
         )""")
 
-        cursor.execute("""CREATE TABLE IF NOT EXISTS favoritos (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            usuario_id INT,
-            filme_id INT,
-            FOREIGN KEY (usuario_id) REFERENCES cadastro (id),
-            FOREIGN KEY (filme_id) REFERENCES filmes (id)
-        )""")
-
-        cursor.execute("""CREATE TABLE IF NOT EXISTS generos (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            nome VARCHAR(50)
-        )""")
-
-        cursor.execute("""CREATE TABLE IF NOT EXISTS diretores (
-            id INT AUTO_INCREMENT PRIMARY KEY,
-            nome VARCHAR(50)
-        )""")
-
         cursor.execute("""CREATE TABLE IF NOT EXISTS filmes (
             id INT AUTO_INCREMENT PRIMARY KEY,
             nome VARCHAR(100),
             caminho VARCHAR(60),
-            usuario_id INT,
-            genero_id INT,
-            diretor_id INT,
-            FOREIGN KEY (usuario_id) REFERENCES cadastro (id),
-            FOREIGN KEY (genero_id) REFERENCES generos (id),
-            FOREIGN KEY (diretor_id) REFERENCES diretores (id)
+            genero VARCHAR(50),
+            diretor VARCHAR(50)
         )""")
-
-
 
         conexao.commit()
 
@@ -111,8 +87,10 @@ class Operacoes():
         conexao.commit()
         return True
     def adicionar_midia(self, nome_filme, genero, diretor, caminho):
+        cursor.execute("""INSERT INTO filmes (nome, genero, diretor, caminho) VALUES (%s,%s,%s,%s)""", (nome_filme, genero, diretor, caminho))
+        conexao.commit()
+        return True
         
-
 
 class MyThread(threading.Thread):
     def __init__(self, client_address, client_socket):
@@ -178,12 +156,15 @@ class MyThread(threading.Thread):
                             enviar = '1'
                         else:
                             enviar = '0'
-                    elif mensagem_str[2] == 'adicionar_midia':
-                        nome_filme = mensagem_str[3]
-                        genero = mensagem_str[4]
-                        diretor = mensagem_str[5]
-                        caminho = mensagem_str[6]
-                        sistema.adicionar_midia(nome_filme, genero, diretor, caminho)
+                    elif mensagem_str[1] == 'adicionar_midia':
+                        nome_filme = mensagem_str[2]
+                        genero = mensagem_str[3]
+                        diretor = mensagem_str[4]
+                        caminho = mensagem_str[5]
+                        if sistema.adicionar_midia(nome_filme, genero, diretor, caminho):
+                            enviar = '1'
+                        else:
+                            enviar = '0'
                     con.send(str(enviar).encode())
                         
 
@@ -213,7 +194,7 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = ip_Adress
-    port = 10008
+    port = 10009
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)

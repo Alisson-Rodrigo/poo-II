@@ -84,7 +84,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
         ip = ip_Adress
-        port = 10008
+        port = 10009
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -112,7 +112,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_7.clicked.connect(self.showTerror)
         self.tela_categoria.pushButton_8.clicked.connect(self.showInfantil)
         self.tela_categoria.pushButton_9.clicked.connect(self.showAnime)
-        self.tela_categoria.pushButton_20.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Transient3_ExtendedandUnused.mp4")))
+        self.tela_categoria.pushButton_10.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Transient3_ExtendedandUnused.mp4")))
 
 
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page)

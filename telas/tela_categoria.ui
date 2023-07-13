@@ -34,7 +34,7 @@
     <property name="geometry">
      <rect>
       <x>0</x>
-      <y>-10</y>
+      <y>0</y>
       <width>1251</width>
       <height>131</height>
      </rect>
@@ -470,160 +470,60 @@ QPushButton:hover {
      </widget>
     </widget>
     <widget class="QWidget" name="page1_2">
-     <widget class="QPushButton" name="pushButton_20">
+     <widget class="QScrollArea" name="scrollArea">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>100</y>
-        <width>251</width>
-        <height>31</height>
+        <x>0</x>
+        <y>0</y>
+        <width>901</width>
+        <height>521</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
+       <string notr="true">border: none;</string>
       </property>
-      <property name="text">
-       <string>VIDEOS TEMPORAIS</string>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
       </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_21">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_22">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_23">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>280</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>10</y>
-        <width>131</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">	color: white;</string>
-      </property>
-      <property name="text">
-       <string>AÇÃO</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
+      <property name="widgetResizable">
        <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>887</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButton_10">
+          <property name="minimumSize">
+           <size>
+            <width>300</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: white;
+border: 1px solid rgba(246, 239, 18, 106);
+</string>
+          </property>
+          <property name="text">
+           <string>Teste</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">
