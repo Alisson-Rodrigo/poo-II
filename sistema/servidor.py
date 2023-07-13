@@ -55,9 +55,8 @@ class Operacoes():
 
         cursor.execute("""CREATE TABLE IF NOT EXISTS filmes (
             id INT AUTO_INCREMENT PRIMARY KEY,
-            titulo VARCHAR(100),
+            nome VARCHAR(100),
             caminho VARCHAR(60),
-            ano INT,
             usuario_id INT,
             genero_id INT,
             diretor_id INT,
@@ -111,6 +110,8 @@ class Operacoes():
         cursor.execute("DELETE FROM cadastro WHERE usuario = %s", (usuario,))
         conexao.commit()
         return True
+    def adicionar_midia(self, nome_filme, genero, diretor, caminho):
+        
 
 
 class MyThread(threading.Thread):
@@ -177,6 +178,12 @@ class MyThread(threading.Thread):
                             enviar = '1'
                         else:
                             enviar = '0'
+                    elif mensagem_str[2] == 'adicionar_midia':
+                        nome_filme = mensagem_str[3]
+                        genero = mensagem_str[4]
+                        diretor = mensagem_str[5]
+                        caminho = mensagem_str[6]
+                        sistema.adicionar_midia(nome_filme, genero, diretor, caminho)
                     con.send(str(enviar).encode())
                         
 

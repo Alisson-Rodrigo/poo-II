@@ -126,10 +126,10 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_admin.pushButton.clicked.connect(self.visualizar_usuarios)
         self.tela_admin.pushButton_3.clicked.connect(self.tela_deletar_usuario)
         self.tela_admin.pushButton_7.clicked.connect(self.deletar_usuario)
-
-
-
-    
+        self.tela_admin.pushButton_4.clicked.connect(self.tela_cadastrar_midia)
+        self.tela_admin.pushButton_5.clicked.connect(self.tela_deletar_midia)
+        self.tela_admin.pushButton_8.clicked.connect(self.adicionar_midia)
+ 
     def operacao_log(self, mensagem):
         if mensagem.split(',')[0] == '1':
             self.client_socket.send(mensagem.encode())
@@ -162,6 +162,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             if self.username_login == 'admin' and password_login == 'admin':
                 self.pagina_admin()
                 self.tela_inicial.txt_user.clear()
+                self.tela_inicial.txt_password.clear()
             elif self.operacao_log(mensagem):
                 self.QtStack.setCurrentIndex(2)
                 self.tela_inicial.txt_user.clear()
@@ -235,9 +236,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             nomes = usuario.upper()
             label = QLabel(nomes, self.tela_admin.scrollAreaWidgetContents_3)
             layout.addWidget(label)
-            label.setStyleSheet("font-size: 20px; color: white; border:none; border-bottom: 1px solid yellow;")  
+            label.setStyleSheet("font-size: 18px; color: white; border:none; border-bottom: 1px solid yellow;")  
             label.setAlignment(Qt.AlignCenter)  
-            label.setFixedSize(140, 30)  
+            label.setFixedSize(140, 30)
 
         self.tela_admin.scrollArea.setWidget(self.tela_admin.scrollAreaWidgetContents_3)
 
@@ -254,6 +255,33 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             self.tela_admin.lineEdit.clear()
         else:
             QMessageBox.about(self, "Erro", "Usuário não encontrado")
+
+    def tela_cadastrar_midia(self):
+        self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_4)
+
+    def adicionar_midia(self):
+        nome_filme = self.tela_admin.lineEdit_2.text()
+        genero = self.tela_admin.lineEdit_3.text()
+        diretor = self.tela_admin.lineEdit_4.text()
+        caminho = self.tela_admin.lineEdit_5.text()
+        if nome_filme and genero and diretor and caminho:
+            msg = f'6,adicionar_midia,{nome_filme},{genero},{diretor},{caminho}'
+            self.client_socket.send(msg.encode())
+            resposta = self.client_socket.recv(1024).decode()
+            if resposta == '1':
+                QMessageBox.about(self, "Sucesso", "Midia cadastrada com sucesso")
+                self.tela_admin.lineEdit_2.clear()
+                self.tela_admin.lineEdit_3.clear()
+                self.tela_admin.lineEdit_4.clear()
+                self.tela_admin.lineEdit_5.clear()
+            else:
+                QMessageBox.about(self, "Erro", "Midia não cadastrada")
+        else:
+            QMessageBox.about(self, "Erro", "Preencha todos os campos")
+
+
+    def tela_deletar_midia(self):
+        self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_5)
 
 
     def voltar_tela(self):
