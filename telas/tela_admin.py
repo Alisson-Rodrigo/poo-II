@@ -149,7 +149,7 @@ class Tela_Admin(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 472, 459))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 475, 459))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -167,12 +167,150 @@ class Tela_Admin(object):
         self.stackedWidget.addWidget(self.page)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
+        self.frame_2 = QtWidgets.QFrame(self.page_3)
+        self.frame_2.setGeometry(QtCore.QRect(230, 110, 491, 281))
+        self.frame_2.setStyleSheet("border-radius: 10px;")
+        self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_2.setObjectName("frame_2")
+        self.lineEdit = QtWidgets.QLineEdit(self.frame_2)
+        self.lineEdit.setGeometry(QtCore.QRect(70, 60, 371, 25))
+        self.lineEdit.setStyleSheet("color: rgb(192, 191, 188);")
+        self.lineEdit.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit.setObjectName("lineEdit")
+        self.label_3 = QtWidgets.QLabel(self.frame_2)
+        self.label_3.setGeometry(QtCore.QRect(30, 60, 31, 31))
+        self.label_3.setStyleSheet("background-image: url(user-x.svg);\n"
+"border: none;\n"
+"background-repeat: no-repeat;")
+        self.label_3.setObjectName("label_3")
+        self.pushButton_7 = QtWidgets.QPushButton(self.frame_2)
+        self.pushButton_7.setGeometry(QtCore.QRect(220, 110, 61, 31))
+        self.pushButton_7.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_7.setStyleSheet("QPushButton {\n"
+"color: white;\n"
+"border: 1px solid yellow;\n"
+"background-color: black;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: white;\n"
+"color: black;\n"
+"}")
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.label_2 = QtWidgets.QLabel(self.page_3)
+        self.label_2.setGeometry(QtCore.QRect(380, 70, 231, 31))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.label_2.setFont(font)
+        self.label_2.setStyleSheet("color: white;\n"
+"border: none;\n"
+"border-bottom: 1px solid yellow;\n"
+"")
+        self.label_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_2.setObjectName("label_2")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
+        self.frame_3 = QtWidgets.QFrame(self.page_4)
+        self.frame_3.setGeometry(QtCore.QRect(120, 100, 731, 401))
+        self.frame_3.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_3.setObjectName("frame_3")
+        self.lineEdit_2 = QtWidgets.QLineEdit(self.frame_3)
+        self.lineEdit_2.setGeometry(QtCore.QRect(200, 40, 371, 25))
+        self.lineEdit_2.setStyleSheet("color: rgb(192, 191, 188);\n"
+"border-radius: 8px;")
+        self.lineEdit_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_2.setObjectName("lineEdit_2")
+        self.lineEdit_3 = QtWidgets.QLineEdit(self.frame_3)
+        self.lineEdit_3.setGeometry(QtCore.QRect(200, 100, 371, 25))
+        self.lineEdit_3.setStyleSheet("color: rgb(192, 191, 188);\n"
+"border-radius: 8px;")
+        self.lineEdit_3.setText("")
+        self.lineEdit_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.lineEdit_4 = QtWidgets.QLineEdit(self.frame_3)
+        self.lineEdit_4.setGeometry(QtCore.QRect(200, 160, 371, 25))
+        self.lineEdit_4.setStyleSheet("color: rgb(192, 191, 188);\n"
+"border-radius: 8px;")
+        self.lineEdit_4.setText("")
+        self.lineEdit_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.lineEdit_5 = QtWidgets.QLineEdit(self.frame_3)
+        self.lineEdit_5.setGeometry(QtCore.QRect(200, 220, 371, 25))
+        self.lineEdit_5.setStyleSheet("color: rgb(192, 191, 188);\n"
+"border-radius: 8px;")
+        self.lineEdit_5.setText("")
+        self.lineEdit_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.pushButton_8 = QtWidgets.QPushButton(self.frame_3)
+        self.pushButton_8.setGeometry(QtCore.QRect(350, 280, 81, 31))
+        self.pushButton_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_8.setStyleSheet("QPushButton {\n"
+"color: white;\n"
+"border: 1px solid yellow;\n"
+"background-color: black;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: white;\n"
+"color: black;\n"
+"}")
+        self.pushButton_8.setObjectName("pushButton_8")
+        self.label_4 = QtWidgets.QLabel(self.page_4)
+        self.label_4.setGeometry(QtCore.QRect(390, 50, 261, 41))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.label_4.setFont(font)
+        self.label_4.setStyleSheet("color: white;\n"
+"border: none;\n"
+"border-bottom: 1px solid yellow;\n"
+"")
+        self.label_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_4.setObjectName("label_4")
         self.stackedWidget.addWidget(self.page_4)
         self.page_5 = QtWidgets.QWidget()
         self.page_5.setObjectName("page_5")
+        self.frame_4 = QtWidgets.QFrame(self.page_5)
+        self.frame_4.setGeometry(QtCore.QRect(230, 100, 491, 341))
+        self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame_4.setObjectName("frame_4")
+        self.lineEdit_6 = QtWidgets.QLineEdit(self.frame_4)
+        self.lineEdit_6.setGeometry(QtCore.QRect(70, 40, 371, 25))
+        self.lineEdit_6.setStyleSheet("color: rgb(192, 191, 188);\n"
+"border-radius: 8px;")
+        self.lineEdit_6.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit_6.setObjectName("lineEdit_6")
+        self.pushButton_9 = QtWidgets.QPushButton(self.frame_4)
+        self.pushButton_9.setGeometry(QtCore.QRect(210, 100, 81, 31))
+        self.pushButton_9.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_9.setStyleSheet("QPushButton {\n"
+"color: white;\n"
+"border: 1px solid yellow;\n"
+"background-color: black;\n"
+"border-radius: 4px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: white;\n"
+"color: black;\n"
+"}")
+        self.pushButton_9.setObjectName("pushButton_9")
+        self.label_5 = QtWidgets.QLabel(self.page_5)
+        self.label_5.setGeometry(QtCore.QRect(360, 50, 261, 41))
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.label_5.setFont(font)
+        self.label_5.setStyleSheet("color: white;\n"
+"border: none;\n"
+"border-bottom: 1px solid yellow;\n"
+"")
+        self.label_5.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_5.setObjectName("label_5")
         self.stackedWidget.addWidget(self.page_5)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -180,7 +318,7 @@ class Tela_Admin(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -195,3 +333,16 @@ class Tela_Admin(object):
         self.pushButton_5.setText(_translate("MainWindow", "DELETAR FILMES"))
         self.label.setText(_translate("MainWindow", "PAINEL DE CONTROLE DA PLATAFORMA \"CAST\""))
         self.pushButton_6.setText(_translate("MainWindow", "USUÁRIOS"))
+        self.lineEdit.setPlaceholderText(_translate("MainWindow", "Username"))
+        self.label_3.setText(_translate("MainWindow", "TextLabel"))
+        self.pushButton_7.setText(_translate("MainWindow", "Delete"))
+        self.label_2.setText(_translate("MainWindow", "Deleção de usuários"))
+        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Nome do filme"))
+        self.lineEdit_3.setPlaceholderText(_translate("MainWindow", "Gênero"))
+        self.lineEdit_4.setPlaceholderText(_translate("MainWindow", "Diretor"))
+        self.lineEdit_5.setPlaceholderText(_translate("MainWindow", "Caminho"))
+        self.pushButton_8.setText(_translate("MainWindow", "Cadastrar"))
+        self.label_4.setText(_translate("MainWindow", "Cadastrar filmes"))
+        self.lineEdit_6.setPlaceholderText(_translate("MainWindow", "Nome do filme"))
+        self.pushButton_9.setText(_translate("MainWindow", "Cadastrar"))
+        self.label_5.setText(_translate("MainWindow", "Deletar filmes"))
