@@ -15,6 +15,13 @@ conexao = mysql.connector.connect(
 cursor = conexao.cursor()
 
 class Operacoes():
+    """
+    Classe responsável por realizar as operações no banco de dados.
+    ...
+    
+
+    """
+
     def __init__(self):
 
         cursor.execute("""CREATE TABLE IF NOT EXISTS cadastro (
@@ -100,6 +107,10 @@ class Operacoes():
         resultados = cursor.fetchall()
         nomes = [resultado[0] for resultado in resultados]  # Extrai os valores da primeira coluna das tuplas
         return nomes
+    def deletar_usuario(self,usuario):
+        cursor.execute("DELETE FROM cadastro WHERE usuario = %s", (usuario,))
+        conexao.commit()
+        return True
 
 
 class MyThread(threading.Thread):
@@ -160,6 +171,12 @@ class MyThread(threading.Thread):
                     if mensagem_str[1] == 'exibir_usuarios':
                         exibir_dadosADMIN = sistema.exibir_dadosADMIN()
                         enviar = exibir_dadosADMIN
+                    elif mensagem_str[1] == 'deletar_usuario':
+                        usuario = mensagem_str[2]
+                        if sistema.deletar_usuario(usuario):
+                            enviar = '1'
+                        else:
+                            enviar = '0'
                     con.send(str(enviar).encode())
                         
 

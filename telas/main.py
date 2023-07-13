@@ -124,6 +124,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_6)
         self.tela_admin.pushButton_22.clicked.connect(self.voltar_tela)
         self.tela_admin.pushButton.clicked.connect(self.visualizar_usuarios)
+        self.tela_admin.pushButton_3.clicked.connect(self.tela_deletar_usuario)
+        self.tela_admin.pushButton_7.clicked.connect(self.deletar_usuario)
 
 
 
@@ -238,6 +240,21 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             label.setFixedSize(140, 30)  
 
         self.tela_admin.scrollArea.setWidget(self.tela_admin.scrollAreaWidgetContents_3)
+
+    def tela_deletar_usuario(self):
+        self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_3)
+
+    def deletar_usuario(self):
+        usuario = self.tela_admin.lineEdit.text()
+        msg = f'6,deletar_usuario,{usuario}'
+        self.client_socket.send(msg.encode())
+        resposta = self.client_socket.recv(1024).decode()
+        if resposta == '1':
+            QMessageBox.about(self, "Sucesso", "Usuário deletado com sucesso")
+            self.tela_admin.lineEdit.clear()
+        else:
+            QMessageBox.about(self, "Erro", "Usuário não encontrado")
+
 
     def voltar_tela(self):
         self.QtStack.setCurrentIndex(0)
