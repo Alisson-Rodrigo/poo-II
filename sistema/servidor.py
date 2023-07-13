@@ -7,7 +7,7 @@ import time
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Curupira098*",
+    password="1234",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -94,6 +94,12 @@ class Operacoes():
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
         resultado = cursor.fetchall()
         return resultado
+    
+    def exibir_dadosADMIN(self):
+        cursor.execute("SELECT usuario FROM cadastro")
+        resultados = cursor.fetchall()
+        nomes = [resultado[0] for resultado in resultados]  # Extrai os valores da primeira coluna das tuplas
+        return nomes
 
 
 class MyThread(threading.Thread):
@@ -149,6 +155,13 @@ class MyThread(threading.Thread):
                         con.send(enviar.encode())
                     finally:
                         self.lock.release()
+                elif mensagem_str[0] == '6':
+                    enviar = ''
+                    if mensagem_str[1] == 'exibir_usuarios':
+                        exibir_dadosADMIN = sistema.exibir_dadosADMIN()
+                        enviar = exibir_dadosADMIN
+                    con.send(str(enviar).encode())
+                        
 
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
@@ -160,7 +173,7 @@ class MyThread(threading.Thread):
 
     def enviar_filme(self, caminho, client_socket):
         buffer_size = 4096
-        video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
+        video_file_path = f'C:/Users/PurooLight/Documents/estudos/pooII/poo-II/sistema/videos/{caminho}'
         video_file_size = os.path.getsize(video_file_path)       
         with open(video_file_path, 'rb') as video_file:
             client_socket.send(str(video_file_size).encode())            

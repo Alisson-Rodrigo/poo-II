@@ -13,6 +13,7 @@ import socket
 import webbrowser
 import threading
 import time
+import ast
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton
 from PyQt5.QtMultimediaWidgets import QVideoWidget
@@ -27,6 +28,7 @@ from tela_cadastro import Tela_Cadastro
 from tela_categoria import Tela_Categoria
 from tela_favoritos import Tela_Favoritos
 from tela_menu import Tela_Menu
+from tela_admin import Tela_Admin
 
 
 class Ui_Main(object):
@@ -42,6 +44,7 @@ class Ui_Main(object):
         self.stack3 = QtWidgets.QMainWindow()
         self.stack4 = QtWidgets.QMainWindow()
         self.stack5 = QtWidgets.QMainWindow()
+        self.stack6 = QtWidgets.QMainWindow()
 
 
         self.tela_inicial = Tela_Login()
@@ -62,7 +65,8 @@ class Ui_Main(object):
         self.tela_menu = Tela_Menu()
         self.tela_menu.setupUi(self.stack5)
 
-
+        self.tela_admin = Tela_Admin()
+        self.tela_admin.setupUi(self.stack6)
 
         self.QtStack.addWidget(self.stack0)
         self.QtStack.addWidget(self.stack1)
@@ -70,6 +74,7 @@ class Ui_Main(object):
         self.QtStack.addWidget(self.stack3)
         self.QtStack.addWidget(self.stack4)
         self.QtStack.addWidget(self.stack5)
+        self.QtStack.addWidget(self.stack6)
 
 
 class Main(QtWidgets.QMainWindow, Ui_Main):
@@ -111,11 +116,16 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
 
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page)
-
         self.tela_menu.pushButton_2.clicked.connect(self.showPerfil)
         self.tela_menu.pushButton_3.clicked.connect(self.showSobre)
         self.tela_menu.pushButton_5.clicked.connect(self.showContato)
         self.tela_menu.pushButton_4.clicked.connect(self.voltar_tela2)
+
+        self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_6)
+        self.tela_admin.pushButton_22.clicked.connect(self.voltar_tela)
+        self.tela_admin.pushButton.clicked.connect(self.visualizar_usuarios)
+
+
 
     
     def operacao_log(self, mensagem):
@@ -147,11 +157,13 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         mensagem = f'1,{self.username_login},{password_login}'
 
         if self.username_login and password_login:
-            if self.operacao_log(mensagem):
+            if self.username_login == 'admin' and password_login == 'admin':
+                self.pagina_admin()
+                self.tela_inicial.txt_user.clear()
+            elif self.operacao_log(mensagem):
                 self.QtStack.setCurrentIndex(2)
                 self.tela_inicial.txt_user.clear()
-                self.tela_inicial.txt_password.clear()
-                
+                self.tela_inicial.txt_password.clear()               
             else:
                 QMessageBox.about(self, "Erro", "Usuário ou senha incorretos")
         else: 
@@ -197,6 +209,40 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 QMessageBox.about(self, "Erro", "Senhas não conferem")
         else:
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
+
+
+    #admin
+    def pagina_admin (self):
+        self.QtStack.setCurrentIndex(6)
+
+    def visualizar_usuarios(self):
+        self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page)
+        msg = '6,exibir_usuarios'
+        self.client_socket.send(msg.encode())
+        resposta = self.client_socket.recv(1024).decode()
+        lista_dados = ast.literal_eval(resposta)
+
+
+        # Verifique se já existe um layout e remova-o, se necessário
+        existing_layout = self.tela_admin.scrollAreaWidgetContents_3.layout()
+        if existing_layout is not None:
+            QWidget().setLayout(existing_layout)
+        
+        # Crie um layout vertical para a área de conteúdo da scrollArea
+        layout = QVBoxLayout(self.tela_admin.scrollAreaWidgetContents_3)
+        layout.setObjectName("layout")
+
+        # Itere sobre a lista de usuários e crie um QLabel para cada um
+        for usuario in lista_dados:
+            label = QLabel(usuario, self.tela_admin.scrollAreaWidgetContents_3)
+            layout.addWidget(label)
+            label.setStyleSheet("font-size: 20px; color: white; border:none; border-bottom: 1px solid yellow;")  # Defina o tamanho da fonte e a cor do texto
+            label.setAlignment(Qt.AlignCenter)  # Centralize o texto
+            label.setMinimumSize(30, 160)  # Defina o tamanho mínimo desejado para o QLabel
+            label.setFixedSize(100, 30)  # Defina o tamanho fixo desejado para o QLabel
+
+        # Configure o widget como conteúdo da scrollArea
+        self.tela_admin.scrollArea.setWidget(self.tela_admin.scrollAreaWidgetContents_3)
 
     def voltar_tela(self):
         self.QtStack.setCurrentIndex(0)
