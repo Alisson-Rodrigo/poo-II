@@ -247,20 +247,23 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
     def deletar_usuario(self):
         usuario = self.tela_admin.lineEdit.text()
-        msg = f'6,deletar_usuario,{usuario}'
-        self.client_socket.send(msg.encode())
-        resposta = self.client_socket.recv(1024).decode()
-        if resposta == '1':
-            QMessageBox.about(self, "Sucesso", "Usuário deletado com sucesso")
-            self.tela_admin.lineEdit.clear()
+        if usuario:
+            msg = f'6,deletar_usuario,{usuario}'
+            self.client_socket.send(msg.encode())
+            resposta = self.client_socket.recv(1024).decode()
+            if resposta == '1':
+                QMessageBox.about(self, "Sucesso", "Usuário deletado com sucesso")
+                self.tela_admin.lineEdit.clear()
+            else:
+                QMessageBox.about(self, "Erro", "Usuário não encontrado")
         else:
-            QMessageBox.about(self, "Erro", "Usuário não encontrado")
+            QMessageBox.about(self, 'Erro', 'Preencha o campo')
 
     def tela_cadastrar_midia(self):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_4)
 
     def adicionar_midia(self):
-        nome_filme = self.tela_admin.lineEdit_2.text()
+        nome_filme = self.tela_admin.lineEdit_2.text().upper()
         genero = self.tela_admin.lineEdit_3.text()
         diretor = self.tela_admin.lineEdit_4.text()
         caminho = self.tela_admin.lineEdit_5.text()
