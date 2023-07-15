@@ -106,18 +106,6 @@ class Operacoes():
         resultado = cursor.fetchall()
         return resultado
     
-    def enviar_filme(self, caminho, client_socket):
-        buffer_size = 4096
-        video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
-        video_file_size = os.path.getsize(video_file_path)       
-        with open(video_file_path, 'rb') as video_file:
-            client_socket.send(str(video_file_size).encode())            
-            while True:
-                data = video_file.read(buffer_size)
-                if not data:
-                    break
-                client_socket.send(data)
-        video_file.close()
 
     def deletar_midia(self, nome_filme):
         cursor.execute("DELETE FROM filmes WHERE nome = %s", (nome_filme,))
@@ -168,7 +156,7 @@ class MyThread(threading.Thread):
                     con.send(dados.encode())
                 elif mensagem_str[0] == '4':
                     caminho = mensagem_str[1]
-                    sistema.enviar_filme(caminho, con)
+                    self.enviar_filme(caminho, con)
                 elif mensagem_str[0] == '5':
                     self.lock
                     self.lock.acquire()
