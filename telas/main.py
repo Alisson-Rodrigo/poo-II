@@ -289,7 +289,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         botao.setObjectName(nome_filme)
         botao.setText(nome_filme)
         botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow;")
-        botao.setFixedSize(140, 30)
+        botao.setFixedSize(250, 30)
         botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
         tela.verticalLayout.addWidget(botao)
         # Retorna o botão para poder fazer referência posteriormente, se necessário
