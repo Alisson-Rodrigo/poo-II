@@ -144,8 +144,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         msg = f'4,{caminho}'
         self.client_socket.send(msg.encode())
         tamanho_arquivo = int(self.client_socket.recv(1024).decode())
-        if tamanho_arquivo == '0':
+        if tamanho_arquivo == 0:
             QMessageBox.about(self, "Erro", "Video não encontrado")
+            return False
         with open(caminho, 'wb') as video_file:
             bytes_recebidos = 0
             while bytes_recebidos < tamanho_arquivo:
@@ -330,6 +331,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def abrir_tela_categoria(self):
         self.QtStack.setCurrentIndex(3)
         self.showInicial()
+        self.buscar_todos_filmes()
     def abrir_menu(self):
         self.QtStack.setCurrentIndex(5)
         self.showInicial_menu()
@@ -338,7 +340,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page_1)
         nome = self.exibir_dados()[5].replace("'", "")
         self.tela_categoria.lineEdit.setText(f'ESCOLHA UMA CATEGORIA, {nome.upper()}')
-   
     def showAcao(self):
         self.tela_categoria.stackedWidget_2.setCurrentWidget(self.tela_categoria.page1_2)
     def showComedia(self):

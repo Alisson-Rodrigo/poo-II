@@ -207,15 +207,20 @@ class MyThread(threading.Thread):
     def enviar_filme(self, caminho, client_socket):
         buffer_size = 4096
         video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
-        video_file_size = os.path.getsize(video_file_path)       
-        with open(video_file_path, 'rb') as video_file:
-            client_socket.send(str(video_file_size).encode())            
-            while True:
-                data = video_file.read(buffer_size)
-                if not data:
-                    break
-                client_socket.send(data)
-        video_file.close()
+        if os.path.exists(video_file_path):
+            video_file_size = os.path.getsize(video_file_path)       
+            with open(video_file_path, 'rb') as video_file:
+                client_socket.send(str(video_file_size).encode())            
+                while True:
+                    data = video_file.read(buffer_size)
+                    if not data:
+                        break
+                    client_socket.send(data)
+            video_file.close()
+            print('Arquivo enviado com sucesso.')
+        else:
+            client_socket.send(str(0).encode())
+            print('Arquivo não encontrado no servidor.')
 
 if __name__ == "__main__":
     sistema = Operacoes()
