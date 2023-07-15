@@ -497,32 +497,7 @@ QPushButton:hover {
          <height>521</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
-         <widget class="QPushButton" name="pushButton_10">
-          <property name="minimumSize">
-           <size>
-            <width>300</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="maximumSize">
-           <size>
-            <width>300</width>
-            <height>30</height>
-           </size>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: white;
-border: 1px solid rgba(246, 239, 18, 106);
-</string>
-          </property>
-          <property name="text">
-           <string>Teste</string>
-          </property>
-         </widget>
-        </item>
-       </layout>
+       <layout class="QVBoxLayout" name="verticalLayout"/>
       </widget>
      </widget>
     </widget>

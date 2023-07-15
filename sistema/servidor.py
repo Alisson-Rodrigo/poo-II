@@ -38,7 +38,7 @@ class Operacoes():
         cursor.execute("""CREATE TABLE IF NOT EXISTS filmes (
             id INT AUTO_INCREMENT PRIMARY KEY,
             nome VARCHAR(100),
-            caminho VARCHAR(60),
+            caminho VARCHAR(200),
             genero VARCHAR(50),
             diretor VARCHAR(50)
         )""")

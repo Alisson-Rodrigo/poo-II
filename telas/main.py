@@ -1,7 +1,8 @@
 import typing
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox, QWidget, QPushButton
-from PyQt5.Qt import Qt
 from PyQt5.QtMultimediaWidgets import QVideoWidget
+from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtCore import Qt
 from PyQt5.QtCore import pyqtSlot
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import *
@@ -112,7 +113,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_7.clicked.connect(self.showTerror)
         self.tela_categoria.pushButton_8.clicked.connect(self.showInfantil)
         self.tela_categoria.pushButton_9.clicked.connect(self.showAnime)
-        self.tela_categoria.pushButton_10.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Transient3_ExtendedandUnused.mp4")))
 
 
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page)
@@ -263,7 +263,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_4)
 
     def adicionar_midia(self):
-        nome_filme = self.tela_admin.lineEdit_2.text().upper()
+        nome_filme = self.tela_admin.lineEdit_2.text()
         genero = self.tela_admin.lineEdit_3.text()
         diretor = self.tela_admin.lineEdit_4.text()
         caminho = self.tela_admin.lineEdit_5.text()
@@ -277,11 +277,22 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 self.tela_admin.lineEdit_3.clear()
                 self.tela_admin.lineEdit_4.clear()
                 self.tela_admin.lineEdit_5.clear()
+                if genero == 'Ação':
+                    botao = self.criar_botao_ação(self.tela_categoria, nome_filme, caminho)
+                    self.tela_categoria.scrollAreaWidgetContents.layout().addWidget(botao)
             else:
                 QMessageBox.about(self, "Erro", "Midia não cadastrada")
         else:
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
 
+    def criar_botao_ação(self, tela, nome_filme, caminho): 
+        botao = QPushButton(tela.scrollAreaWidgetContents)
+        botao.setObjectName(nome_filme)
+        botao.setText(nome_filme)
+        botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow;")
+        botao.setFixedSize(140, 30)
+        botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+        return botao
 
     def tela_deletar_midia(self):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_5)

@@ -228,14 +228,6 @@ class Tela_Categoria(object):
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.pushButton_10 = QtWidgets.QPushButton(self.scrollAreaWidgetContents)
-        self.pushButton_10.setMinimumSize(QtCore.QSize(300, 30))
-        self.pushButton_10.setMaximumSize(QtCore.QSize(300, 30))
-        self.pushButton_10.setStyleSheet("color: white;\n"
-"border: 1px solid rgba(246, 239, 18, 106);\n"
-"")
-        self.pushButton_10.setObjectName("pushButton_10")
-        self.verticalLayout.addWidget(self.pushButton_10)
         self.scrollArea.setWidget(self.scrollAreaWidgetContents)
         self.stackedWidget_2.addWidget(self.page1_2)
         self.page_3 = QtWidgets.QWidget()
@@ -638,7 +630,6 @@ class Tela_Categoria(object):
         self.pushButton_9.setText(_translate("MainWindow", "ANIMES"))
         self.label_2.setText(_translate("MainWindow", "EXPLORE"))
         self.lineEdit.setText(_translate("MainWindow", "SELECIONE UMA CATEGÓRIA, USER!"))
-        self.pushButton_10.setText(_translate("MainWindow", "Teste"))
         self.pushButton_30.setText(_translate("MainWindow", "FILME"))
         self.pushButton_31.setText(_translate("MainWindow", "FILME"))
         self.pushButton_32.setText(_translate("MainWindow", "FILME"))
