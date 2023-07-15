@@ -266,9 +266,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def tela_cadastrar_midia(self):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_4)
 
+        
     def adicionar_midia(self):
-        nome_filme = self.tela_admin.lineEdit_2.text()
-
+        nome_filme = self.tela_admin.lineEdit_2.text().upper()
         genero = self.tela_admin.lineEdit_3.text()
         diretor = self.tela_admin.lineEdit_4.text()
         caminho = self.tela_admin.lineEdit_5.text()
@@ -277,17 +277,17 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             self.client_socket.send(msg.encode())
             resposta = self.client_socket.recv(1024).decode()
             if resposta == '1':
-                QMessageBox.about(self, "Sucesso", "Midia cadastrada com sucesso")
+                QMessageBox.about(self, "Sucesso", "Mídia cadastrada com sucesso")
                 self.tela_admin.lineEdit_2.clear()
                 self.tela_admin.lineEdit_3.clear()
                 self.tela_admin.lineEdit_4.clear()
                 self.tela_admin.lineEdit_5.clear()
-                if genero == 'Ação':
+                if genero == 'AÇÃO':
                     self.criar_botao_açao(self.tela_categoria, nome_filme, caminho)
-                elif genero == 'Comédia':
+                elif genero == 'COMÉDIA':
                     self.criar_botao_comedia(self.tela_categoria, nome_filme, caminho)
             else:
-                QMessageBox.about(self, "Erro", "Midia não cadastrada")
+                QMessageBox.about(self, "Erro", "Mídia não cadastrada")
         else:
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
 
