@@ -90,6 +90,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
 
+        self.buscar_todos_filmes()
+
         self.tela_inicial.button_login.clicked.connect(self.verificacao_login)
         self.tela_inicial.button_register.clicked.connect(self.abrir_tela_cadastro)
         self.tela_inicial.pushButton.clicked.connect(self.close)
@@ -114,7 +116,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_categoria.pushButton_8.clicked.connect(self.showInfantil)
         self.tela_categoria.pushButton_9.clicked.connect(self.showAnime)
 
-
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page)
         self.tela_menu.pushButton_2.clicked.connect(self.showPerfil)
         self.tela_menu.pushButton_3.clicked.connect(self.showSobre)
@@ -138,7 +139,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 return True
         return False
 
-    
     def buscar_video(self,caminho):
         msg = f'4,{caminho}'
         self.client_socket.send(msg.encode())
@@ -278,21 +278,30 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 self.tela_admin.lineEdit_4.clear()
                 self.tela_admin.lineEdit_5.clear()
                 if genero == 'Ação':
-                    botao = self.criar_botao_ação(self.tela_categoria, nome_filme, caminho)
-                    self.tela_categoria.scrollAreaWidgetContents.layout().addWidget(botao)
+                    self.criar_botao_ação(self.tela_categoria, nome_filme, caminho)
             else:
                 QMessageBox.about(self, "Erro", "Midia não cadastrada")
         else:
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
 
-    def criar_botao_ação(self, tela, nome_filme, caminho): 
+    def criar_botao_ação(self, tela, nome_filme, caminho):
         botao = QPushButton(tela.scrollAreaWidgetContents)
         botao.setObjectName(nome_filme)
         botao.setText(nome_filme)
         botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow;")
         botao.setFixedSize(140, 30)
         botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+        tela.verticalLayout.addWidget(botao)
+        # Retorna o botão para poder fazer referência posteriormente, se necessário
         return botao
+    
+    def buscar_todos_filmes(self):
+        msg = f'6,exibir_todos_filmes'
+        self.client_socket.send(msg.encode())
+        resposta = self.client_socket.recv(1024).decode()
+        self.resposta2 = ast.literal_eval(resposta)
+        for nome_filme, caminho in self.resposta2:
+            self.criar_botao_ação(self.tela_categoria, nome_filme, caminho)
 
     def tela_deletar_midia(self):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_5)

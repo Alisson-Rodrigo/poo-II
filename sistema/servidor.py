@@ -90,6 +90,10 @@ class Operacoes():
         cursor.execute("""INSERT INTO filmes (nome, genero, diretor, caminho) VALUES (%s,%s,%s,%s)""", (nome_filme, genero, diretor, caminho))
         conexao.commit()
         return True
+    def exibir_filmes(self):
+        cursor.execute("SELECT nome, caminho FROM filmes")
+        resultado = cursor.fetchall()
+        return resultado
         
 
 class MyThread(threading.Thread):
@@ -165,6 +169,8 @@ class MyThread(threading.Thread):
                             enviar = '1'
                         else:
                             enviar = '0'
+                    elif mensagem_str[1] == 'exibir_todos_filmes':
+                        enviar = sistema.exibir_filmes()
                     con.send(str(enviar).encode())
                         
 
