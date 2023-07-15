@@ -438,7 +438,7 @@ QPushButton:hover {
      <string notr="true">border: 1px solid white;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="page_1">
      <widget class="QLineEdit" name="lineEdit">
@@ -502,631 +502,131 @@ QPushButton:hover {
      </widget>
     </widget>
     <widget class="QWidget" name="page_3">
-     <widget class="QPushButton" name="pushButton_30">
+     <widget class="QScrollArea" name="scrollArea_2">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>100</y>
-        <width>251</width>
-        <height>31</height>
+        <x>0</x>
+        <y>0</y>
+        <width>901</width>
+        <height>521</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
+       <string notr="true">border: none;</string>
       </property>
-      <property name="text">
-       <string>FILME</string>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
       </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_31">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_32">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_33">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>280</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_3">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>10</y>
-        <width>131</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">	color: white;</string>
-      </property>
-      <property name="text">
-       <string>COMÉDIA</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
+      <property name="widgetResizable">
        <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>887</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_3"/>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page">
-     <widget class="QPushButton" name="pushButton_24">
+     <widget class="QScrollArea" name="scrollArea_3">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>251</width>
-        <height>31</height>
+        <x>0</x>
+        <y>0</y>
+        <width>901</width>
+        <height>521</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
+       <string notr="true">border: none;</string>
       </property>
-      <property name="text">
-       <string>FILME</string>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
       </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_25">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>280</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_26">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>100</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_27">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>10</y>
-        <width>131</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">	color: white;</string>
-      </property>
-      <property name="text">
-       <string>DRAMA</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
+      <property name="widgetResizable">
        <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_4">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>887</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_4"/>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_2">
-     <widget class="QPushButton" name="pushButton_28">
+     <widget class="QScrollArea" name="scrollArea_4">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>251</width>
-        <height>31</height>
+        <x>0</x>
+        <y>0</y>
+        <width>901</width>
+        <height>521</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
+       <string notr="true">border: none;</string>
       </property>
-      <property name="text">
-       <string>FILME</string>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
       </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_29">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>280</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_35">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>100</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_36">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>10</y>
-        <width>131</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">	color: white;</string>
-      </property>
-      <property name="text">
-       <string>TERROR</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
+      <property name="widgetResizable">
        <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>887</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_5"/>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_4">
-     <widget class="QPushButton" name="pushButton_37">
+     <widget class="QScrollArea" name="scrollArea_5">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>280</y>
-        <width>251</width>
-        <height>31</height>
+        <x>0</x>
+        <y>0</y>
+        <width>901</width>
+        <height>521</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
+       <string notr="true">border: none;</string>
       </property>
-      <property name="text">
-       <string>FILME</string>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
       </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_38">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>100</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_39">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_40">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_6">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>10</y>
-        <width>131</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">	color: white;</string>
-      </property>
-      <property name="text">
-       <string>INFANTIL</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
+      <property name="widgetResizable">
        <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>887</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_6"/>
+      </widget>
      </widget>
     </widget>
     <widget class="QWidget" name="page_5">
@@ -1162,128 +662,35 @@ QPushButton:hover {
        <string>FILME</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_42">
+     <widget class="QScrollArea" name="scrollArea_6">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>220</y>
-        <width>251</width>
-        <height>31</height>
+        <x>0</x>
+        <y>0</y>
+        <width>901</width>
+        <height>521</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
+       <string notr="true">border: none;</string>
       </property>
-      <property name="text">
-       <string>FILME</string>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOn</enum>
       </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_43">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>100</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="pushButton_44">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>160</y>
-        <width>251</width>
-        <height>31</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>10</pointsize>
-       </font>
-      </property>
-      <property name="cursor">
-       <cursorShape>PointingHandCursor</cursorShape>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-color: white;
-}
-
-QPushButton:hover {
-	background-color: white;
-	color: black;
-
-}</string>
-      </property>
-      <property name="text">
-       <string>FILME</string>
-      </property>
-     </widget>
-     <widget class="QLineEdit" name="lineEdit_7">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>10</y>
-        <width>131</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">	color: white;</string>
-      </property>
-      <property name="text">
-       <string>ANIMES</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="readOnly">
+      <property name="widgetResizable">
        <bool>true</bool>
       </property>
+      <widget class="QWidget" name="scrollAreaWidgetContents_8">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>887</width>
+         <height>521</height>
+        </rect>
+       </property>
+       <layout class="QVBoxLayout" name="verticalLayout_8"/>
+      </widget>
      </widget>
     </widget>
    </widget>

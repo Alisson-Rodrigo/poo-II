@@ -267,7 +267,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_4)
 
     def adicionar_midia(self):
-        nome_filme = self.tela_admin.lineEdit_2.text().upper()
+        nome_filme = self.tela_admin.lineEdit_2.text()
 
         genero = self.tela_admin.lineEdit_3.text()
         diretor = self.tela_admin.lineEdit_4.text()
@@ -283,21 +283,34 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 self.tela_admin.lineEdit_4.clear()
                 self.tela_admin.lineEdit_5.clear()
                 if genero == 'Ação':
-                    self.criar_botao_ação(self.tela_categoria, nome_filme, caminho)
+                    self.criar_botao_açao(self.tela_categoria, nome_filme, caminho)
+                elif genero == 'Comédia':
+                    self.criar_botao_comedia(self.tela_categoria, nome_filme, caminho)
             else:
                 QMessageBox.about(self, "Erro", "Midia não cadastrada")
         else:
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
 
-    def criar_botao_ação(self, tela, nome_filme, caminho):
+    def criar_botao_açao(self, tela, nome_filme, caminho):
         botao = QPushButton(tela.scrollAreaWidgetContents)
         botao.setObjectName(nome_filme)
         botao.setText(nome_filme)
-        botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow;")
+        botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
         botao.setFixedSize(400, 30)
         botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
         tela.verticalLayout.addWidget(botao)
         return botao
+    
+    def criar_botao_comedia(self, tela, nome_filme, caminho):
+        botao = QPushButton(tela.scrollAreaWidgetContents_3)
+        botao.setObjectName(nome_filme)
+        botao.setText(nome_filme)
+        botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
+        botao.setFixedSize(140, 30)
+        botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+        tela.verticalLayout_3.addWidget(botao)
+        return botao
+
     
     def buscar_todos_filmes(self):
         msg = f'6,exibir_todos_filmes'
@@ -305,7 +318,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         resposta = self.client_socket.recv(1024).decode()
         self.resposta2 = ast.literal_eval(resposta)
         for nome_filme, caminho in self.resposta2:
-            self.criar_botao_ação(self.tela_categoria, nome_filme, caminho)
+            self.criar_botao_açao(self.tela_categoria, nome_filme, caminho)
 
     def tela_deletar_midia(self):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_5)

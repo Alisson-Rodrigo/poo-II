@@ -232,307 +232,63 @@ class Tela_Categoria(object):
         self.stackedWidget_2.addWidget(self.page1_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
-        self.pushButton_30 = QtWidgets.QPushButton(self.page_3)
-        self.pushButton_30.setGeometry(QtCore.QRect(10, 100, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_30.setFont(font)
-        self.pushButton_30.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_30.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_30.setObjectName("pushButton_30")
-        self.pushButton_31 = QtWidgets.QPushButton(self.page_3)
-        self.pushButton_31.setGeometry(QtCore.QRect(10, 160, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_31.setFont(font)
-        self.pushButton_31.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_31.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_31.setObjectName("pushButton_31")
-        self.pushButton_32 = QtWidgets.QPushButton(self.page_3)
-        self.pushButton_32.setGeometry(QtCore.QRect(10, 220, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_32.setFont(font)
-        self.pushButton_32.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_32.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_32.setObjectName("pushButton_32")
-        self.pushButton_33 = QtWidgets.QPushButton(self.page_3)
-        self.pushButton_33.setGeometry(QtCore.QRect(10, 280, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_33.setFont(font)
-        self.pushButton_33.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_33.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_33.setObjectName("pushButton_33")
-        self.lineEdit_3 = QtWidgets.QLineEdit(self.page_3)
-        self.lineEdit_3.setGeometry(QtCore.QRect(390, 10, 131, 41))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_3.setFont(font)
-        self.lineEdit_3.setStyleSheet("    color: white;")
-        self.lineEdit_3.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEdit_3.setReadOnly(True)
-        self.lineEdit_3.setObjectName("lineEdit_3")
+        self.scrollArea_2 = QtWidgets.QScrollArea(self.page_3)
+        self.scrollArea_2.setGeometry(QtCore.QRect(0, 0, 901, 521))
+        self.scrollArea_2.setStyleSheet("border: none;")
+        self.scrollArea_2.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.scrollArea_2.setWidgetResizable(True)
+        self.scrollArea_2.setObjectName("scrollArea_2")
+        self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 887, 521))
+        self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
+        self.verticalLayout_3 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
+        self.verticalLayout_3.setObjectName("verticalLayout_3")
+        self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_3)
         self.stackedWidget_2.addWidget(self.page_3)
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
-        self.pushButton_24 = QtWidgets.QPushButton(self.page)
-        self.pushButton_24.setGeometry(QtCore.QRect(10, 220, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_24.setFont(font)
-        self.pushButton_24.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_24.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_24.setObjectName("pushButton_24")
-        self.pushButton_25 = QtWidgets.QPushButton(self.page)
-        self.pushButton_25.setGeometry(QtCore.QRect(10, 280, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_25.setFont(font)
-        self.pushButton_25.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_25.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_25.setObjectName("pushButton_25")
-        self.pushButton_26 = QtWidgets.QPushButton(self.page)
-        self.pushButton_26.setGeometry(QtCore.QRect(10, 100, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_26.setFont(font)
-        self.pushButton_26.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_26.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_26.setObjectName("pushButton_26")
-        self.pushButton_27 = QtWidgets.QPushButton(self.page)
-        self.pushButton_27.setGeometry(QtCore.QRect(10, 160, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_27.setFont(font)
-        self.pushButton_27.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_27.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_27.setObjectName("pushButton_27")
-        self.lineEdit_4 = QtWidgets.QLineEdit(self.page)
-        self.lineEdit_4.setGeometry(QtCore.QRect(390, 10, 131, 41))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_4.setFont(font)
-        self.lineEdit_4.setStyleSheet("    color: white;")
-        self.lineEdit_4.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEdit_4.setReadOnly(True)
-        self.lineEdit_4.setObjectName("lineEdit_4")
+        self.scrollArea_3 = QtWidgets.QScrollArea(self.page)
+        self.scrollArea_3.setGeometry(QtCore.QRect(0, 0, 901, 521))
+        self.scrollArea_3.setStyleSheet("border: none;")
+        self.scrollArea_3.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.scrollArea_3.setWidgetResizable(True)
+        self.scrollArea_3.setObjectName("scrollArea_3")
+        self.scrollAreaWidgetContents_4 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_4.setGeometry(QtCore.QRect(0, 0, 887, 521))
+        self.scrollAreaWidgetContents_4.setObjectName("scrollAreaWidgetContents_4")
+        self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_4)
+        self.verticalLayout_4.setObjectName("verticalLayout_4")
+        self.scrollArea_3.setWidget(self.scrollAreaWidgetContents_4)
         self.stackedWidget_2.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
-        self.pushButton_28 = QtWidgets.QPushButton(self.page_2)
-        self.pushButton_28.setGeometry(QtCore.QRect(10, 220, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_28.setFont(font)
-        self.pushButton_28.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_28.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_28.setObjectName("pushButton_28")
-        self.pushButton_29 = QtWidgets.QPushButton(self.page_2)
-        self.pushButton_29.setGeometry(QtCore.QRect(10, 280, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_29.setFont(font)
-        self.pushButton_29.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_29.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_29.setObjectName("pushButton_29")
-        self.pushButton_35 = QtWidgets.QPushButton(self.page_2)
-        self.pushButton_35.setGeometry(QtCore.QRect(10, 100, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_35.setFont(font)
-        self.pushButton_35.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_35.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_35.setObjectName("pushButton_35")
-        self.pushButton_36 = QtWidgets.QPushButton(self.page_2)
-        self.pushButton_36.setGeometry(QtCore.QRect(10, 160, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_36.setFont(font)
-        self.pushButton_36.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_36.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_36.setObjectName("pushButton_36")
-        self.lineEdit_5 = QtWidgets.QLineEdit(self.page_2)
-        self.lineEdit_5.setGeometry(QtCore.QRect(390, 10, 131, 41))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_5.setFont(font)
-        self.lineEdit_5.setStyleSheet("    color: white;")
-        self.lineEdit_5.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEdit_5.setReadOnly(True)
-        self.lineEdit_5.setObjectName("lineEdit_5")
+        self.scrollArea_4 = QtWidgets.QScrollArea(self.page_2)
+        self.scrollArea_4.setGeometry(QtCore.QRect(0, 0, 901, 521))
+        self.scrollArea_4.setStyleSheet("border: none;")
+        self.scrollArea_4.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.scrollArea_4.setWidgetResizable(True)
+        self.scrollArea_4.setObjectName("scrollArea_4")
+        self.scrollAreaWidgetContents_5 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_5.setGeometry(QtCore.QRect(0, 0, 887, 521))
+        self.scrollAreaWidgetContents_5.setObjectName("scrollAreaWidgetContents_5")
+        self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_5)
+        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.scrollArea_4.setWidget(self.scrollAreaWidgetContents_5)
         self.stackedWidget_2.addWidget(self.page_2)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
-        self.pushButton_37 = QtWidgets.QPushButton(self.page_4)
-        self.pushButton_37.setGeometry(QtCore.QRect(10, 280, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_37.setFont(font)
-        self.pushButton_37.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_37.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_37.setObjectName("pushButton_37")
-        self.pushButton_38 = QtWidgets.QPushButton(self.page_4)
-        self.pushButton_38.setGeometry(QtCore.QRect(10, 100, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_38.setFont(font)
-        self.pushButton_38.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_38.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_38.setObjectName("pushButton_38")
-        self.pushButton_39 = QtWidgets.QPushButton(self.page_4)
-        self.pushButton_39.setGeometry(QtCore.QRect(10, 160, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_39.setFont(font)
-        self.pushButton_39.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_39.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_39.setObjectName("pushButton_39")
-        self.pushButton_40 = QtWidgets.QPushButton(self.page_4)
-        self.pushButton_40.setGeometry(QtCore.QRect(10, 220, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_40.setFont(font)
-        self.pushButton_40.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_40.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_40.setObjectName("pushButton_40")
-        self.lineEdit_6 = QtWidgets.QLineEdit(self.page_4)
-        self.lineEdit_6.setGeometry(QtCore.QRect(390, 10, 131, 41))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_6.setFont(font)
-        self.lineEdit_6.setStyleSheet("    color: white;")
-        self.lineEdit_6.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEdit_6.setReadOnly(True)
-        self.lineEdit_6.setObjectName("lineEdit_6")
+        self.scrollArea_5 = QtWidgets.QScrollArea(self.page_4)
+        self.scrollArea_5.setGeometry(QtCore.QRect(0, 0, 901, 521))
+        self.scrollArea_5.setStyleSheet("border: none;")
+        self.scrollArea_5.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.scrollArea_5.setWidgetResizable(True)
+        self.scrollArea_5.setObjectName("scrollArea_5")
+        self.scrollAreaWidgetContents_6 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_6.setGeometry(QtCore.QRect(0, 0, 887, 521))
+        self.scrollAreaWidgetContents_6.setObjectName("scrollAreaWidgetContents_6")
+        self.verticalLayout_6 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_6)
+        self.verticalLayout_6.setObjectName("verticalLayout_6")
+        self.scrollArea_5.setWidget(self.scrollAreaWidgetContents_6)
         self.stackedWidget_2.addWidget(self.page_4)
         self.page_5 = QtWidgets.QWidget()
         self.page_5.setObjectName("page_5")
@@ -552,68 +308,23 @@ class Tela_Categoria(object):
 "\n"
 "}")
         self.pushButton_41.setObjectName("pushButton_41")
-        self.pushButton_42 = QtWidgets.QPushButton(self.page_5)
-        self.pushButton_42.setGeometry(QtCore.QRect(10, 220, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_42.setFont(font)
-        self.pushButton_42.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_42.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_42.setObjectName("pushButton_42")
-        self.pushButton_43 = QtWidgets.QPushButton(self.page_5)
-        self.pushButton_43.setGeometry(QtCore.QRect(10, 100, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_43.setFont(font)
-        self.pushButton_43.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_43.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_43.setObjectName("pushButton_43")
-        self.pushButton_44 = QtWidgets.QPushButton(self.page_5)
-        self.pushButton_44.setGeometry(QtCore.QRect(10, 160, 251, 31))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.pushButton_44.setFont(font)
-        self.pushButton_44.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.pushButton_44.setStyleSheet("QPushButton {\n"
-"color: white;\n"
-"}\n"
-"\n"
-"QPushButton:hover {\n"
-"    background-color: white;\n"
-"    color: black;\n"
-"\n"
-"}")
-        self.pushButton_44.setObjectName("pushButton_44")
-        self.lineEdit_7 = QtWidgets.QLineEdit(self.page_5)
-        self.lineEdit_7.setGeometry(QtCore.QRect(390, 10, 131, 41))
-        font = QtGui.QFont()
-        font.setPointSize(20)
-        self.lineEdit_7.setFont(font)
-        self.lineEdit_7.setStyleSheet("    color: white;")
-        self.lineEdit_7.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEdit_7.setReadOnly(True)
-        self.lineEdit_7.setObjectName("lineEdit_7")
+        self.scrollArea_6 = QtWidgets.QScrollArea(self.page_5)
+        self.scrollArea_6.setGeometry(QtCore.QRect(0, 0, 901, 521))
+        self.scrollArea_6.setStyleSheet("border: none;")
+        self.scrollArea_6.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAlwaysOn)
+        self.scrollArea_6.setWidgetResizable(True)
+        self.scrollArea_6.setObjectName("scrollArea_6")
+        self.scrollAreaWidgetContents_8 = QtWidgets.QWidget()
+        self.scrollAreaWidgetContents_8.setGeometry(QtCore.QRect(0, 0, 887, 521))
+        self.scrollAreaWidgetContents_8.setObjectName("scrollAreaWidgetContents_8")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_8)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.scrollArea_6.setWidget(self.scrollAreaWidgetContents_8)
         self.stackedWidget_2.addWidget(self.page_5)
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget_2.setCurrentIndex(1)
+        self.stackedWidget_2.setCurrentIndex(6)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -630,28 +341,14 @@ class Tela_Categoria(object):
         self.pushButton_9.setText(_translate("MainWindow", "ANIMES"))
         self.label_2.setText(_translate("MainWindow", "EXPLORE"))
         self.lineEdit.setText(_translate("MainWindow", "SELECIONE UMA CATEGÓRIA, USER!"))
-        self.pushButton_30.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_31.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_32.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_33.setText(_translate("MainWindow", "FILME"))
-        self.lineEdit_3.setText(_translate("MainWindow", "COMÉDIA"))
-        self.pushButton_24.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_25.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_26.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_27.setText(_translate("MainWindow", "FILME"))
-        self.lineEdit_4.setText(_translate("MainWindow", "DRAMA"))
-        self.pushButton_28.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_29.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_35.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_36.setText(_translate("MainWindow", "FILME"))
-        self.lineEdit_5.setText(_translate("MainWindow", "TERROR"))
-        self.pushButton_37.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_38.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_39.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_40.setText(_translate("MainWindow", "FILME"))
-        self.lineEdit_6.setText(_translate("MainWindow", "INFANTIL"))
         self.pushButton_41.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_42.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_43.setText(_translate("MainWindow", "FILME"))
-        self.pushButton_44.setText(_translate("MainWindow", "FILME"))
-        self.lineEdit_7.setText(_translate("MainWindow", "ANIMES"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Tela_Categoria()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
