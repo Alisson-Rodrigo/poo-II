@@ -130,6 +130,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_admin.pushButton_4.clicked.connect(self.tela_cadastrar_midia)
         self.tela_admin.pushButton_5.clicked.connect(self.tela_deletar_midia)
         self.tela_admin.pushButton_8.clicked.connect(self.adicionar_midia)
+        self.tela_admin.pushButton_9.clicked.connect(self.botao_deletar_midia)
  
     def operacao_log(self, mensagem):
         if mensagem.split(',')[0] == '1':
@@ -142,7 +143,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def buscar_video(self,caminho):
         msg = f'4,{caminho}'
         self.client_socket.send(msg.encode())
-        tamanho_arquivo = int(self.client_socket.recv(1024).decode())   
+        tamanho_arquivo = int(self.client_socket.recv(1024).decode())
+        if tamanho_arquivo == '0':
+            QMessageBox.about(self, "Erro", "Video não encontrado")
         with open(caminho, 'wb') as video_file:
             bytes_recebidos = 0
             while bytes_recebidos < tamanho_arquivo:
@@ -263,7 +266,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_4)
 
     def adicionar_midia(self):
-        nome_filme = self.tela_admin.lineEdit_2.text()
+        nome_filme = self.tela_admin.lineEdit_2.text().upper()
+
         genero = self.tela_admin.lineEdit_3.text()
         diretor = self.tela_admin.lineEdit_4.text()
         caminho = self.tela_admin.lineEdit_5.text()
@@ -289,10 +293,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         botao.setObjectName(nome_filme)
         botao.setText(nome_filme)
         botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow;")
-        botao.setFixedSize(250, 30)
+        botao.setFixedSize(400, 30)
         botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
         tela.verticalLayout.addWidget(botao)
-        # Retorna o botão para poder fazer referência posteriormente, se necessário
         return botao
     
     def buscar_todos_filmes(self):
@@ -305,6 +308,17 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
     def tela_deletar_midia(self):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_5)
+    
+    def botao_deletar_midia(self):
+        nome = self.tela_admin.lineEdit_6.text()
+        msg = f'6,deletar_midia,{nome}'
+        self.client_socket.send(msg.encode())
+        resposta = self.client_socket.recv(1024).decode()
+        if resposta == '1':
+            QMessageBox.about(self, "Sucesso", "Midia deletada com sucesso")
+            self.tela_admin.lineEdit_6.clear()
+        else:
+            QMessageBox.about(self, "Erro", "Midia não encontrada")
 
 
     def voltar_tela(self):
