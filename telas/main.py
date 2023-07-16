@@ -308,7 +308,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             botao.setObjectName(nome_filme)
             botao.setText(nome_filme)
             botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
-            botao.setFixedSize(140, 30)
+            botao.setFixedSize(400, 30)
             botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
             tela.verticalLayout_3.addWidget(botao)
             return botao
@@ -335,7 +335,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         resposta = self.client_socket.recv(1024).decode()
         if resposta == '1':
             QMessageBox.about(self, "Sucesso", "Midia deletada com sucesso")
-            self.tela_admin.lineEdit_6.clear()sss
+            self.tela_admin.lineEdit_6.clear()
         else:
             QMessageBox.about(self, "Erro", "Midia não encontrada")
     def voltar_tela(self):
