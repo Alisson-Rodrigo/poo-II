@@ -335,13 +335,9 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         resposta = self.client_socket.recv(1024).decode()
         if resposta == '1':
             QMessageBox.about(self, "Sucesso", "Midia deletada com sucesso")
-            self.tela_admin.lineEdit_6.clear()
-            self.tela_categoria.removeWidget(self.tela_categoria.findChild(QPushButton, nome))
-
+            self.tela_admin.lineEdit_6.clear()sss
         else:
             QMessageBox.about(self, "Erro", "Midia não encontrada")
-
-
     def voltar_tela(self):
         self.QtStack.setCurrentIndex(0)
     def voltar_tela2(self):
