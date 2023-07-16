@@ -336,6 +336,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         if resposta == '1':
             QMessageBox.about(self, "Sucesso", "Midia deletada com sucesso")
             self.tela_admin.lineEdit_6.clear()
+            self.tela_categoria.removeWidget(self.tela_categoria.findChild(QPushButton, nome))
+
         else:
             QMessageBox.about(self, "Erro", "Midia não encontrada")
 
