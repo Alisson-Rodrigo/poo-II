@@ -85,7 +85,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
         ip = ip_Adress
-        port = 10009
+        port = 10010
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -268,8 +268,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
 
         
     def adicionar_midia(self):
-        nome_filme = self.tela_admin.lineEdit_2.text().upper()
-        genero = self.tela_admin.lineEdit_3.text()
+        nome_filme = self.tela_admin.lineEdit_2.text()
+        genero = self.tela_admin.lineEdit_3.text().capitalize()
         diretor = self.tela_admin.lineEdit_4.text()
         caminho = self.tela_admin.lineEdit_5.text()
         if nome_filme and genero and diretor and caminho:
@@ -282,44 +282,48 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 self.tela_admin.lineEdit_3.clear()
                 self.tela_admin.lineEdit_4.clear()
                 self.tela_admin.lineEdit_5.clear()
-                if genero == 'AÇÃO':
-                    self.criar_botao_açao(self.tela_categoria, nome_filme, caminho)
-                elif genero == 'COMÉDIA':
-                    self.criar_botao_comedia(self.tela_categoria, nome_filme, caminho)
+                if genero == 'Ação':
+                    self.criar_botao_açao(self.tela_categoria, nome_filme, caminho, genero)
+                elif genero == 'Comédia':
+                    self.criar_botao_comedia(self.tela_categoria, nome_filme, caminho, genero)
             else:
                 QMessageBox.about(self, "Erro", "Mídia não cadastrada")
         else:
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
 
-    def criar_botao_açao(self, tela, nome_filme, caminho):
-        botao = QPushButton(tela.scrollAreaWidgetContents)
-        botao.setObjectName(nome_filme)
-        botao.setText(nome_filme)
-        botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
-        botao.setFixedSize(400, 30)
-        botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
-        tela.verticalLayout.addWidget(botao)
-        return botao
+    def criar_botao_açao(self, tela, nome_filme, caminho, genero):
+        if genero == 'Ação':
+            botao = QPushButton(tela.scrollAreaWidgetContents)
+            botao.setObjectName(nome_filme)
+            botao.setText(nome_filme)
+            botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
+            botao.setFixedSize(400, 30)
+            botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+            tela.verticalLayout.addWidget(botao)
+            return botao
     
-    def criar_botao_comedia(self, tela, nome_filme, caminho):
-        botao = QPushButton(tela.scrollAreaWidgetContents_3)
-        botao.setObjectName(nome_filme)
-        botao.setText(nome_filme)
-        botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
-        botao.setFixedSize(140, 30)
-        botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
-        tela.verticalLayout_3.addWidget(botao)
-        return botao
+    def criar_botao_comedia(self, tela, nome_filme, caminho, genero):
+        if genero == 'Comédia':
+            botao = QPushButton(tela.scrollAreaWidgetContents_3)
+            botao.setObjectName(nome_filme)
+            botao.setText(nome_filme)
+            botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
+            botao.setFixedSize(140, 30)
+            botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+            tela.verticalLayout_3.addWidget(botao)
+            return botao
 
     
     def buscar_todos_filmes(self):
-        msg = f'6,exibir_todos_filmes'
+        msg = '6,exibir_todos_filmes'
         self.client_socket.send(msg.encode())
         resposta = self.client_socket.recv(1024).decode()
-        self.resposta2 = ast.literal_eval(resposta)
-        for nome_filme, caminho in self.resposta2:
-            self.criar_botao_açao(self.tela_categoria, nome_filme, caminho)
-
+        resposta2 = ast.literal_eval(resposta)
+        for nome_filme, caminho, genero in resposta2:
+            if genero == 'Ação':
+                self.criar_botao_açao(self.tela_categoria, nome_filme, caminho, genero)
+            elif genero == 'Comédia':
+                self.criar_botao_comedia(self.tela_categoria, nome_filme, caminho, genero)
 
     def tela_deletar_midia(self):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_5)
@@ -345,7 +349,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
     def abrir_tela_categoria(self):
         self.QtStack.setCurrentIndex(3)
         self.showInicial()
-        self.buscar_todos_filmes()
     def abrir_menu(self):
         self.QtStack.setCurrentIndex(5)
         self.showInicial_menu()

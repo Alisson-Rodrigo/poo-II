@@ -102,7 +102,7 @@ class Operacoes():
         else:
             return False
     def exibir_filmes(self):
-        cursor.execute("SELECT nome, caminho FROM filmes")
+        cursor.execute("SELECT nome, caminho, genero FROM filmes")
         resultado = cursor.fetchall()
         return resultado
     
@@ -227,7 +227,7 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = ip_Adress
-    port = 10009
+    port = 10010
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
