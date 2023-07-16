@@ -320,6 +320,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         for nome_filme, caminho in self.resposta2:
             self.criar_botao_açao(self.tela_categoria, nome_filme, caminho)
 
+
     def tela_deletar_midia(self):
         self.tela_admin.stackedWidget.setCurrentWidget(self.tela_admin.page_5)
     
