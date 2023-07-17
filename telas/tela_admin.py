@@ -180,7 +180,7 @@ class Tela_Admin(object):
         self.lineEdit.setObjectName("lineEdit")
         self.label_3 = QtWidgets.QLabel(self.frame_2)
         self.label_3.setGeometry(QtCore.QRect(30, 60, 31, 31))
-        self.label_3.setStyleSheet("background-image: url(:/newPrefix/user-x.svg);\n"
+        self.label_3.setStyleSheet("background-image: url(user-x.svg);\n"
 "border: none;\n"
 "background-repeat: no-repeat;")
         self.label_3.setObjectName("label_3")
