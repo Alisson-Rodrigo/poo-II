@@ -145,7 +145,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.client_socket.send(msg.encode())
         tamanho_arquivo = int(self.client_socket.recv(1024).decode())
         if tamanho_arquivo == 0:
-            QMessageBox.about(self, "Erro", "Video não encontrado")
             return False
         with open(caminho, 'wb') as video_file:
             bytes_recebidos = 0
@@ -403,7 +402,10 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         sys.exit(app.exec_())
 
     def abrir_tela_midia(self, caminho):
-        self.player = VideoPlayer(caminho)
+        if caminho:
+            self.player = VideoPlayer(caminho)
+        else:
+            QMessageBox.about(self, "Erro", "Vídeo não encontrado")
 
 
 class VideoPlayer(QWidget):
