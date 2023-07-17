@@ -84,7 +84,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.setupUi(self)
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
-        ip = '10.0.0.176'
+        ip = ip_Adress
         port = 10010
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -406,7 +406,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             self.player = VideoPlayer(caminho)
         else:
             QMessageBox.about(self, "Erro", "Vídeo não encontrado")
-
 
 
 class VideoPlayer(QWidget):

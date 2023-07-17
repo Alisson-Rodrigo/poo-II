@@ -206,7 +206,7 @@ class MyThread(threading.Thread):
 
     def enviar_filme(self, caminho, client_socket):
         buffer_size = 4096
-        video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
+        video_file_path = f'C:/Users/PurooLight/Documents/estudos/pooII/poo-II/sistema/videos/{caminho}'
         if os.path.exists(video_file_path):
             video_file_size = os.path.getsize(video_file_path)       
             with open(video_file_path, 'rb') as video_file:
