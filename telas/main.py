@@ -36,7 +36,7 @@ class Ui_Main(object):
     '''
     Criando a tela principal, onde será exibido o menu principal, a tela de login e a tela de cadastro, além de todas as outras telas.
 
-    Atribtues
+    Attribtues
     ------
     QtStack: QStackedLayout
         Layout que permite a troca de telas
@@ -303,7 +303,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         mensagem: str
             Mensagem que será enviada para o servidor
 
-        Atributes
+        Attributes
         ------
         resposta: str
             Resposta que será recebida do servidor
@@ -1370,3 +1370,5 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)    
     show_main = Main()
     sys.exit(app.exec_())
+
+    

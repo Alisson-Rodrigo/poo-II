@@ -22,6 +22,10 @@ class Operacoes():
     ------
     none
 
+    Attributes
+    ------
+    none
+    
     Methods
     ------
     cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha)
@@ -60,7 +64,7 @@ class Operacoes():
         ------
         none
 
-        Atributes
+        Attributes
         ------
         none
 
@@ -115,7 +119,7 @@ class Operacoes():
         confirmar_senha : str
             Confirmação da senha do usuário.
         
-        Atributes
+        Attributes
         ------
         none
 
@@ -149,7 +153,7 @@ class Operacoes():
         password : str
             Senha do usuário.
 
-        Atributes
+        Attributes
         ------
         none
 
@@ -185,7 +189,7 @@ class Operacoes():
         usuario : str
             Nome de usuário do usuário.
         
-        Atributes
+        Attributes
         ------
         none
 
@@ -216,7 +220,7 @@ class Operacoes():
         usuario : str
             Nome de usuário do usuário.
         
-        Atributes
+        Attributes
         ------
         none
 
@@ -241,7 +245,7 @@ class Operacoes():
         ------
         none
 
-        Atributes
+        Attributes
         ------
         none
 
@@ -268,7 +272,7 @@ class Operacoes():
         usuario : str
             Nome de usuário do usuário.
         
-        Atributes
+        Attributes
         ------
         none
 
@@ -299,7 +303,7 @@ class Operacoes():
         caminho : str
             Caminho da mídia.
 
-        Atributes
+        Attributes
         ------
         none
 
@@ -332,7 +336,7 @@ class Operacoes():
         caminho : str
             Caminho da mídia.
 
-        Atributes
+        Attributes
         ------
         none
 
@@ -359,7 +363,7 @@ class Operacoes():
         ------
         none
 
-        Atributes
+        Attributes
         ------
         none
 
@@ -387,7 +391,7 @@ class Operacoes():
         nome_filme : str
             Nome da mídia.
         
-        Atributes
+        Attributes
         ------
         none
 
@@ -419,7 +423,7 @@ class MyThread(threading.Thread):
     client_socket : str
         Socket do cliente.
     
-    Atributes
+    Attributes
     ------
     name : str
         Nome da thread.
@@ -450,7 +454,7 @@ class MyThread(threading.Thread):
         client_socket : str
             Socket do cliente.
         
-        Atributes
+        Attributes
         ------
         name : str
             Nome da thread.
@@ -483,7 +487,7 @@ class MyThread(threading.Thread):
         ------
         none
 
-        Atributes
+        Attributes
         ------
         none
 
@@ -612,7 +616,7 @@ class MyThread(threading.Thread):
         client_socket : str
             Socket do cliente.
 
-        Atributes
+        Attributes
         ------
         none
 
