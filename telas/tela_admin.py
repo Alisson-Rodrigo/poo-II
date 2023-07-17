@@ -149,7 +149,7 @@ class Tela_Admin(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 475, 459))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 472, 459))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -180,7 +180,7 @@ class Tela_Admin(object):
         self.lineEdit.setObjectName("lineEdit")
         self.label_3 = QtWidgets.QLabel(self.frame_2)
         self.label_3.setGeometry(QtCore.QRect(30, 60, 31, 31))
-        self.label_3.setStyleSheet("background-image: url(user-x.svg);\n"
+        self.label_3.setStyleSheet("background-image: url(:/newPrefix/user-x.svg);\n"
 "border: none;\n"
 "background-repeat: no-repeat;")
         self.label_3.setObjectName("label_3")
@@ -318,7 +318,7 @@ class Tela_Admin(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(1)
+        self.stackedWidget.setCurrentIndex(4)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -344,5 +344,5 @@ class Tela_Admin(object):
         self.pushButton_8.setText(_translate("MainWindow", "Cadastrar"))
         self.label_4.setText(_translate("MainWindow", "Cadastrar filmes"))
         self.lineEdit_6.setPlaceholderText(_translate("MainWindow", "Nome do filme"))
-        self.pushButton_9.setText(_translate("MainWindow", "Cadastrar"))
+        self.pushButton_9.setText(_translate("MainWindow", "Deletar"))
         self.label_5.setText(_translate("MainWindow", "Deletar filmes"))
