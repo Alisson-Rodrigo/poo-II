@@ -15,6 +15,7 @@ import webbrowser
 import threading
 import time
 import ast
+import os
 
 from PyQt5.QtWidgets import QApplication, QMainWindow, QVBoxLayout, QWidget, QPushButton
 from PyQt5.QtMultimediaWidgets import QVideoWidget
@@ -246,7 +247,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
         ip = '10.180.46.76'
-        port = 10011
+        port = 10012
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -292,6 +293,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_admin.pushButton_5.clicked.connect(self.tela_deletar_midia)
         self.tela_admin.pushButton_8.clicked.connect(self.adicionar_midia)
         self.tela_admin.pushButton_9.clicked.connect(self.botao_deletar_midia)
+        self.tela_admin.pushButton_10.clicked.connect(self.enviar_midia_servidor)
  
     def operacao_log(self, mensagem):
         '''
@@ -975,7 +977,29 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
             tela.verticalLayout_3.addWidget(botao)
             return botao
+        
+    def enviar_midia_servidor (self):
+        fileName, _ = QFileDialog.getOpenFileName(self, "Open Video")
+        if fileName != '':
+            url = QUrl.fromLocalFile(fileName)
+            video = QMediaContent(url)
 
+        buffer_size = 4096
+        if os.path.exists(fileName):
+            video_file_size = os.path.getsize(fileName)       
+            with open(fileName, 'rb') as video_file:
+                msg = f'6,tamanho_video,{video_file_size}'
+                self.client_socket.send(str(msg).encode())            
+                while True:
+                    data = video_file.read(buffer_size)
+                    if not data:
+                        break
+                    msg = f'6,video,{data}'
+                    self.client_socket.send(msg.encode())
+            video_file.close()
+            print('Arquivo enviado com sucesso.')
+        else:
+            QMessageBox.about('Erro', 'Arquivo não encontrado.')
     
     def buscar_todos_filmes(self):
         '''

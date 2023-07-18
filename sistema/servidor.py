@@ -586,6 +586,24 @@ class MyThread(threading.Thread):
                             enviar = '1'
                         else:
                             enviar = '0'
+
+                    elif mensagem_str[1] == 'tamanho_video':
+                        self.tamanho = mensagem_str[2]
+
+                    elif mensagem_str[1] == 'video':
+                        video = mensagem_str[2]
+                        if self.tamanho == 0:
+                            return False
+                        with open(video, 'wb') as video_file:
+                            bytes_recebidos = 0
+                            while bytes_recebidos < self.tamanho:
+                                data = con.recv(4096)
+                                if not data:
+                                    break
+                                bytes_recebidos += len(data)
+                                video_file.write(data)
+                            print('Vídeo recebido e salvo com sucesso!')
+
                     elif mensagem_str[1] == 'deletar_midia':
                         nome_filme = mensagem_str[2]
                         if sistema.deletar_midia(nome_filme):
@@ -595,8 +613,7 @@ class MyThread(threading.Thread):
                     elif mensagem_str[1] == 'exibir_todos_filmes':
                         enviar = sistema.exibir_filmes()
                     con.send(str(enviar).encode())
-                        
-
+                                            
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
                 con.close()
@@ -604,6 +621,7 @@ class MyThread(threading.Thread):
                 print(str(e))
                 con.close()
                 break
+
 
     def enviar_filme(self, caminho, client_socket):
         '''
@@ -650,7 +668,7 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = '10.180.46.76'
-    port = 10011
+    port = 10012
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)

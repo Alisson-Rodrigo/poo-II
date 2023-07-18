@@ -149,7 +149,7 @@ class Tela_Admin(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 472, 459))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 475, 459))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -222,6 +222,7 @@ class Tela_Admin(object):
         self.lineEdit_2.setGeometry(QtCore.QRect(200, 40, 371, 25))
         self.lineEdit_2.setStyleSheet("color: rgb(192, 191, 188);\n"
 "border-radius: 8px;")
+        self.lineEdit_2.setText("")
         self.lineEdit_2.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_2.setObjectName("lineEdit_2")
         self.lineEdit_3 = QtWidgets.QLineEdit(self.frame_3)
@@ -246,7 +247,7 @@ class Tela_Admin(object):
         self.lineEdit_5.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.pushButton_8 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_8.setGeometry(QtCore.QRect(350, 280, 81, 31))
+        self.pushButton_8.setGeometry(QtCore.QRect(350, 350, 81, 31))
         self.pushButton_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_8.setStyleSheet("QPushButton {\n"
 "color: white;\n"
@@ -260,6 +261,19 @@ class Tela_Admin(object):
 "color: black;\n"
 "}")
         self.pushButton_8.setObjectName("pushButton_8")
+        self.pushButton_10 = QtWidgets.QPushButton(self.frame_3)
+        self.pushButton_10.setGeometry(QtCore.QRect(260, 270, 281, 21))
+        self.pushButton_10.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_10.setStyleSheet("QPushButton {\n"
+"color: rgb(192, 191, 188);\n"
+"border-radius: 8px;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"color: black;\n"
+"background: white;\n"
+"}")
+        self.pushButton_10.setObjectName("pushButton_10")
         self.label_4 = QtWidgets.QLabel(self.page_4)
         self.label_4.setGeometry(QtCore.QRect(390, 50, 261, 41))
         font = QtGui.QFont()
@@ -318,7 +332,7 @@ class Tela_Admin(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -337,12 +351,14 @@ class Tela_Admin(object):
         self.label_3.setText(_translate("MainWindow", "TextLabel"))
         self.pushButton_7.setText(_translate("MainWindow", "Delete"))
         self.label_2.setText(_translate("MainWindow", "Deleção de usuários"))
-        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Nome do filme"))
+        self.lineEdit_2.setPlaceholderText(_translate("MainWindow", "Nome da Midia"))
         self.lineEdit_3.setPlaceholderText(_translate("MainWindow", "Gênero"))
         self.lineEdit_4.setPlaceholderText(_translate("MainWindow", "Diretor"))
         self.lineEdit_5.setPlaceholderText(_translate("MainWindow", "Caminho"))
         self.pushButton_8.setText(_translate("MainWindow", "Cadastrar"))
-        self.label_4.setText(_translate("MainWindow", "Cadastrar filmes"))
+        self.pushButton_10.setText(_translate("MainWindow", "Enviar Midia"))
+        self.label_4.setText(_translate("MainWindow", "Cadastrar MIdias"))
+        self.lineEdit_6.setText(_translate("MainWindow", "Nome da Midia"))
         self.lineEdit_6.setPlaceholderText(_translate("MainWindow", "Nome do filme"))
         self.pushButton_9.setText(_translate("MainWindow", "Deletar"))
-        self.label_5.setText(_translate("MainWindow", "Deletar filmes"))
+        self.label_5.setText(_translate("MainWindow", "Deletar MIdias"))
