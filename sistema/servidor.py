@@ -7,7 +7,7 @@ import time
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="1234",
+    password="Cupira098*",
     #linux: Curupira098*
     database="bdPOO" 
 )
