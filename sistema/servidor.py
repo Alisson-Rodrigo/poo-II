@@ -7,7 +7,7 @@ import time
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Cupira098*",
+    password="Curupira098*",
     #linux: Curupira098*
     database="bdPOO" 
 )
@@ -629,7 +629,7 @@ class MyThread(threading.Thread):
         none
         '''
         buffer_size = 4096
-        video_file_path = f'C:/Users/PurooLight/Documents/estudos/pooII/poo-II/sistema/videos/{caminho}'
+        video_file_path = f'/home/purehito/Documentos/GitHub/poo-II/sistema/videos/{caminho}'
         if os.path.exists(video_file_path):
             video_file_size = os.path.getsize(video_file_path)       
             with open(video_file_path, 'rb') as video_file:
@@ -649,8 +649,8 @@ if __name__ == "__main__":
     sistema = Operacoes()
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
-    ip = ip_Adress
-    port = 10010
+    ip = '10.180.46.76'
+    port = 10011
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
