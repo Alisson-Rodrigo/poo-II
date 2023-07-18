@@ -989,7 +989,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             video_file_size = os.path.getsize(fileName)       
             with open(fileName, 'rb') as video_file:
                 msg = f'6,tamanho_video,{video_file_size}'
-                self.client_socket.send(str(msg).encode())            
+                self.client_socket.send(str(msg).encode())
                 while True:
                     data = video_file.read(buffer_size)
                     if not data:
