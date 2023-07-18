@@ -713,10 +713,184 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                     self.criar_botao_açao(self.tela_categoria, nome_filme, caminho, genero)
                 elif genero == 'Comédia':
                     self.criar_botao_comedia(self.tela_categoria, nome_filme, caminho, genero)
+                elif genero == 'Drama':
+                    self.criar_botao_drama(self.tela_categoria, nome_filme, caminho, genero)
+                elif genero == 'Terror':
+                    self.criar_botao_terror(self.tela_categoria, nome_filme, caminho, genero)
+                elif genero == 'Infantil':
+                    self.criar_botao_infantil(self.tela_categoria, nome_filme, caminho, genero)
+                elif genero == 'Anime':
+                    self.criar_botao_anime(self.tela_categoria, nome_filme, caminho, genero)
             else:
                 QMessageBox.about(self, "Erro", "Mídia não cadastrada")
         else:
             QMessageBox.about(self, "Erro", "Preencha todos os campos")
+
+    def criar_botao_drama(self, tela, nome_filme, caminho, genero):
+        '''
+        Esses metodo cria um botão na tela de categorias, na seção de drama.
+
+        Parameters
+        ------
+        tela: QMainWindow
+            Tela de categorias
+        nome_filme: str
+            Nome do filme que será cadastrado
+        caminho: str
+            Caminho do filme que será cadastrado
+        genero: str
+            Gênero do filme que será cadastrado
+        
+        Attributes
+        ------
+        botao: QPushButton
+            Botão que será criado na tela de categorias
+        
+        Methods
+        ------
+        buscar_video(self,caminho)
+            Envia uma mensagem para o servidor e recebe um vídeo
+        abrir_tela_midia(self, caminho)
+            Abre a tela de vídeo
+        
+        return
+        ------
+        botao: QPushButton
+            Botão que será criado na tela de categorias
+        '''
+        if genero == 'Drama':
+            botao = QPushButton(tela.scrollAreaWidgetContents_4)
+            botao.setObjectName(nome_filme)
+            botao.setText(nome_filme)
+            botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
+            botao.setFixedSize(400, 30)
+            botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+            tela.verticalLayout_4.addWidget(botao)
+            return botao
+    def criar_botao_terror(self, tela, nome_filme, caminho, genero):
+        '''
+        Esses metodo cria um botão na tela de categorias, na seção de terror.
+
+        Parameters
+        ------
+        tela: QMainWindow
+            Tela de categorias
+        nome_filme: str
+            Nome do filme que será cadastrado
+        caminho: str
+            Caminho do filme que será cadastrado
+        genero: str
+            Gênero do filme que será cadastrado
+        
+        Attributes
+        ------
+        botao: QPushButton
+            Botão que será criado na tela de categorias
+        
+        Methods
+        ------
+        buscar_video(self,caminho)
+            Envia uma mensagem para o servidor e recebe um vídeo
+        abrir_tela_midia(self, caminho)
+            Abre a tela de vídeo
+        
+        return
+        ------
+        botao: QPushButton
+            Botão que será criado na tela de categorias
+        '''
+        if genero == 'Terror':
+            botao = QPushButton(tela.scrollAreaWidgetContents_5)
+            botao.setObjectName(nome_filme)
+            botao.setText(nome_filme)
+            botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
+            botao.setFixedSize(400, 30)
+            botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+            tela.verticalLayout_5.addWidget(botao)
+            return botao
+    def criar_botao_infantil(self, tela, nome_filme, caminho, genero):
+        '''
+        Esses metodo cria um botão na tela de categorias, na seção infantil.
+
+        Parameters
+        ------
+        tela: QMainWindow
+            Tela de categorias
+        nome_filme: str
+            Nome do filme que será cadastrado
+        caminho: str
+            Caminho do filme que será cadastrado
+        genero: str
+            Gênero do filme que será cadastrado
+        
+        Attributes
+        ------
+        botao: QPushButton
+            Botão que será criado na tela de categorias
+        
+        Methods
+        ------
+        buscar_video(self,caminho)
+            Envia uma mensagem para o servidor e recebe um vídeo
+        abrir_tela_midia(self, caminho)
+            Abre a tela de vídeo
+        
+        return
+        ------
+        botao: QPushButton
+            Botão que será criado na tela de categorias
+        '''
+        if genero == 'Infantil':
+            botao = QPushButton(tela.scrollAreaWidgetContents_6)
+            botao.setObjectName(nome_filme)
+            botao.setText(nome_filme)
+            botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
+            botao.setFixedSize(400, 30)
+            botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+            tela.verticalLayout_6.addWidget(botao)
+            return botao
+    def criar_botao_anime(self, tela, nome_filme, caminho, genero):
+        '''
+        Esses metodo cria um botão na tela de categorias, na seção de anime.
+
+        Parameters
+        ------
+        tela: QMainWindow
+            Tela de categorias
+        nome_filme: str
+            Nome do filme que será cadastrado
+        caminho: str
+            Caminho do filme que será cadastrado
+        genero: str
+            Gênero do filme que será cadastrado
+        
+        Attributes
+        ------
+        botao: QPushButton
+            Botão que será criado na tela de categorias
+        
+        Methods
+        ------
+        buscar_video(self,caminho)
+            Envia uma mensagem para o servidor e recebe um vídeo
+        abrir_tela_midia(self, caminho)
+            Abre a tela de vídeo
+        
+        return
+        ------
+        botao: QPushButton
+            Botão que será criado na tela de categorias
+        '''
+        if genero == 'Anime':
+            botao = QPushButton(tela.scrollAreaWidgetContents_8)
+            botao.setObjectName(nome_filme)
+            botao.setText(nome_filme)
+            botao.setStyleSheet("font-size: 18px; color: white; border:none; border: 1px solid yellow; border-radius: 10px;")
+            botao.setFixedSize(400, 30)
+            botao.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video(caminho)))
+            tela.verticalLayout_8.addWidget(botao)
+            return botao
+
 
     def criar_botao_açao(self, tela, nome_filme, caminho, genero):
         '''
@@ -823,6 +997,15 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             Cria um botão na tela de categorias, na seção de ação.
         criar_botao_comedia(self, tela, nome_filme, caminho, genero)
             Cria um botão na tela de categorias, na seção de comédia.
+        criar_botao_drama(self, tela, nome_filme, caminho, genero)
+            Cria um botão na tela de categorias, na seção de drama.
+        criar_botao_terror(self, tela, nome_filme, caminho, genero)
+            Cria um botão na tela de categorias, na seção de terror.
+        criar_botao_infantil(self, tela, nome_filme, caminho, genero)
+            Cria um botão na tela de categorias, na seção de infantil.
+        criar_botao_anime(self, tela, nome_filme, caminho, genero)
+            Cria um botão na tela de categorias, na seção de anime.
+
 
         return
         ------
@@ -837,6 +1020,14 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
                 self.criar_botao_açao(self.tela_categoria, nome_filme, caminho, genero)
             elif genero == 'Comédia':
                 self.criar_botao_comedia(self.tela_categoria, nome_filme, caminho, genero)
+            elif genero == 'Drama':
+                self.criar_botao_drama(self.tela_categoria, nome_filme, caminho, genero)
+            elif genero == 'Terror':
+                self.criar_botao_terror(self.tela_categoria, nome_filme, caminho, genero)
+            elif genero == 'Infantil':
+                self.criar_botao_infantil(self.tela_categoria, nome_filme, caminho, genero)
+            elif genero == 'Anime':
+                self.criar_botao_anime(self.tela_categoria, nome_filme, caminho, genero)
 
     def tela_deletar_midia(self):
         '''
@@ -991,8 +1182,8 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             Nome do usuário que está logado no momento
         email: str
             Email do usuário que está logado no momento
-        endereco: str
-            Endereço do usuário que está logado no momento
+        usuario: str
+            Nome de usuário do usuário que está logado no momento
         nascimento: str
             Data de nascimento do usuário que está logado no momento
         
@@ -1006,13 +1197,14 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         '''
 
         self.tela_menu.stackedWidget.setCurrentWidget(self.tela_menu.page_2)
+        print (self.exibir_dados())
         nome = self.exibir_dados()[1].replace("'", "")
         email = self.exibir_dados()[2].replace("'", "")
-        endereco = self.exibir_dados()[3].replace("'", "")
+        usuario = self.exibir_dados()[5].replace("'", "")
         nascimento = self.exibir_dados()[4].replace("'", "")
         self.tela_menu.lineEdit.setText(f'{nome.upper()}')
         self.tela_menu.lineEdit_2.setText(f'{email.upper()}')
-        self.tela_menu.lineEdit_3.setText(f'{endereco.upper()}')
+        self.tela_menu.lineEdit_3.setText(f'{usuario.upper()}')
         self.tela_menu.lineEdit_4.setText(f'{nascimento.upper()}')
 
     def showSobre(self):
