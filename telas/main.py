@@ -240,7 +240,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         ------
         None
             
-        '''
+        ''' 
         super(Main,self).__init__(parent)
         self.setupUi(self)
         hostname = socket.gethostname()
