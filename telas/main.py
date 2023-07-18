@@ -100,7 +100,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_cadastro.pushButton_2.clicked.connect(self.voltar_tela)
 
         self.tela_primaria.pushButton_4.clicked.connect(self.abrir_tela_categoria)
-        self.tela_primaria.pushButton_2s.clicked.connect(self.abrir_menu)
+        self.tela_primaria.pushButton_2.clicked.connect(self.abrir_menu)
         self.tela_primaria.pushButton_10.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("ShaunOCarneiro-ClipedeEstreia-TVMarcelito2-FaixaInfantil.mp4")))
         self.tela_primaria.pushButton_6.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("Landscapes_Volume4K(UHD)(1).mp4")))
         self.tela_primaria.pushButton_14.clicked.connect(lambda: self.abrir_tela_midia(self.buscar_video("AberturaOShowDeTomeJerryBomDiaeCiaSbt.mp4")))
