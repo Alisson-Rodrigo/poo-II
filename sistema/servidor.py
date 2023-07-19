@@ -588,16 +588,19 @@ class MyThread(threading.Thread):
                             enviar = '0'
 
                     elif mensagem_str[1] == 'tamanho_video':
-                        self.tamanho = mensagem_str[2]
+                        self.tamanho = int(mensagem_str[2])
+                        print(self.tamanho)
 
                     elif mensagem_str[1] == 'video':
-                        video = mensagem_str[2]
+                        nome_arquivo = mensagem_str[2]
                         if self.tamanho == 0:
                             return False
-                        with open(video, 'wb') as video_file:
+                        with open(nome_arquivo, 'wb') as video_file:
                             bytes_recebidos = 0
                             while bytes_recebidos < self.tamanho:
-                                data = con.recv(4096)
+                                msg = con.recv(1024)
+                                data = mensagem.decode('utf-8', errors='ignore').split(',')
+
                                 if not data:
                                     break
                                 bytes_recebidos += len(data)
@@ -668,7 +671,7 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = ip_Adress
-    port = 10012
+    port = 10014
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)

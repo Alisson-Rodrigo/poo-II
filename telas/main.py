@@ -247,7 +247,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         hostname = socket.gethostname()
         ip_Adress = socket.gethostbyname(hostname)
         ip = ip_Adress
-        port = 10012
+        port = 10014
         addr = ((ip, port))
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect(addr)
@@ -978,23 +978,10 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             tela.verticalLayout_3.addWidget(botao)
             return botao
         
-    def enviar_midia_servidor (self):
-        video_file_path = QFileDialog.getOpenFileName(self, "Open Video")
-        buffer_size = 4096
-        if os.path.exists(video_file_path):
-            video_file_size = os.path.getsize(video_file_path)       
-            with open(video_file_path, 'rb') as video_file:
-                self.client_socket.send(str(video_file_size).encode())            
-                while True:
-                    data = video_file.read(buffer_size)
-                    if not data:
-                        break
-                    self.client_socket.send(data)
-            video_file.close()
-            print('Arquivo enviado com sucesso.')
-        else:
-            self.client_socket.send(str(0).encode())
-            print('Arquivo não encontrado no servidor.')
+    def enviar_midia_servidor(self):
+        video_file_path, _ = QFileDialog.getOpenFileName(self, "Open Video")
+
+
     
     def buscar_todos_filmes(self):
         '''
