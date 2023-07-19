@@ -979,27 +979,22 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             return botao
         
     def enviar_midia_servidor (self):
-        fileName, _ = QFileDialog.getOpenFileName(self, "Open Video")
-        if fileName != '':
-            url = QUrl.fromLocalFile(fileName)
-            video = QMediaContent(url)
-
+        video_file_path = QFileDialog.getOpenFileName(self, "Open Video")
         buffer_size = 4096
-        if os.path.exists(fileName):
-            video_file_size = os.path.getsize(fileName)       
-            with open(fileName, 'rb') as video_file:
-                msg = f'6,tamanho_video,{video_file_size}'
-                self.client_socket.send(str(msg).encode())
+        if os.path.exists(video_file_path):
+            video_file_size = os.path.getsize(video_file_path)       
+            with open(video_file_path, 'rb') as video_file:
+                self.client_socket.send(str(video_file_size).encode())            
                 while True:
                     data = video_file.read(buffer_size)
                     if not data:
                         break
-                    msg = f'6,video,{data}'
-                    self.client_socket.send(msg.encode())
+                    self.client_socket.send(data)
             video_file.close()
             print('Arquivo enviado com sucesso.')
         else:
-            QMessageBox.about('Erro', 'Arquivo não encontrado.')
+            self.client_socket.send(str(0).encode())
+            print('Arquivo não encontrado no servidor.')
     
     def buscar_todos_filmes(self):
         '''
