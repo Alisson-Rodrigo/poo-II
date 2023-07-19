@@ -667,7 +667,7 @@ if __name__ == "__main__":
     sistema = Operacoes()
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
-    ip = '10.180.46.76'
+    ip = ip_Adress
     port = 10012
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
