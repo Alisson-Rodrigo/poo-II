@@ -149,7 +149,7 @@ class Tela_Admin(object):
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents_3 = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 472, 459))
+        self.scrollAreaWidgetContents_3.setGeometry(QtCore.QRect(0, 0, 475, 459))
         self.scrollAreaWidgetContents_3.setObjectName("scrollAreaWidgetContents_3")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout.setObjectName("verticalLayout")
@@ -246,7 +246,7 @@ class Tela_Admin(object):
         self.lineEdit_5.setAlignment(QtCore.Qt.AlignCenter)
         self.lineEdit_5.setObjectName("lineEdit_5")
         self.pushButton_8 = QtWidgets.QPushButton(self.frame_3)
-        self.pushButton_8.setGeometry(QtCore.QRect(350, 280, 81, 31))
+        self.pushButton_8.setGeometry(QtCore.QRect(350, 340, 81, 31))
         self.pushButton_8.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.pushButton_8.setStyleSheet("QPushButton {\n"
 "color: white;\n"
@@ -260,6 +260,19 @@ class Tela_Admin(object):
 "color: black;\n"
 "}")
         self.pushButton_8.setObjectName("pushButton_8")
+        self.pushButton_10 = QtWidgets.QPushButton(self.frame_3)
+        self.pushButton_10.setGeometry(QtCore.QRect(590, 220, 81, 25))
+        self.pushButton_10.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
+        self.pushButton_10.setStyleSheet("QPushButton {\n"
+"color: rgb(192, 191, 188);\n"
+"border-radius: 8px;color: white;\n"
+"}\n"
+"\n"
+"QPushButton:hover {\n"
+"background-color: white;\n"
+"color: black;\n"
+"}")
+        self.pushButton_10.setObjectName("pushButton_10")
         self.label_4 = QtWidgets.QLabel(self.page_4)
         self.label_4.setGeometry(QtCore.QRect(390, 50, 261, 41))
         font = QtGui.QFont()
@@ -318,7 +331,7 @@ class Tela_Admin(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(4)
+        self.stackedWidget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -342,6 +355,7 @@ class Tela_Admin(object):
         self.lineEdit_4.setPlaceholderText(_translate("MainWindow", "Diretor"))
         self.lineEdit_5.setPlaceholderText(_translate("MainWindow", "Caminho"))
         self.pushButton_8.setText(_translate("MainWindow", "Cadastrar"))
+        self.pushButton_10.setText(_translate("MainWindow", "Open File"))
         self.label_4.setText(_translate("MainWindow", "Cadastrar filmes"))
         self.lineEdit_6.setPlaceholderText(_translate("MainWindow", "Nome do filme"))
         self.pushButton_9.setText(_translate("MainWindow", "Deletar"))

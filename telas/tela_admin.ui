@@ -278,7 +278,7 @@ QPushButton:hover {
      <string notr="true">border: 1px solid white;</string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page_6">
      <widget class="QLabel" name="label">
@@ -335,7 +335,7 @@ border-bottom: 1px solid yellow;</string>
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>472</width>
+         <width>475</width>
          <height>459</height>
         </rect>
        </property>
@@ -590,7 +590,7 @@ border-radius: 8px;</string>
        <property name="geometry">
         <rect>
          <x>350</x>
-         <y>280</y>
+         <y>340</y>
          <width>81</width>
          <height>31</height>
         </rect>
@@ -613,6 +613,33 @@ color: black;
        </property>
        <property name="text">
         <string>Cadastrar</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_10">
+       <property name="geometry">
+        <rect>
+         <x>590</x>
+         <y>220</y>
+         <width>81</width>
+         <height>25</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+color: rgb(192, 191, 188);
+border-radius: 8px;color: white;
+}
+
+QPushButton:hover {
+background-color: white;
+color: black;
+}</string>
+       </property>
+       <property name="text">
+        <string>Open File</string>
        </property>
       </widget>
      </widget>
