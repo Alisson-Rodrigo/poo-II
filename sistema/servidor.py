@@ -587,26 +587,6 @@ class MyThread(threading.Thread):
                         else:
                             enviar = '0'
 
-                    elif mensagem_str[1] == 'tamanho_video':
-                        self.tamanho = int(mensagem_str[2])
-                        print(self.tamanho)
-
-                    elif mensagem_str[1] == 'video':
-                        nome_arquivo = mensagem_str[2]
-                        if self.tamanho == 0:
-                            return False
-                        with open(nome_arquivo, 'wb') as video_file:
-                            bytes_recebidos = 0
-                            while bytes_recebidos < self.tamanho:
-                                msg = con.recv(1024)
-                                data = mensagem.decode('utf-8', errors='ignore').split(',')
-
-                                if not data:
-                                    break
-                                bytes_recebidos += len(data)
-                                video_file.write(data)
-                            print('Vídeo recebido e salvo com sucesso!')
-
                     elif mensagem_str[1] == 'deletar_midia':
                         nome_filme = mensagem_str[2]
                         if sistema.deletar_midia(nome_filme):
@@ -665,6 +645,7 @@ class MyThread(threading.Thread):
         else:
             client_socket.send(str(0).encode())
             print('Arquivo não encontrado no servidor.')
+
 
 if __name__ == "__main__":
     sistema = Operacoes()

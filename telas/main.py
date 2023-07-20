@@ -293,7 +293,7 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
         self.tela_admin.pushButton_5.clicked.connect(self.tela_deletar_midia)
         self.tela_admin.pushButton_8.clicked.connect(self.adicionar_midia)
         self.tela_admin.pushButton_9.clicked.connect(self.botao_deletar_midia)
-        self.tela_admin.pushButton_10.clicked.connect(self.enviar_midia_servidor)
+        #self.tela_admin.pushButton_10.clicked.connect(self.enviar_midia)
  
     def operacao_log(self, mensagem):
         '''
@@ -978,10 +978,6 @@ class Main(QtWidgets.QMainWindow, Ui_Main):
             tela.verticalLayout_3.addWidget(botao)
             return botao
         
-    def enviar_midia_servidor(self):
-        video_file_path, _ = QFileDialog.getOpenFileName(self, "Open Video")
-
-
     
     def buscar_todos_filmes(self):
         '''
