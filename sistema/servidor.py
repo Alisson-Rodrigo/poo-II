@@ -7,9 +7,9 @@ import time
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="Curupira098*",
+    password="1234",
     #linux: Curupira098*
-    database="bdPOO" 
+    database="bdPOO"
 )
 
 cursor = conexao.cursor()
