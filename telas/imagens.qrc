@@ -1,5 +1,12 @@
 <RCC>
   <qresource prefix="newPrefix">
+    <file>aviao (1).png</file>
+    <file>mapa_mundiINTEIRO.png</file>
+    <file>aviao.png</file>
+    <file>mundo1.png</file>
+    <file>no-mundo-todo.png</file>
+    <file>no-mundo-todo.png</file>
+    <file>lupa.png</file>
     <file>trash.svg</file>
     <file>user-x.svg</file>
     <file>user.svg</file>
