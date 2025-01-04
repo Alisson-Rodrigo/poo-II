@@ -1,18 +1,20 @@
-import mysql.connector
-import threading, socket
 import os
+import socket
+import threading
 import time
 
+import mysql.connector
 
 conexao = mysql.connector.connect(
     host="localhost",
     user="root",
     password="1234",
-    #linux: Curupira098*
+    # linux: Curupira098*
     database="bdPOO"
 )
 
 cursor = conexao.cursor()
+
 
 class Operacoes():
     '''
@@ -25,7 +27,7 @@ class Operacoes():
     Attributes
     ------
     none
-    
+
     Methods
     ------
     cadastramento(nome, email, endereco, nascimento, usuario, senha, confirmar_senha)
@@ -48,7 +50,7 @@ class Operacoes():
         Exibe todas as mídias.
     deletar_midia(nome_filme)
         Deleta uma mídia.
-    
+
     return
     ------
     True
@@ -56,6 +58,7 @@ class Operacoes():
     False
         Se a operação não for realizada com sucesso.
     '''
+
     def __init__(self):
         '''
         Essa função é responsável por criar as tabelas no banco de dados. Caso as tabelas já existam, não será criada uma nova tabela.
@@ -98,7 +101,7 @@ class Operacoes():
 
         conexao.commit()
 
-    def cadastramento (self, nome, email, endereco, nascimento, usuario, senha, confirmar_senha):
+    def cadastramento(self, nome, email, endereco, nascimento, usuario, senha, confirmar_senha):
         '''
         Essa função é responsável por realizar o cadastramento de um novo usuário no banco de dados.
 
@@ -118,7 +121,7 @@ class Operacoes():
             Senha do usuário.
         confirmar_senha : str
             Confirmação da senha do usuário.
-        
+
         Attributes
         ------
         none
@@ -127,7 +130,7 @@ class Operacoes():
         ------
         verificar_usuario_existente(usuario)
             Verifica se o usuário já existe no banco de dados.
-        
+
         return
         ------
         True
@@ -138,7 +141,8 @@ class Operacoes():
         if self.verificar_usuario_existente(usuario) == True:
             return False
         else:
-            cursor.execute('''INSERT INTO cadastro (nome, email, endereco, nascimento, usuario, senha, confirmar_senha) VALUES (%s,%s,%s,%s,%s,%s,%s)''', (nome, email, endereco, nascimento, usuario, senha, confirmar_senha))
+            cursor.execute('''INSERT INTO cadastro (nome, email, endereco, nascimento, usuario, senha, confirmar_senha) VALUES (%s,%s,%s,%s,%s,%s,%s)''',
+                           (nome, email, endereco, nascimento, usuario, senha, confirmar_senha))
             conexao.commit()
             return True
 
@@ -161,7 +165,7 @@ class Operacoes():
         ------
         verificar_usuario_existente(usuario)
             Verifica se o usuário já existe no banco de dados.
-        
+
         return
         ------
         True
@@ -171,7 +175,8 @@ class Operacoes():
         '''
         self.verificacao = self.verificar_usuario_existente(username)
         if self.verificacao == True:
-            cursor.execute("SELECT * FROM cadastro WHERE usuario = %s AND senha = %s", (username, password))
+            cursor.execute(
+                "SELECT * FROM cadastro WHERE usuario = %s AND senha = %s", (username, password))
             resultado = cursor.fetchall()
             if resultado:
                 return True
@@ -180,7 +185,7 @@ class Operacoes():
         else:
             return False
 
-    def verificar_usuario_existente(self,usuario):
+    def verificar_usuario_existente(self, usuario):
         '''
         Essa função é responsável por verificar se o usuário já existe no banco de dados.
 
@@ -188,7 +193,7 @@ class Operacoes():
         ------
         usuario : str
             Nome de usuário do usuário.
-        
+
         Attributes
         ------
         none
@@ -211,7 +216,7 @@ class Operacoes():
             return True
         return False
 
-    def exibir_dados(self,usuario):
+    def exibir_dados(self, usuario):
         '''
         Essa função é responsável por exibir os dados do usuário.
 
@@ -219,7 +224,7 @@ class Operacoes():
         ------
         usuario : str
             Nome de usuário do usuário.
-        
+
         Attributes
         ------
         none
@@ -236,7 +241,7 @@ class Operacoes():
         cursor.execute("SELECT * FROM cadastro WHERE usuario = %s", (usuario,))
         resultado = cursor.fetchall()
         return resultado
-    
+
     def exibir_dadosADMIN(self):
         '''
         Essa função é responsável por exibir todos os usuários.
@@ -257,13 +262,14 @@ class Operacoes():
         ------
         nomes : list
             Lista com todos os usuários.
-        
+
         '''
         cursor.execute("SELECT usuario FROM cadastro")
         resultados = cursor.fetchall()
-        nomes = [resultado[0] for resultado in resultados] 
+        nomes = [resultado[0] for resultado in resultados]
         return nomes
-    def deletar_usuario(self,usuario):
+
+    def deletar_usuario(self, usuario):
         '''
         Essa função é responsável por deletar um usuário.
 
@@ -271,7 +277,7 @@ class Operacoes():
         ------
         usuario : str
             Nome de usuário do usuário.
-        
+
         Attributes
         ------
         none
@@ -286,12 +292,12 @@ class Operacoes():
             Se o usuário for deletado com sucesso.
         False
             Se o usuário não for deletado com sucesso.
-        
+
         '''
         cursor.execute("DELETE FROM cadastro WHERE usuario = %s", (usuario,))
         conexao.commit()
         return True
-    
+
     def verificar_midia_existente(self, nome_filme, caminho):
         '''
         Essa função é responsável por verificar se a mídia já existe no banco de dados.
@@ -315,7 +321,8 @@ class Operacoes():
         ------
         True
         '''
-        cursor.execute("SELECT * FROM filmes WHERE nome = %s AND caminho = %s", (nome_filme, caminho))
+        cursor.execute(
+            "SELECT * FROM filmes WHERE nome = %s AND caminho = %s", (nome_filme, caminho))
         resultado = cursor.fetchall()
         if resultado:
             return False
@@ -350,11 +357,13 @@ class Operacoes():
             Se a mídia existir no banco de dados e a mídia não for adicionada com sucesso.
         '''
         if self.verificar_midia_existente(nome_filme, caminho) == True:
-            cursor.execute("""INSERT INTO filmes (nome, genero, diretor, caminho) VALUES (%s,%s,%s,%s)""", (nome_filme, genero, diretor, caminho))
+            cursor.execute("""INSERT INTO filmes (nome, genero, diretor, caminho) VALUES (%s,%s,%s,%s)""",
+                           (nome_filme, genero, diretor, caminho))
             conexao.commit()
             return True
         else:
             return False
+
     def exibir_filmes(self):
         '''
         Essa função é responsável por exibir todas as mídias.
@@ -380,7 +389,6 @@ class Operacoes():
         cursor.execute("SELECT nome, caminho, genero FROM filmes")
         resultado = cursor.fetchall()
         return resultado
-    
 
     def deletar_midia(self, nome_filme):
         '''
@@ -390,7 +398,7 @@ class Operacoes():
         ------
         nome_filme : str
             Nome da mídia.
-        
+
         Attributes
         ------
         none
@@ -411,6 +419,7 @@ class Operacoes():
         conexao.commit()
         return True
 
+
 class MyThread(threading.Thread):
     '''
     Essa classe é responsável por criar uma nova thread para cada cliente que se conectar ao servidor.
@@ -422,7 +431,7 @@ class MyThread(threading.Thread):
         Endereço do cliente.
     client_socket : str
         Socket do cliente.
-    
+
     Attributes
     ------
     name : str
@@ -431,18 +440,19 @@ class MyThread(threading.Thread):
         Socket do cliente.
     lock : str
         Lock para controlar o acesso ao recurso compartilhado.
-    
+
     Methods
     ------
     run()
         Inicia a thread.
     enviar_filme(caminho, client_socket)
         Envia o filme para o cliente.
-    
+
     return
     ------
     none
     '''
+
     def __init__(self, client_address, client_socket):
         '''
         Essa função de inicialização é responsável por criar uma nova thread para cada cliente que se conectar ao servidor.
@@ -453,7 +463,7 @@ class MyThread(threading.Thread):
             Endereço do cliente.
         client_socket : str
             Socket do cliente.
-        
+
         Attributes
         ------
         name : str
@@ -462,7 +472,7 @@ class MyThread(threading.Thread):
             Socket do cliente.
         lock : str
             Lock para controlar o acesso ao recurso compartilhado.
-        
+
         Methods
         ------
         none
@@ -477,7 +487,6 @@ class MyThread(threading.Thread):
         print('Nova conexão, endereço: ', client_address)
         self.lock = threading.Lock()
 
- 
     def run(self):
         '''
         Essa função é responsável por iniciar a thread.
@@ -596,7 +605,7 @@ class MyThread(threading.Thread):
                     elif mensagem_str[1] == 'exibir_todos_filmes':
                         enviar = sistema.exibir_filmes()
                     con.send(str(enviar).encode())
-                                            
+
             except ConnectionResetError:
                 print('A conexão foi redefinida pelo cliente.')
                 con.close()
@@ -604,7 +613,6 @@ class MyThread(threading.Thread):
                 print(str(e))
                 con.close()
                 break
-
 
     def enviar_filme(self, caminho, client_socket):
         '''
@@ -632,9 +640,9 @@ class MyThread(threading.Thread):
         buffer_size = 4096
         video_file_path = f'C:/Users/PurooLight/Documents/estudos/pooII/poo-II/sistema/videos/{caminho}'
         if os.path.exists(video_file_path):
-            video_file_size = os.path.getsize(video_file_path)       
+            video_file_size = os.path.getsize(video_file_path)
             with open(video_file_path, 'rb') as video_file:
-                client_socket.send(str(video_file_size).encode())            
+                client_socket.send(str(video_file_size).encode())
                 while True:
                     data = video_file.read(buffer_size)
                     if not data:
@@ -652,7 +660,7 @@ if __name__ == "__main__":
     hostname = socket.gethostname()
     ip_Adress = socket.gethostbyname(hostname)
     ip = ip_Adress
-    port = 10014
+    port = 10015
     addr = ((ip, port))
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind(addr)
@@ -662,4 +670,3 @@ if __name__ == "__main__":
         client_socket, addr = server_socket.accept()
         my_thread = MyThread(addr, client_socket)
         my_thread.start()
-
